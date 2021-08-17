@@ -1,0 +1,617 @@
+.lp-top-bar{
+
+    background-color: rgba(0, 0, 0, 0.24);;
+
+}
+
+
+
+
+.lp-header-search .lp-header-search-tagline,
+
+.lp-header-search .lp-header-search-cats ul li a,
+
+.lp-header-search .lp-search-form-submit button,
+
+.lp-listing .lp-listing-top .lp-listing-price-range,
+
+.lp-listing .lp-listing-top .lp-listing-favrt,
+
+.lp-listing .lp-listing-top .li-listing-clock,
+
+.lp-listing .lp-listing-top .lp-listing-cat,
+
+.lp-locations .lp-location-box .lp-location-bottom a,
+
+.lp-read-news,
+
+.lp-read-news a,
+
+.lp-listings.list-style .lp-listing .lp-listing-bottom .lp-listing-cat i,
+
+.lp-listings-widget .lp-listing .lp-listing-detail h6 span,
+
+.lp-listings-widget .lp-listing .lp-listing-detail .lp-rating-avg,
+
+.lp-header-title .lp-header-title-left h3,
+
+.lp-header-title .lp-header-title-left .lp-header-breadcrumbs a,
+
+.lp-header-title .lp-header-title-left .lp-header-breadcrumbs a:hover:before,
+
+.lp-header-title .lp-header-title-left .lp-header-breadcrumbs a:before,
+
+.lp-header-title .lp-header-title-left .lp-header-breadcrumbs,
+
+.lp-header-toggles,
+
+.lp-header-search .price-filter ul li:hover,
+
+.lp-listing-title .lp-listing-title-rating .lp-rating-avg,
+
+.lp-listing-announcement .announcement-wrap a,
+
+.lp-review-form-top .lp-review-images button,
+
+.lp-listing-review-form .review-submit-btn,
+
+.lp-listing-additional-details .toggle-additional-details,
+
+.lp-discount-btn,
+
+.single-page-bg .lp-listing-title .lp-listing-name h2,
+.single-page-bg .lp-listing-title .lp-listing-name h1,
+.single-page-bg .lp-listing-title .lp-listing-name .lp-listing-name-tagline,
+
+.single-page-bg .lp-listing-title .lp-listing-title-rating .lp-rating-count,
+
+.lp-see-all a,
+
+a.browse-imgs,
+
+.lp-header-search .price-filter ul li.active,
+
+.lp-locations .lp-location-box .lp-location-bottom a span
+{
+
+    color: #fff !important;
+
+}
+
+.lp-listing .lp-listing-top .lp-listing-price-range{
+
+    background-color: #1414148a !important;
+
+}
+
+
+
+.lp-header-search .lp-search-form-submit button{
+
+    background-color: transparent !important;
+
+}
+
+.lp-header-middle .lp-header-nav-btn button span,
+
+.header-style2 .lp-top-bar,
+
+.lp-listing-action-btns ul li a,
+
+.lp-review-form-top,
+
+.lp-listing-offer .flip-clock-wrapper ul li a div div.inn{
+
+    background-color: #fff;
+
+}
+
+.header-style3 .lp-top-bar{
+
+    background-color: #333333 !important;
+
+}
+
+
+
+.lp-header-middle .lp-header-nav-btn button,
+
+.lp-activities .lp-activity .lp-activity-author-thumb img{
+
+    border-color: #fff !important;
+
+}
+
+.lp-header-search .lp-search-form-what,
+
+.lp-header-search .lp-search-form-where{
+
+
+
+}
+
+.lp-header-search .lp-search-form-what label,
+
+.lp-header-search .lp-search-form-where label,
+
+.lp-section-heading h2,
+
+.lp-listing .lp-listing-bottom h3 a,
+
+.lp-activity h3 a,
+
+.footer-menu ul li a,
+
+.lp-listings-widget .lp-listing .lp-listing-detail h3 a,
+
+.lp-listing-faq .faq-title a,
+
+.lp-listing-reviews .lp-total-reviews,
+
+.lp-listing-review .lp-review-left .lp-review-name,
+
+.lp-listing-review .lp-review-right strong,
+
+.lp-discount-widget .lp-discount-top strong,
+
+.lp-discount-widget .lp-discount-bottom strong,
+
+.lp-discount-widget .lp-discount-bottom p,
+
+.lp-listing-action-btns .smenu div a,
+
+.announcement-wrap span{
+
+    /*color: #333333 !important;*/
+
+}
+
+.footer-menu ul li a{
+
+    color: #333333 !important;
+
+}
+
+.lp-header-search .lp-search-form-what input,
+
+.lp-header-search .lp-search-form-where input,
+
+.lp-section-heading p,
+
+.lp-listing .lp-listing-bottom .lp-listing-cats a,
+
+.lp-rating-num,
+
+.lp-listing-location a,
+
+.lp-activity .lp-activity-description,
+
+.lp-activity .lp-activity-bottom .lp-activity-review-writer,
+
+footer .copyrights,
+
+.header-style2 .lp-top-bar a,
+
+.header-style2 .lp-top-bar li:before,
+
+.lp-listings.list-style .lp-listing .lp-listing-bottom .lp-listing-cat,
+
+.lp-listings-widget .lp-listing .lp-listing-detail .lp-rating-count,
+
+.lp-header-search .price-filter ul li,
+
+.lp-header-search-filters .header-filter-wrap,
+
+.lp-header-search-filters .header-filter-wrap.select-filter select,
+
+.lp-listing-title .lp-listing-name .lp-listing-name-tagline,
+
+.lp-listing-title .lp-listing-title-rating .lp-rating-count,
+
+.lp-listing-action-btns ul li a,
+
+.lp-listing-desription,
+
+.lp-listing-specs ul li,
+
+.lp-listing-faq .faq-answer,
+
+.lp-listing-review .lp-review-left .lp-review-count,
+
+.lp-listing-review .lp-review-left .lp-review-count i,
+
+.lp-listing-review .lp-review-right .lp-review-right-top time,
+
+.lp-listing-review .lp-review-right .lp-review-right-content,
+
+.lp-review-form-top .lp-review-stars span.stars-label,
+
+.lp-review-form-top .lp-review-images label,
+
+.listing-page-sidebar .lp-widget ul li,
+
+.lp-widget-social-links a,
+
+.lp-listing-timings .toggle-all-days,
+
+.listing-page-sidebar .lp-widget ul li.lp-widget-social-links a,
+
+.online-owner-widget .lp-online-social a,
+
+.online-owner-widget .lp-online-detail p{
+
+    color: #797979 !important;
+
+}
+
+.lp-header-search .lp-search-form-what{
+
+    background-color: #eeeeee !important;
+
+}
+
+.lp-header-search.archive-search .lp-search-form-what{
+
+    background-color: #fff !important;
+
+}
+
+.lp-header-search .lp-search-form-where,
+
+.lp-listing-timings .toggle-all-days{
+
+    background-color: #fff !important;
+
+}
+
+.red-tooltip + .tooltip.left .tooltip-arrow{
+
+    border-left-color: #ff5a5f !important;
+
+}
+
+.lp-listings .lp-listing,
+
+.lp-listing .lp-listing-top-thumb,
+
+.lp-listings.list-style .lp-listings-inner-wrap,
+.lp-listings-widget .lp-listing,
+
+.lp-listing-action-btns ul li a,
+
+.lp-listing-announcement .announcement-wrap,
+
+.lp-listing-specs ul li,
+
+.lp-listing-faqs .lp-listing-faq,
+
+.lp-listing-reviews .lp-listing-review,
+
+.lp-listing-review-form,
+
+.lp-listing-review-form .lp-review-form-top,
+
+.lp-listing-review-form textarea,
+
+.listing-page-sidebar .lp-widget,
+
+.lp-listing-timings div.lp-today-timing,
+
+.lp-listing-timings .toggle-all-days,
+
+.lp-category-boxed2 .lp-category-boxed2-inner,
+
+.lp-category-boxed2 .lp-category-boxed2-inner-bottom,
+
+.lp-listing .lp-listing-bottom,
+
+.lp-discount-widget .lp-discount-top .lp-discount-thumb,
+
+footer.style3,
+
+.lp-listing-menu-items .lp-listing-menu-item,
+
+.lp-listing-menu-top,
+
+.lp-listing-menuu-wrap{
+
+    border-color: #dedede !important;
+
+}
+
+.lp-listing-stars .lp-star-box,
+
+.lp-listing-stars .lp-star-box i{
+
+
+
+    border-color: #73cf42 !important;
+
+}
+
+
+
+/*.lp-listing-stars .lp-star-box:hover,*/
+
+
+
+.lp-listing-review .lp-review-right .lp-rating-num,
+
+.online-owner-widget .lp-online-detail h4 span:before{
+
+    color: #fff !important;
+
+    background-color: #73cf42 !important;
+
+}
+
+.lp-timing-status.status-open,
+
+.lp-widget .lp-listing-price-range p span.currency-sign.green{
+
+    color: #73cf42 !important;
+
+}
+
+.lp-listing .lp-listing-bottom h4 span,
+
+.lp-activity h4 span,
+
+.lp-listings-widget .lp-listing .lp-listing-detail h6 span{
+
+    color: #ebac2c !important;
+
+}
+
+.lp-listings-widget .lp-listing .lp-listing-detail h6 span{
+
+    /*background-color: #ebac2c !important;*/
+
+}
+
+.lp-listings .listing-slider .lp-listing .lp-listing-bottom,
+
+.lp-listing-review-form,
+
+.lp-listing-price-range,
+
+.lp-discount-widget .lp-discount-bottom,
+
+.lp-listings .listing-slider .lp-listing .lp-listing-bottom .lp-listing-bottom-inner{
+
+    background-color: #fafafa !important;
+
+}
+
+
+
+
+
+.lp-header-search-filters .header-filter-wrap.select-filter select{
+
+    background-color: #f4f4f4;
+
+    border-color: #dedede !important;
+
+}
+
+
+
+.lp-listing-title .lp-listing-logo img{
+
+    border-color: #dfdfdf !important;
+
+}
+
+.lp-listing-action-btns ul li a:hover{
+
+    background-color: #f8f8f8 !important;
+
+}
+
+
+
+.lp-listing-review .lp-review-right-bottom .review-interesting,
+
+.lp-listing-review .lp-review-right-bottom .review-interesting .react-count,
+
+.lp-activity-description .review-interesting,
+
+.lp-activity-description .review-interesting .react-count{
+
+    color: #3498db !important;
+
+}
+
+.lp-listing-review .lp-review-right-bottom .review-interesting:hover,
+
+.lp-activity-description .review-interesting:hover{
+
+    color: #fff !important;
+
+    background-color: #3498db !important;
+
+}
+
+.lp-listing-review .lp-review-right-bottom .review-interesting:hover .react-count,
+
+.lp-activity-description .review-interesting:hover .react-count{
+
+    color: #fff !important;
+
+}
+
+.lp-listing-review .lp-review-right-bottom .review-love,
+
+.lp-listing-review .lp-review-right-bottom .review-love .react-count,
+
+.lp-activity-description .review-love,
+
+.lp-activity-description .review-love .react-count{
+
+    color: #e67e22 !important;
+
+}
+
+.lp-listing-review .lp-review-right-bottom .review-love:hover,
+
+.lp-activity-description .review-love:hover{
+
+    color: #fff !important;
+
+    background-color: #e67e22 !important;
+
+}
+
+.lp-listing-review .lp-review-right-bottom .review-love:hover .react-count,
+
+.lp-activity-description .review-love:hover .react-count{
+
+    color: #fff !important;
+
+}
+
+.lp-listing-review .lp-review-right-bottom .review-lol,
+
+.lp-listing-review .lp-review-right-bottom .review-lol .react-count,
+
+.lp-activity-description .review-lol,
+
+.lp-activity-description .review-lol .react-count{
+
+    color: #e74c3c !important;
+
+}
+
+.lp-listing-review .lp-review-right-bottom .review-lol:hover,
+
+.lp-activity-description .review-lol:hover{
+
+    color: #fff !important;
+
+    background-color: #e74c3c !important;
+
+}
+
+.lp-listing-review .lp-review-right-bottom .review-lol:hover .react-count,
+
+.lp-activity-description .review-lol:hover .react-count{
+
+    color: #fff !important;
+
+}
+
+.lp-review-form-top .lp-review-images button,
+
+a.browse-imgs,
+
+.lp-listing-action-btns .smenu div,
+
+.lp-listing-action-btns .smenu div a{
+
+    background-color: #acacac;
+
+}
+
+.listing-page-sidebar .lp-widget ul li,
+
+.lp-widget .lp-listing-price-range,
+
+.lp-listing-additional-details h4,
+
+.listing-page-sidebar .lp-widget #singlepostmap{
+
+    border-color: #e3e3e3 !important;
+
+}
+
+.lp-widget .lp-listing-price-range p,
+
+.online-owner-widget .lp-online-detail h4 span{
+
+    color: #7f7f7f !important;
+
+}
+
+#claimform .claim-details ul li{
+
+    background-color: #fff !important;
+
+}
+
+
+
+.lp-listing-action-btns ul li#lp-book-now > a{
+
+    background-color: transparent; !important;
+
+}
+
+
+
+/*.lp-listings-widget .lp-listing .lp-listing-detail .lp-rating-avg,*/
+
+/*.lp-listing-title .lp-listing-title-rating .lp-rating-avg{*/
+
+/*background-color: #73cf42 !important;*/
+
+/*}*/
+
+/*new color css*/
+.lp-coupns-btns:hover,
+.lp-menu-step-two-btn button:hover,
+.lp-menu-save-btns button:hover,
+.lp-form-feild-btn:hover {
+    background-color: #42a7df
+}
+
+.lp-menu-step-two-btn button span,
+.lp-menu-step-two-btn button,
+.lp-step-icon i,
+.lp-choose-menu .lp-listing-selecter-drop a,
+.lp-menu-container-outer .ui-tabs .ui-tabs-nav .ui-tabs-active a,.lp-header-togglesa .listing-view-layout-v2 ul li .active .fa{
+    color: #42a7df
+}
+
+.lp-menu-step-two-btn button,.lp-header-togglesa .listing-view-layout-v2 ul li .active .fa{
+    border: 1px solid #42a7df
+}
+
+.lp-form-feild-btn,
+.lp-location-picker-outer .active {
+    border-color: #42a7df
+}
+
+.lp-left-content-container a:hover,
+.lp-form-feild-btn{
+    color: #42a7df
+}
+
+.lp-review-reply-btn {
+    background-color: #42a7df
+}
+
+.lp-add-new-btn,
+.lp-let-start-btn,
+.lp-location-picker-outer .active,.arrow-left,.arrow-right{
+    background: #42a7df;
+}
+.lp-listings.list-style .lp-listing .lp-listing-bottom .lp-listing-cat,
+.lp-listings.grid-style .lp-listing-location a:hover,.lp-listings.grid-style .lp-listing-location:hover .fa{
+    color: #42a7df !important;
+}
+.lp-sorting-filter-outer .active,.lp-sorting-filter-outer .active:hover{
+    border-bottom:1px solid #42a7df!important;
+    color: #42a7df !important;
+}
+.lp-sorting-filter-outer .active .fa,.lp-header-search-filters .more-filters{
+    color: #42a7df !important;
+}
+
+.lp-listing-price-range .claim-area a.phone-number:hover,
+.lp-listing-price-range #lp-report-listing a:hover{
+
+    border-color: #41a6df;
+    background-color: #41a6df;
+}
+/*new color css end*/

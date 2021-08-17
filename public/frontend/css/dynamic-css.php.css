@@ -1,0 +1,1098 @@
+
+        .lp-top-bar{
+
+        background-color: #FFFFFF
+        }
+        .header-with-topbar .lp-header-overlay:first-child,
+
+        .header-without-topbar .lp-header-overlay:first-child,
+
+        .header-menu-dropdown .lp-header-overlay:first-child
+
+        {
+
+        
+        }
+
+        .lp-topbar-menu li a,
+
+        .lp-top-bar-social ul li a{
+
+        color: #797979;
+
+        }
+
+        .home .lp-topbar-menu li a,
+
+        .home .lp-top-bar-social ul li a{
+
+        color: #FFFFFF;
+
+        }
+        .lp-topbar .lp-topbar-menu li a,
+        .lp-topbar .lp-top-bar-social ul li a{
+            color: #FFFFFF;
+        }
+
+
+        .lp-header-middle,
+        .lp-menu-bar.lp-header-full-width-st,
+        .header-bg-color-class{
+            background-color: #DD3333        }
+
+        .home .lp-header-middle,
+        .home .header-bg-color-class{
+
+        background-color: #000000
+        }
+
+
+        .lp-header-search-wrap{
+
+        
+        background-image: url(../../images/custom/home-banner.jpg);
+
+            }
+        .lp-header-search-wrap-banner-height{
+        
+        height: 610px;
+
+            }
+        .lp-header-search-wrap-set-top{
+        top: 0px;
+        }
+
+        .header-container-height{
+
+        height: 610px;
+
+        }
+        .lp-category-abs2 .lp-category-abs2-inner span,
+
+        .lp-header-search .lp-search-form-submit,
+
+        .lp-listing .lp-listing-top .lp-listing-cat,
+
+        .red-tooltip + .tooltip > .tooltip-inner,
+
+        .header-style2 .lp-header-middle,
+
+        .lp-listings.list-style .lp-listing .lp-listing-bottom .lp-listing-cat i,
+
+        .lp-header-search .price-filter ul li:hover,
+
+        .header-style3 .lp-header-middle .lp-header-nav-btn button span,
+
+        .lp-listing-announcement .announcement-wrap a,
+
+        .lp-listing-review-form .review-submit-btn,
+
+        .lp-discount-btn,
+
+        .lp-header-search .price-filter ul li.active,
+
+        .lp-header-user-nav .lp-user-menu .lp-user-welcome,
+
+        .imo-widget-title-container:before,
+
+        .dis-code-copy-pop .copy-now,
+        .event-grid-date span,
+        .event-grid-ticket{
+
+        background-color: #DD3333
+        }
+
+        .lp-section-heading i, .lp-section-title-container i,
+
+        .lp-section-heading i,
+
+        .lp-listing .lp-listing-bottom h3 a:hover,
+
+        .lp-listings .more-listings a,
+
+        .lp-activity a:hover,
+
+        .lp-activity .lp-activity-bottom .lp-activity-review-writer a,
+
+        .footer-menu ul li a:hover,
+
+        .footer-menu ul li a:focus,
+
+        .lp-listings-widget .lp-listing .lp-listing-detail h3 a:hover,
+
+        .lp-header-title .lp-header-title-left .lp-header-breadcrumbs a:hover,
+
+        .header-style3 .lp-header-middle .lp-header-add-btn a,
+
+        .lp-listing-announcement .announcement-wrap i,
+
+        .lp-listing-faq .faq-title a span,
+
+        .lp-widget-social-links a:hover,
+
+        .flip-clock-wrapper ul li a div div.inn,
+
+        .lp-widget .lp-listing-price-range p a,
+
+        .lp-listing-additional-details li span,
+
+        .listing-page-sidebar .lp-widget ul li.lp-widget-social-links a:hover,
+
+        .online-owner-widget .lp-online-social a:hover,
+
+        .lp-discount-widget .lp-dis-code-copy span,
+
+        .lp-section-title-container .lp-sub-title a,
+
+        .lp-listing-faq .faq-title a i,
+
+        .lp-listing-faq .ui-accordion-header-icon,
+
+        .lp-header-search-form #input-dropdown li:hover span,
+
+        .lp-header-search-form #input-dropdown li:hover a,
+
+        .lp-header-search-form #input-dropdown li:hover,
+
+        .lp-header-search-form .chosen-container .chosen-results li:hover,
+
+        .lp-header-search-form .chosen-container .chosen-results li.highlighted,
+
+        .home .lp-top-bar-social ul li a:hover,
+
+        .lp-activity-review-writer a,
+
+        .lp-activity-description a,
+
+        .arrow-left:hover,
+
+        .arrow-right:hover,
+
+        .lp-menu-item-title:hover,
+
+        .lp-listing-menu-items .lp-listing-menu-item .lp-menu-item-price span,
+
+        .lp-listing-menu-items h6,
+
+        .lp-listing-menu-top span,
+
+        .widget-social-icons li a,
+
+        .lp-dis-code-copy span,
+
+        #sidebar aside.widget.widget_recent_entries li a:hover,
+
+        .element-inner-button,
+
+        .lp-header-title .lp-header-toggles a.active,
+
+        .lp-author-nav ul li a i,
+        .hours-select > li > button.add-hours span,
+        .element-inner-button,
+        .lp-listings .listing-slider .lp-listing-bottom-inner .lp-listing-cat,
+        .event-hosted-grid label strong,
+        .lp-listing-menu-items .lp-listing-menu-item .lp-menu-item-price a,
+        .lp-event-detail-title-hosted h2 a,.lp-event-detail-side-section ul li > a,
+        .lp-event-attende-view-all span
+        {
+        color: #DD3333 !important;
+        }
+        .widget-social-icons li a.phone-link{
+        color: #797979 !important;
+        }
+
+        .lp-header-search .price-filter ul li:hover,
+
+        .lp-header-search .price-filter ul li.active,
+
+        .header-style3 .lp-header-middle .lp-header-nav-btn button,
+
+        .grid-style3 .lp-blog-grid-link:hover,
+        .lp-event-attende-view-all span{
+
+        border-color: #DD3333 !important;
+
+        }
+
+
+
+        .lp-header-search-filters .header-filter-wrap:hover,
+
+        .lp-header-search-filters .header-filter-wrap.active,
+
+        .lp-listings .more-listings a:hover,
+
+        .lp-section-title-container .lp-sub-title a:hover,
+
+        .lp-listing-timings .toggle-all-days:hover,
+
+        .lp-pagination ul li > span.current:hover, .lp-pagination ul li > span.current,
+
+        .lp-listing-action-btns .smenu div:hover,
+
+        .lp-listing-action-btns .smenu div:hover a,
+
+        .lp-listing-action-btns .smenu div a:hover,
+
+        .lp-blog-grid-author li.category-link a:hover,
+
+        .grid-style3 .lp-blog-grid-link,
+
+        .new-list-style .lp-blog-grid-link,
+
+        .grid-style3 .lp-blog-grid-shares span i:hover,
+
+        .new-list-style .lp-blog-grid-shares span i:hover,
+
+        .tagcloud a:hover,
+
+        .element-inner-button:hover,
+        .lp-event-attende-view-all span:hover,
+        .lp-detail-event-going-btn button{
+
+        color: #fff !important;
+
+        border-color: #DD3333 !important;
+
+        background-color: #DD3333 !important;
+
+        }
+
+        .lp-header-search-filters .header-filter-wrap.active i,
+        .lp-header-search-filters .header-filter-wrap:hover i,
+        .lp-header-toggles a{
+        color: #fff !important;
+        }
+
+        .lp-header-search .lp-header-search-tagline,
+        .left-heading .lp-sub-title,
+        .sidebar-banner-des,.lp-header-search-tagline-sidebar-banner span{
+        font-family: Quicksand;
+        }
+
+        .lp-join-now li a{
+
+        
+            font-family: Quicksand
+            
+        }
+
+
+        lp-header-middle .lp-header-user-nav .header-login-btn:hover{
+
+        color: #DD3333 !important;
+
+        border-color: #fff;
+
+        background-color: #fff;
+
+        }
+
+        .widget-social-icons li a:hover,
+        .lp-header-middle .lp-header-user-nav:hover a,
+
+        .close-right-icon{
+
+        color: #DD3333 !important;
+
+        }
+
+        .lp-ann-btn, .lp-ann-btn:hover{
+
+        color: #DD3333;
+
+        }
+
+        .lp-listing-action-btns ul li#lp-book-now > a:hover,
+
+        .lp-listing-leadform-inner .form-horizontal input[type="submit"],
+
+        .page-container-second-style2 .blog-pagination a,
+
+        .page-container-second-style2 .lp-review-btn,
+
+        .contact-style2.contact-right .lp-review-btn,
+
+        .lp-banner-bottom-right a:hover{
+
+        background-color: #DD3333 !important;
+
+        border-color: #DD3333 !important;
+
+        color: #fff !important;
+
+        }
+
+        .lp-listing-action-btns ul li#lp-book-now > a:hover i{
+
+        color: #fff !important;
+
+        }
+
+        .lp_auto_loc_container .lp-dyn-city{
+
+
+
+        }
+
+        .popup-header strong, .lp-listing-announcements .lp-listing-announcement .close-ann{
+
+        background-color: #DD3333
+        }
+
+        .lp-listing-additional-details .toggle-additional-details,
+
+        .lp-author-nav ul li a:hover, .lp-author-nav ul li a:hover i,
+
+        .lp-author-nav ul li a.active:before,
+        .lp-events-btns-outer button:first-child{
+
+        background-color: #DD3333;
+
+        color: #fff !important;
+
+        border-color: #DD3333
+        }
+
+        .app-view-reviews-all{
+
+        color: #DD3333;
+
+        border-color: #DD3333;
+
+        }
+
+        .icon-bar{
+
+        background-color: #FFFFFF;
+
+        }
+        .contact-right a span{
+        color: #7f7f7f;
+        }
+        .contact-right a span:hover{
+        color: #DD3333;
+        }
+        .lp-grid-box-bottom-grid6 a:hover,.lp-filter-top-section li a,.sidebar-filters .currency-signs>ul>li>a{
+        color: #DD3333;
+        }
+        .lp-grid6-cate a:hover,.lp-listing-cats a:hover,.lp-grid-box-bottom-grid6 .pull-right:hover .fa,.lp-grid-box-bottom-grid6 .pull-right a:hover{
+        color: #DD3333 !important;
+
+        }
+        .sidebar-filters .currency-signs>ul>li>a:hover{
+        border-color: #DD3333;
+
+        }
+        .search-filters > ul > li > a.active, div#lp-find-near-me ul li a.active{
+        border-color: #DD3333 !important;
+
+        }
+        .search-filters > ul > li > a.active{
+        background-color: #DD3333 !important;
+
+        }
+        
+    
+
+    .banner-view-classic .lp-home-categoires li a,
+    .home-categories-area .new-banner-category-view2 li a span p#cat-img-bg,
+    .home-categories-area .new-banner-category-view1 li a,
+    .banner-default-view-category-2 .lp-home-categoires li a span p#cat-img-bg,
+    .banner-view-cat-tranparent-category .lp-upper-cat-view3 li a span p#cat-img-bg,
+    .home-categories-area .lp-inside-search-view1 li a,
+    .home-categories-area .lp-inside-search-view2 li a span p#cat-img-bg,
+    .banner-view-cat-tranparent-category .lp-upper-cat-view4 li a,
+    .home-categories-area .banner-default-view-category1 li a,
+    .home-categories-area .banner-default-view-category2 li a span p#cat-img-bg,
+    .banner-default-view-category4.lp-home-categoires li a,
+    .banner-default-view-category4.lp-home-categoires li a span p#cat-img-bg,
+    .banner-default-view-category3.lp-home-categoires li a,
+    .banner-default-view-category3.lp-home-categoires li a span p#cat-img-bg,
+    .new-banner-category-view.lp-home-categoires li a,
+    .new-banner-category-view3.lp-home-categoires li a,
+    .lp-upper-cat-view1.lp-home-categoires li a,
+    .lp-upper-cat-view2.lp-home-categoires li a,
+    .lp-inside-search-view.lp-home-categoires li a,
+    .lp-inside-search-view3.lp-home-categoires li a,
+    .home-categories-area .lp-home-categoires.new-banner-category-view4 li a{
+
+    background: #DD3333;
+
+    }
+
+    .home-categories-area .new-banner-category-view2 li a:hover span p#cat-img-bg, .home-categories-area .new-banner-category-view1 li a:hover, .banner-default-view-category-2 .lp-home-categoires li a:hover span p#cat-img-bg, .banner-view-cat-tranparent-category .lp-upper-cat-view3 li a:hover span p#cat-img-bg, .home-categories-area .lp-inside-search-view1 li a:hover, .home-categories-area .lp-inside-search-view2 li a:hover span p#cat-img-bg, .banner-view-cat-tranparent-category .lp-upper-cat-view4 li a:hover,.home-categories-area .banner-default-view-category1 li a:hover, .home-categories-area .banner-default-view-category2 li a:hover span p#cat-img-bg,
+
+    .banner-default-view-category4.lp-home-categoires li a:hover,
+
+    .banner-default-view-category3.lp-home-categoires li a:hover,.new-banner-category-view.lp-home-categoires li a:hover,.new-banner-category-view3.lp-home-categoires li a:hover,
+
+    .lp-upper-cat-view1.lp-home-categoires li a:hover,.lp-upper-cat-view2.lp-home-categoires li a:hover,.lp-inside-search-view.lp-home-categoires li a:hover,.lp-inside-search-view3.lp-home-categoires li a:hover, .home-categories-area .lp-home-categoires.new-banner-category-view4 li a:hover{
+
+    background: #000000;
+
+    }
+    .home-categories-area .lp-home-categoires.category-view-bg-transparent li a{
+    background: rgba(221,51,51,0.8);
+    }
+    .home-categories-area .lp-home-categoires.category-view-bg-transparent li a:hover{
+    background: rgba(0,0,0,0.8);
+    }
+
+
+    .lp-home-banner-contianer-inner-new-search .lp-search-description p, .home-categories-area .new-banner-category-view2 li a span, .banner-default-view-category-2 .lp-home-categoires li a span, .home-categories-area .lp-inside-search-view2 li a span,.home-categories-area .banner-default-view-category2 li a span, .home-categories-area ul.lp-home-categoires li a span{
+
+    color: #FFFFFF;
+
+    }
+
+
+
+
+
+    .header-container.lp-header-bg .lp-color-header-style .lp-menu-container .lp-menu > div > ul > li > a,
+    .header-container.lp-header-bg .lp-color-header-style .lp-menu-container .lp-menu ul li.page_item_has_children::after,
+    .header-container.lp-header-bg .lp-color-header-style .lp-menu-container .lp-menu ul li.menu-item-has-children::after, .lp-menu-outer::after, #click-search-view,
+    #click-search-view i, .lp-menu-container .lp-menu > div > ul > li > a,
+    .lp-join-now a,
+    .lp-header-full-width .lp-add-listing-btn li a,
+    .lp-header-middle .header-main-menu ul li a,
+    .lp-add-listing-btn ul li a,
+    .lp-header-bg-black .navbar-toggle,
+    .lp-header-full-width .lp-add-listing-btn li a, .lp-header-middle .lp-header-add-btn a{
+    color: #FFFFFF;
+    }
+    .lp-header-full-width .lp-add-listing-btn li a,
+    .lp-header-bg-black .navbar-toggle, .lp-header-middle .lp-header-add-btn a,
+    .header-container.lp-header-bg .lp-menu-container .lp-menu>div>ul>li>a{
+        border-color: #FFFFFF;
+    }
+
+    .lp-header-full-width .lp-add-listing-btn ul li a.header-list-icon, .lp-header-full-width .lp-add-listing-btn ul li a.header-list-icon-st6{
+    border: 1px solid #FFFFFF;
+    }
+
+
+
+    .lp-header-with-bigmenu .lp-join-now a,.lp-header-with-bigmenu .lp-add-listing-btn ul li a{
+
+    color: #FFFFFF ;
+    }
+    .lp-header-with-bigmenu .lp-join-now a:hover,.lp-header-with-bigmenu .lp-add-listing-btn ul li a,.lp-header-with-bigmenu .nav .open > a,.lp-header-with-bigmenu .nav .open > a:hover,.lp-header-with-bigmenu .nav .open > a:focus,.lp-header-with-bigmenu .nav > li > a:hover,.lp-header-with-bigmenu .nav > li > a:focus,.lp-mega-menu-outer #menu-main li a:hover,.about-box-icon-style2 i,.lp-total-meta ul li a:hover,
+    .lp-total-meta ul li a:hover span,.lp-total-meta ul .active a,.lp-total-meta ul .active a span,.theme-color,
+    .lp-qoute-butn a,.lp-mega-menu-outer .lp-menu ul li:hover a,.theme-color span,
+    .stickynavbar #nav_bar ul li a:hover{
+
+    color: #DD3333 ;
+    }
+    .theme-color,.listing-category-slider4 .slick-prev:hover:before,.listing-category-slider4 .slick-next:hover:before{
+    color: #DD3333 !important;
+    }
+    .lp-category-icon-outer,.lp-right-content-box .lp-social-box ul li a i:hover,.lp-detail-services-box ul li a:hover,.lp-detail-offers-content a,.lp-offer-count,.lp-quote-submit-btn,.lp-left-filter .search-filters .sortbyrated-outer ul li a:hover,.lp-qoute-butn a:first-child,.lp-new-social-widget li i,.lp_payment_step_next.active{
+    background-color:#DD3333 ;
+
+    }
+    .listing-second-view .widget-box.business-contact.lp-lead-form-st input.lp-review-btn,
+    .listing-style-3 a.open-map-view:hover,.listing-app-view .listing-app-view2 .lp-listing-announcement .announcement-wrap.last .announcement-btn{
+    color: #DD3333;
+    border: 1px solid #DD3333;
+    }
+
+    .widget-box.business-contact.lp-lead-form-st .contact-form.quickform form.form-horizontal .form-group.pos-relative i.lp-search-icon,
+    .listing-app-view .listing-app-view2 .single_listing .review-form .form-submit .lp-review-btn, .lp-dashboard-event-tick-btn .fa{
+    color: #DD3333;
+    }
+
+    .widget-box.business-contact.lp-lead-form-st .contact-form.quickform form.form-horizontal .form-group.pos-relative:hover input.lp-review-btn,#see_filter:hover {
+    background: #DD3333;
+    }
+    .lp-search-bar-header .lp-header-search-button .lp-search-bar-right .icons8-search.lp-search-icon:hover,
+    .listing-app-view2 .toggle-all-days:hover,.lp-menu-app-view-outer .lp-menu-type-heading,
+    .listing-app-view .listing-app-view2 .lp-listing-announcement .announcement-wrap.last .announcement-btn:hover,
+    .listing-app-view .listing-app-view2 .single_listing .review-form .form-submit .lp-review-btn:hover{
+    background: #DD3333;
+    color: #fff;
+    }
+
+    .lp-qoute-butn a,.listing-app-view2 .toggle-all-days:hover,
+    .listing-app-view .listing-app-view2 .single_listing .review-form .form-submit .lp-review-btn:hover,.listing-app-view .listing-app-view2 .single_listing .review-form .form-submit .lp-review-btn{
+    border-color:#DD3333 ;
+    }
+    .lp-detail-services-box ul li a:hover,.lp-left-filter .search-filters > ul > li > a:hover,.list_view .lp-grid3-category-outer span.cat-icon{
+
+    background-color:#DD3333 !important;
+    }
+
+    .lp-header-with-bigmenu .lp-join-now a,.lp-header-with-bigmenu .lp-add-listing-btn ul li a{
+
+    color: #FFFFFF ;
+    }
+    .lp-header-with-bigmenu .lp-join-now a:hover,.lp-header-with-bigmenu .lp-add-listing-btn ul li a,.lp-header-with-bigmenu .nav .open > a,.lp-header-with-bigmenu .nav .open > a:hover,.lp-header-with-bigmenu .nav .open > a:focus,.lp-header-with-bigmenu .nav > li > a:hover,.lp-header-with-bigmenu .nav > li > a:focus,.lp-mega-menu-outer #menu-main li a:hover,.about-box-icon-style2 i,.lp-total-meta ul li a:hover,
+    .lp-total-meta ul li a:hover span,.lp-total-meta ul .active a,.lp-total-meta ul .active a span,.theme-color,
+    .lp-qoute-butn a,.lp-mega-menu-outer .lp-menu ul li:hover a,.theme-color span,
+    .stickynavbar #nav_bar ul li a:hover{
+
+    color: #DD3333 ;
+    }
+    .theme-color,.listing-category-slider4 .slick-prev:hover:before,.listing-category-slider4 .slick-next:hover:before,
+    .listing-app-view .listing-app-view2 .lp-listing-announcement .announcement-wrap.last .announcement-btn
+    ,.lp-popular-menu-outer h6,.lp-popular-menu-outer h6 .fa
+    {
+    color: #DD3333 !important;
+    }
+    .lp-category-icon-outer,.lp-right-content-box .lp-social-box ul li a i:hover,.lp-detail-services-box ul li a:hover,.lp-detail-offers-content a,.lp-offer-count,.lp-quote-submit-btn,.lp-left-filter .search-filters .sortbyrated-outer ul li a:hover,.lp-qoute-butn a:first-child,.lp-new-social-widget li i{
+    background-color:#DD3333 ;
+
+    }
+
+    .lp-qoute-butn a{
+    border-color:#DD3333 ;
+    }
+    .lp-detail-services-box ul li a:hover,.lp-left-filter .search-filters > ul > li > a:hover,.list_view .lp-grid3-category-outer span.cat-icon
+,.lp-listing-menuu-slider .slick-arrow:hover
+    {
+
+    background-color:#DD3333 !important;
+    }
+
+    .footer-style1 .footer-upper-bar,
+    .footer-style2,
+    .footer-style4,
+    .footer-style5,
+    .footer-style7,
+    .footer-style8,
+    .footer-style10,
+    .footer-style11{
+    background-color: #363F48;
+    }
+    .footer-style1 .footer-bottom-bar,
+    .footer-style3,
+    .footer4-bottom-area,
+    .footer5-bottom-area,
+    .footer-style6,
+    .footer7-bottom-area,
+    .footer8-bottom-area,
+    .footer-style8-bg-logo,
+    .footer-style9,
+    .footer10-bottom-area{
+    background-color: #000000;
+    }
+
+    .footer-style1 .footer-upper-bar,
+    .footer-style1 .footer-upper-bar a,
+    .padding-top-60 .widget h2,
+    .padding-top-60 .widget a,
+    .padding-top-60 .widget span,
+    .padding-top-60 .widget p{
+        }
+
+    .footer-about-company li:before{
+
+    
+    }
+
+    footer.style3 .container,
+    footer.style3 .copyrights,
+    footer.style3 .footer-menu ul li a,
+    .footer-bottom-bar .footer-about-company li,
+    .footer-bottom-bar .credit-links,
+    .footer-bottom-bar .credit-links a,
+    footer .widget-title,
+    footer .widget-title h2,
+    footer .widget a,
+    footer .widget span,
+    footer .widget p,
+    footer .tagcloud a,
+    footer.footer-style9 .footer-menu li a,
+    .footer4-bottom-area .footer-menu li a,
+    .footer4-bottom-area .copyrights,
+    .footer5-bottom-area .copyrights{
+        }
+
+    
+        .header-front-page-wrap .lp-header-full-width .lp-menu-bar{
+        background-color: #000000;
+        }
+
+        .header-right-panel .lp-menu > ul li a,
+        .lp-menu > ul li a,
+        .lp-menu ul li.page_item_has_children::after,
+        .lp-menu ul li.menu-item-has-children::after{
+        color: #FFFFFF !important;
+        }
+        .header-inner-page-wrap .lp-menu-bar-color{
+        background-color: #DD3333        }
+        .header-inner-page-wrap .header-filter .input-group.width-49-percent.margin-right-15.hide-where,
+        .header-inner-page-wrap .header-filter .input-group.width-49-percent,
+        .header-inner-page-wrap .header-filter .input-group.width-49-percent.margin-right-15 {
+        border:1px solid #FFFFFF;
+        }
+        .header-inner-page-wrap .lp-header-bg-black .navbar-toggle,
+        .header-inner-page-wrap .lp-header-bg-black.header-fixed .navbar-toggle{
+        color: #FFFFFF;
+        border-color: #FFFFFF;
+        }
+                .lp-topbar {
+        background-color: #363F48 !important;
+        }
+    
+    
+                .header-container.lp-header-bg{
+            background-image:url(../../images/custom/home-banner.jpg);
+            background-repeat:no-repeat;
+            background-position:center top;
+            }
+            .call-to-action2 h1{
+    background-image:url(../../images/custom/hb.png);
+    background-repeat:no-repeat;
+    background-position:center center;
+    }
+    
+    .listing-app-view .admin-top-section .user-details .user-portfolio,.listing-app-view .user-detail-wrap{
+    background-image:url(../../images/custom/userdetail.jpg);
+    background-repeat:no-repeat;
+    background-position:center center;
+    }
+    .lp-blog-style2-inner .lp-blog-grid-author li .fa,.lp-blog-grid-author2 li .fa,
+    .listing-app-view .footer-app-menu ul li a:hover,.listing-app-view .small-scrren-app-view .sign-login-wrap a,
+    .listing-app-view .small-scrren-app-view .add-listing-btn,
+    .googledroppin,.googledroppin:hover{
+    color: #DD3333;
+    }
+    .city-girds2 .city-thumb2  .category-style3-title-outer,.single-tabber2 ul .active a:after,.waycheckoutModal .btn-default:hover,
+    .list_view .lp-grid-box-bottom .lp-nearest-distance,.grid_view2 .lp-grid-box-bottom .lp-nearest-distance{
+    background: #DD3333;
+    }
+    .single-tabber2 ul li a:hover,.single-tabber2 ul .active a,#sidebar aside ul li a:hover,#sidebar .jw-recent-posts-widget ul li .jw-recent-content a:hover,
+    .blog-read-more-style2 a,.blog-read-more a{
+    color: #DD3333;
+
+    }
+    .waycheckoutModal .btn-default:hover{
+    border-color:#DD3333 !important;
+
+    }
+    .blog-detail-link,.listing-app-view .footer-app-menu ul li:hover{
+    color: #DD3333 !important;
+    border-color:#DD3333 !important;
+    }
+    .blog-detail-link:hover,.video-bottom-search-content,.listing-app-view.login-form-pop-tabs{
+    background-color: #DD3333 !important;
+
+    }
+    #sidebar aside h2.widget-title:after{
+    background: #DD3333;
+
+    }
+    .app-view-header .lp-menu-bar,.slider-handle,.tooltip-inner{
+    background: #DD3333;
+
+    }
+    .review-secondary-btn,.blog-read-more a:hover,
+    .lp-tooltip-outer .lp-tool-tip-content .sortbyrated-outer ul li .active{
+    background: #DD3333 !important;
+    border-color: #DD3333 !important;
+    }
+    .location-filters-wrapper #distance_range_div input[type=range]::-webkit-slider-thumb,#distance_range_div_btn a:hover,.location-filters-wrapper #distance_range_div input[type=range]::-moz-range-thumb,.location-filters-wrapper #distance_range_div input[type=range]::-ms-thumb{
+
+    background:#DD3333 !important;
+    }
+    .tooltip.top .tooltip-arrow{
+
+    border-top-color: #DD3333;
+    }
+    input:checked + .slider{
+
+    background-color: #DD3333;
+    }
+    .listing-app-view .app-view-filters .close{
+    border-color: #DD3333 !important;
+    color: #DD3333;
+    }
+    .listing-app-view .app-view-filters .close:hover{
+    background: #DD3333;
+    }
+    .listing-app-view .small-scrren-app-view .mm-listview a:hover,.listing-app-view .small-scrren-app-view .mm-listview a:focus,body .list_view a.lp-add-to-fav.remove-fav:hover span{
+
+    color: #DD3333 !important;
+
+    }
+
+
+            .lp-header-overlay,.page-header-overlay, .lp-home-banner-contianer-inner-video-outer{
+        background-color: rgba(0, 0, 0, 0.6);
+        }
+    
+            .lp-home-banner-contianer {
+        height: 610px;
+        }
+    
+        .lp-home-banner-contianer-1 {
+        height: 370px;
+        }
+
+    
+
+
+    .lp-list-view-edit li a:hover, .review-post p i, .lp-header-full-width.lp-header-bg-grey .lp-add-listing-btn li a:hover,
+    .lp-header-full-width.lp-header-bg-grey .lp-add-listing-btn li a, .lp-header-bg-grey .navbar-toggle, .lp-search-bar-all-demo .add-more,
+    .lp-bg-grey .lp-search-bar-left .border-dropdown .chosen-container-single span::after, .lp-right-grid .add-more,
+    .lp-search-bar-all-demo .add-more, .lp-right-grid .add-more, .video-option > h2 > span:first-of-type i, .count-text.all-listing,
+    .lp-bg-grey .lp-search-bar-left .border-dropdown .chosen-container-single span::after, a.watch-video.popup-youtube,
+    .dashboard-content .tab-content.dashboard-contnt h4 a, .campaign-options ul li i.fa-bar-chart, .email-address,
+    body .grid_view2 a.add-to-fav.lp-add-to-fav.simptip-position-top.simptip-movable:hover > i, .wpb_wrapper > ul > li::before,
+    body .grid_view2 a.add-to-fav.lp-add-to-fav.simptip-position-top.simptip-movable:hover > span, .lp-h4 a:hover,
+    .promote-listing-box .texual-area > ul li i, .row.invoices-company-details a:hover, .checkout-bottom-area ul.clearfix > li > a:hover,
+    .lp-all-listing span.count > p, .lp-all-listing span.count, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover,
+    .lp-h1 a:hover, .lp-h2 a:hover, .lp-h3 a:hover, .lp-h5 a:hover, .lp-h6 a:hover, .lp-blog-grid-category a:hover,
+    .lp-blog-grid-title h4 a:hover, .footer-menu li a:hover, .post-rice, .tags-container li a label, .tags-container li a:hover span,
+    .ui-accordion .ui-accordion-header span, .post-stat .fa-star, .listing-page-result-row p a:hover, p a.achor-color,
+    .blog-tags ul li a:hover, .post-meta-left-box .breadcrumbs li a:hover, .post-meta-right-box .post-stat li a:hover,
+    .parimary-link:hover, .secodary-link, blockquote::after, .lp-blockquote::after, .colored, .lp-add-listing-btn ul li a:hover,
+    .listing-second-view .post-meta-right-box .post-stat a.add-to-fav:hover, .lp-list-view-paypal-inner h4:hover,
+    .listing-second-view .post-meta-right-box .post-stat a.add-to-fav:hover span, .overlay-video-thumb:hover i,
+    body .lp-grid-box-contianer a.add-to-fav.lp-add-to-fav.simptip-position-top.simptip-movable:hover i,
+    .bottom-links a,.lp-list-view-content-upper h4:hover, .lp-blog-grid-author li a:hover, .lp-blog-grid-author li:hover,
+    .dashboard-content .lp-pay-options .lp-promotebtn:hover, .dashboard-content .lp-pay-options .lp-promotebtn,
+    .tags-container li a span.tag-icon, .lp-grid-box-price li > a:hover, .lp-grid-box-bottom .pull-left a:hover,
+    .tags-container li a:hover span, .menu ul.sub-menu li:hover > a, .menu ul.children li:hover > a,
+    .post-stat li a:hover, .lp-tabs .lp-list-view .lp-list-view-content-upper h4:hover, .lp-tabs .lp-list-view .lp-list-view-paypal-inner h4:hover,
+    .post-reviews .fa-star, .listing-second-view .map-area .listing-detail-infos ul li a:hover > span,
+    .widget-contact-info .list-st-img li a:hover, .get-directions > a:hover, body .grid_view2 a.add-to-fav.lp-add-to-fav:hover span,
+    ul.post-stat li > a:hover > span i, .lp-grid-box-left.pull-left > ul > li > a:hover,
+    .grid_view2 .lp-post-quick-links > li a:hover, .list_view .lp-post-quick-links > li a:hover,
+    .lp-grid-box-description h4.lp-h4 > a:hover, body .list_view a.add-to-fav.lp-add-to-fav:hover span,
+    body .list_view a.add-to-fav.lp-add-to-fav:hover, .grid_view2 .lp-post-quick-links > li a:hover > i,
+    .list_view .lp-post-quick-links > li a:hover > i, .list_view .lp-post-quick-links > li a > i:hover,
+    .listing-second-view .features.list-style-none > li a:hover > i, .listing-second-view .features li > a:hover span i,
+    .lp-join-now ul.lp-user-menu > li:hover > a, .listing-second-view .claim-area a.phone-number.md-trigger.claimformtrigger2:hover,
+    .listing-view-layout > ul li a.active, .listing-view-layout > ul li a:hover, .listing-style4 #lp-find-near-me .near-me-btn.active{
+    color: #DD3333;
+    }
+
+    .dashboard-tabs ul li ul li.active a,.post-meta-right-box .post-stat li a:hover span {
+    color: #DD3333 !important;
+    }
+
+    .ui-tooltip, .md-closer, .post-submit .ui-tabs .ui-tabs-nav li a, #success span p, .lp-list-view-paypal,
+    .lp-listing-form input[type=radio]:checked + label::before, .lp-listing-form input[type=submit], .lp-invoice-table tr td a,
+    .lp-modal-list .lp-print-list, .lp-tabs .lp-pay-publsh, .lp-dropdown-menu ul li a:hover,
+    .listing-second-view .online-booking-form > a.onlineform.active, .listing-second-view .online-booking-form > a.onlineform:hover,
+    .listing-second-view .listing-post article figure figcaption .bottom-area .listing-cats, .top-heading-area,
+    .lp-dropdown-menu ul li a:hover,
+    .listing-second-view .online-booking-form .booking-form input[type="submit"], .lp-price-main .lp-title,
+    .ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all, .calendar-month-header,
+    .lp-search-bar-all-demo .lp-search-btn:hover, .lp-bg-grey .input-group-addon, .lp-search-bar-all-demo .lp-search-btn:hover,
+    .lp-bg-grey .input-group-addon, .hours-select > li > button.add-hours, .typeahead__container .typeahead__button > button,
+    .form-group .lp-search-bar-right, a.watch-video.popup-youtube:hover, .active-packages-area .table-responsive .top-area,
+    .lp-grid-box-contianer .md-close i:hover, .listing-second-view a.secondary-btn.make-reservation,
+    .list-st-img.list-style-none li a.edit-list:hover, .mm-menu .mm-navbar.mm-navbar-top, .lp-user-menu li a:hover,
+    .fc-widget-content .fc-content-skeleton .fc-day-grid-event.fc-h-event.fc-event.fc-start.fc-end:hover,
+    .lp-primary-btn:hover, .lp-search-btn, .lp-home-categoires li a:hover, .lp-post-quick-links li a.icon-quick-eye,
+    .md-close i, .menu ul.sub-menu li a:hover, .menu ul.children li a:hover, .user-portfolio-stat ul li i,
+    .lp-submit-btn:hover, .secondary-btn, .list-st-img li a:hover, .price-plan-box, .btn-first-hover, .btn-second-hover:hover,
+    .ui-autocomplete li:hover, .tes-icon i, .menu ul.sub-menu li:hover > a, .menu ul.children li:hover > a,	.mm-listview .mm-next,
+    .mm-navbar-size-1 a, .mm-listview a:hover, .active-tag:hover, .dashboard-content .lp-pay-options .lp-promotebtn:hover,
+    .double-bounce1, .double-bounce2, .lpmap-icon-shape.cardHighlight, [data-tooltip].simptip-position-top::after,
+    [data-tooltip].simptip-position-top::after, [data-tooltip].simptip-position-bottom::after,
+    [data-tooltip].simptip-position-left::after, [data-tooltip].simptip-position-right::after,
+    .menu ul.children li > a::before, .menu ul.sub-menu li > a::before, .lp-user-menu li > a::before,
+    .currency-signs > ul > li > a.active, .search-filters > ul > li > a.active,div#lp-find-near-me ul li a.active,
+    .select2-container--default .select2-results__option--highlighted[aria-selected], .bookingjs-form .bookingjs-form-button:hover, a.googleAddressbtn:hover, a.googleAddressbtn.active, .lp-recurring-button-wrap input[type=checkbox]:checked + label::before {
+    background-color: #DD3333;
+    }
+    a.lp-change-plan-btn:hover {
+    background-color: #DD3333 !important;
+    border-color: #DD3333 !important;
+    }
+
+    .lp-tabs .panel-heading li.active a, .ui-state-default.ui-state-highlight {
+    background-color: #DD3333 !important;
+    }
+
+    .lp-grid-box-price .category-cion a, .ui-state-default.ui-state-highlight, .lp-header-full-width.lp-header-bg-grey .lp-add-listing-btn li a:hover,
+    .lp-header-full-width.lp-header-bg-grey .lp-add-listing-btn li a, .lp-header-bg-grey .navbar-toggle, .lp-bg-grey .lp-interest-bar input[type="text"],
+    .lp-bg-grey .chosen-container .chosen-single, .lp-bg-grey .lp-interest-bar input[type="text"], .lp-bg-grey .chosen-container .chosen-single,
+    a.watch-video.popup-youtube, .listing-second-view a.secondary-btn.make-reservation,
+    .fc-widget-content .fc-content-skeleton .fc-day-grid-event.fc-h-event.fc-event.fc-start.fc-end,
+    .lpmap-icon-contianer, .dashboard-content .lp-pay-options .lp-promotebtn,.currency-signs > ul > li > a.active,
+    .listing-view-layout > ul li a.active, .listing-view-layout > ul li a:hover, .search-filters > ul > li > a.active, div#lp-find-near-me ul li a.active {
+    border-color: #DD3333;
+    }
+
+    .ui-autocomplete li:hover {
+    border-color: #DD3333 !important;
+    }
+    a.googleAddressbtn.active::after,
+    .ui-tooltip::after {
+    border-top-color: #DD3333;
+    }
+    .dashboard-content .lp-main-tabs .nav-tabs > li.active > a, [data-tooltip].simptip-position-left::before,
+    .dashboard-content .lp-main-tabs .nav-tabs > li a:hover, .dashboard-tabs.lp-main-tabs.text-center  ul  li  a.active-dash-menu {
+    border-left-color: #DD3333;
+    }
+
+    .lpmap-icon-shape.cardHighlight::after, [data-tooltip].simptip-position-top::before {
+    border-top-color: #DD3333 !important;
+    }
+
+    .dashboard-tabs.lp-main-tabs.text-center > ul > li.opened:hover > a,
+    .dashboard-tabs.lp-main-tabs.text-center > ul > li:hover > a,
+    .dashboard-tabs.lp-main-tabs.text-center ul li a.active-dash-menu {
+    border-left-color: #DD3333 !important;
+    }
+
+    [data-tooltip].simptip-position-right::before, [data-tooltip].simptip-position-top.half-arrow::before,
+    [data-tooltip].simptip-position-bottom.half-arrow::before {
+    border-right-color: #DD3333 !important;
+    }
+
+    [data-tooltip].simptip-position-top::before {
+    border-top-color: #DD3333 !important;
+    }
+    [data-tooltip].simptip-position-bottom::before {
+    border-bottom-color: #DD3333 !important;
+    }
+
+
+    .lp-primary-btn, .lp-search-btn:hover, .dashboard-tabs, .nav-tabs > li > a:hover,
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .lp-submit-btn, .secondary-btn:hover,
+    .list-st-img li a, .btn-first-hover:hover, .btn-second-hover, .about-box-icon, .upload-btn:hover, .chosen-container .chosen-results li.highlighted,
+    .secondary-btn:active, .lp_confirmation .list-st-img li a.edit-list, .secondary-btn:focus, .resurva-booking .hidden-items input.lp-review-btn,
+    input.lp-review-btn:hover, .dashboard-content .lp-list-page-list .lp-list-view .lp-rigt-icons .remove-fav i:hover,
+    .lp-topbar, .lp-home-categoires li a, .lp-grid-box-bottom,  .form-group .lp-search-bar-right:hover,
+    .post-submit .ui-tabs .ui-tabs-nav li.ui-state-active a, .lp-list-pay-btn a:hover, .lp-modal-list .lp-print-list:hover,
+    .listing-second-view .online-booking-form > a.onlineform, .listing-second-view .contact-form ul li input[type="submit"],
+    .listing-second-view .online-booking-form .booking-form, .listing-second-view .ask-question-area > a.ask_question_popup,
+    .widget-box.business-contact .contact-form.quickform form.form-horizontal .form-group.pos-relative:hover input.lp-review-btn,
+    .listing-second-view a.secondary-btn:hover, .submit-images:hover > a.browse-imgs, .lp-price-main .lp-upgrade-color,
+    .lp-price-main .lp-upgrade-color:hover, .lp-price-main .lp-without-prc:hover, .featured-plan .lp-price-free.lp-without-prc.btn,
+    .hours-select > li > button.add-hours:hover, .dashboard-content .postbox table.widefat a.see_more_btn:hover,
+    #input-dropdown li:hover span, #input-dropdown li:hover a, #input-dropdown li:hover, .thankyou-panel ul li a:hover,
+    .dashboard-content .promotional-section a.lp-submit-btn:hover, .widget-box.reservation-form a.make-reservation,
+    .dashboard-content .lp-pay-options .promote-btn.pull-right:hover, .lp-dashboard-right-panel-listing ul li a.reply:hover,
+    .dashboard-content .lp-list-view-content-bottom ul.lp-list-view-edit > li > a:hover,
+    .dashboard-content .lp-list-view-content-bottom ul.lp-list-view-edit > li > a:hover > span, .form-group.mr-bottom-0 > a.md-close:hover,
+    .lp-rigt-icons.lp-list-view-content-bottom .list-st-img li input.lp-review-btn:hover, .lp-contact-support .secondary-btn:hover,
+    .lp-rigt-icons.lp-list-view-content-bottom .list-st-img li a.edit-list:hover,
+    .dashboard-content .user-recent-listings-inner .lp-list-page-list .remove-fav.md-close:hover,
+    .resurva-booking .lp-list-view-inner-contianer ul li form:hover > span, .listing-second-view a.secondary-btn.make-reservation:hover,
+    .dashboard-content .lp-pay-options .promotebtn:hover,
+    #select2-searchlocation-results .select2-results__option.select2-results__option--highlighted, .bookingjs-form .bookingjs-form-button, a.googleAddressbtn {
+    background-color: #000000;
+    }
+
+    .lp-tabs .lp-pay-publsh:hover,.lp_payment_step_next.active:hover {
+    background-color: #000000 !important;
+    }
+
+    input, .form-group label, .post-stat  li,
+    .post-stat  li a, .listing-page-result-row p a, p a.achor-color:hover,
+    .form-group label, .blog-tags ul li a, .post-meta-left-box .breadcrumbs li a, .post-meta-left-box .breadcrumbs li span,
+    .tags-container li a span, .price-plan-content ul li span, .paragraph-form, .form-review-stars li i, .form-review-stars li a ,
+    .post-meta-right-box .post-stat li a, .parimary-link, .secodary-link:hover, blockquote, .upload-btn, input.lp-review-btn,
+    .lp-blockquote, .listing-second-view a.secondary-btn i, .bottom-links a:hover, .resurva-booking .hidden-items input.lp-review-btn:hover,
+    .lp-menu .has-menu > a::after, .listing-second-view .post-meta-right-box .post-stat a.secondary-btn i, a.browse-imgs,
+    .listing-second-view a.secondary-btn, .listing-second-view .contact-form ul li input[type="submit"]:hover,
+    .listing-second-view .features li span i, .listing-second-view .post-meta-right-box .post-stat > li > a span.email-icon,
+    .lp-price-free, .dashboard-content .tab-content.dashboard-contnt .ui-sortable-handle, .thankyou-panel ul li a,
+    .dashboard-content .postbox table.widefat a.see_more_btn, .dashboard-content .promotiona-text > h3,
+    .dashboard-content .lp-face.lp-front.lp-pay-options > h3, .dashboard-content .lp-face.lp-dash-sec > h4,
+    .dashboard-content .lp-pay-options .lp-promotebtn, .dashboard-content .promote-btn.pull-right::before,
+    .dashboard-content .lp-list-view-content-bottom ul.lp-list-view-edit > li > a, .lp-dashboard-right-panel-listing ul li a.reply,
+    .dashboard-content .lp-list-view-content-bottom ul.lp-list-view-edit > li > a > span,
+    .lp-rigt-icons.lp-list-view-content-bottom .list-st-img li input.lp-review-btn,
+    .lp-rigt-icons.lp-list-view-content-bottom .list-st-img li a.edit-list,
+    .lp-rigt-icons.lp-list-view-content-bottom .list-st-img li input.lp-review-btn::before,
+    .lp-rigt-icons.lp-list-view-content-bottom .list-st-img li a.edit-list::before, .form-group.mr-bottom-0 > a.md-close,
+    .lp-rigt-icons.lp-list-view-content-bottom .list-st-img li a.edit-list > span, .lp-contact-support .secondary-btn i,
+    .widget-box.business-contact .contact-form.quickform form.form-horizontal .form-group.pos-relative i.lp-search-icon,
+    .dashboard-content .user-recent-listings-inner .lp-list-page-list .remove-fav.md-close > span,
+    .dashboard-content .lp-list-page-list .lp-list-view .remove-fav i,
+    .resurva-booking ul li.clearfix > form#booking > span, .dashboard-content .lp-pay-options .promotebtn {
+    color: #000000;
+    }
+
+    .nav-tabs > li > a::after{
+    border-bottom-color: #000000;
+    }
+    .upload-btn, .listing-second-view a.secondary-btn, .listing-second-view .contact-form ul li input[type="submit"],
+    input.lp-review-btn, a.browse-imgs, .lp-price-free, .dashboard-content .postbox table.widefat a.see_more_btn,
+    .dashboard-content .lp-pay-options .promote-btn.pull-right, .widget-box.reservation-form a.make-reservation,
+    .thankyou-panel ul li a, .dashboard-content .lp-list-view-content-bottom ul.lp-list-view-edit > li > a,
+    .lp-dashboard-right-panel-listing ul li a.reply, .lp-rigt-icons.lp-list-view-content-bottom .list-st-img li input.lp-review-btn,
+    .lp-rigt-icons.lp-list-view-content-bottom .list-st-img li a.edit-list,
+    .dashboard-content .user-recent-listings-inner .lp-list-page-list .remove-fav.md-close, .form-group.mr-bottom-0 > a.md-close,
+    .lp-contact-support .secondary-btn:hover, .resurva-booking .lp-list-view-inner-contianer ul li form > span,
+    .listing-second-view a.secondary-btn.make-reservation:hover, .dashboard-content .lp-pay-options .promotebtn {
+    border-color: #000000;
+    }
+
+    .menu ul.children li:hover > a, .menu ul.sub-menu li:hover > a, .lp-user-menu li:hover > a,
+    .grid_view2 .lp-post-quick-links > li a, .list_view .lp-post-quick-links > li a {
+    background-color: transparent !important;
+    }
+
+
+    .lp-coupns-btns:hover,
+    .lp-menu-step-two-btn button:hover,
+    .lp-menu-save-btns button:hover,
+    .lp-form-feild-btn:hover {
+    background-color: #DD3333;
+    }
+
+    .lp-menu-step-two-btn button:hover,
+    .lp-menu-save-btns button:hover,
+    .lp-form-feild-btn:hover {
+    background-color: #DD3333;
+    }
+
+    .lp-menu-step-two-btn button span,
+    .lp-menu-step-two-btn button,
+    .lp-step-icon i,
+    .lp-choose-menu .lp-listing-selecter-drop a,
+    .lp-menu-container-outer .ui-tabs .ui-tabs-nav .ui-tabs-active a,.lp-header-togglesa .listing-view-layout-v2 ul li .active .fa{
+    color: #DD3333;
+    }
+
+    .lp-menu-step-two-btn button,.lp-header-togglesa .listing-view-layout-v2 ul li .active .fa,.lp-header-togglesa .listing-view-layout-v2 ul li .fa:hover,.listing-page-sidebar .lp-listing-price-range .claim-area a.phone-number{
+    border: 1px solid #DD3333;
+    }
+
+    .lp-form-feild-btn,
+    .lp-location-picker-outer .active,.lp-listing-price-range #lp-report-listing a,#lp-find-near-me .near-me-btn:hover,.listing-simple .post-with-map-container-right #lp-find-near-me a.active:hover,.listing-with-map .post-with-map-container-right #lp-find-near-me a.active:hover{
+    border-color: #DD3333;
+    }
+
+    .lp-left-content-container a:hover,
+    .lp-form-feild-btn,.lp-header-togglesa .listing-view-layout-v2 ul li .fa:hover,.lp-listing-review .lp-review-left .lp-review-name{
+    color: #DD3333;
+    }
+
+    .lp-review-reply-btn,.lp-dashboard-new .sidebar-nav>.sidebar-brand,.lp-public-reply-btn a:hover,
+    .lp-public-reply-btn a:focus{
+    background-color: #DD3333;
+    }
+
+    .lp-add-new-btn,
+    .lp-let-start-btn,
+    .lp-location-picker-outer .active,.arrow-left,.arrow-right,.lp-listing-menu-items h6:after{
+    background: #DD3333;
+    }
+    .lp-listings.list-style .lp-listing .lp-listing-bottom .lp-listing-cat,
+    .lp-listings.grid-style .lp-listing-location a:hover,.lp-listings.grid-style .lp-listing-location:hover .fa,.listing-page-sidebar .lp-listing-price-range .claim-area a.phone-number,.grid-style .lp-listing-cat,
+    .listing-slider .lp-listing .lp-listing-bottom-inner .lp-listing-cats a:hover{
+    color: #DD3333 !important;
+    }
+    .lp-sorting-filter-outer .active,.lp-sorting-filter-outer .active:hover,.lp-sorting-filter-outer li a:hover,.lp-listing-price-range #lp-report-listing a{
+    border-bottom:1px solid #DD3333!important;
+    color: #DD3333 !important;
+    }
+    .lp-sorting-filter-outer .active .fa,.lp-header-search-filters .more-filters,.lp-sorting-filter-outer li:hover a,.lp-sorting-filter-outer li:hover a .fa,#lp-find-near-me .near-me-btn:hover{
+    color: #DD3333 !important;
+    }
+
+
+
+    .lp-listing-price-range .claim-area a.phone-number:hover,
+    .lp-listing-price-range #lp-report-listing a:hover{
+
+    border-color: #DD3333;
+    background-color: #DD3333;
+    }
+    .hidding-form-feilds .form-group input[type="text"]:focus,
+    .hidding-form-feilds .form-group input[type="email"]:focus,
+    .hidding-form-feilds .form-group textarea:focus,
+    .hidding-form-feilds .form-group select:focus {
+
+    border-left: 3px solid #DD3333;
+
+    }
+    .review-submit-btn:hover,.lp-listing-leadform-inner .form-horizontal input[type="submit"]:hover,.lp-header-search .price-filter ul li:hover,.lp-header-search .form-group .lp-search-bar-right:hover .lp-search-form-submit{
+    background-color:rgba(221,51,51,0.9);
+    }
+        .lp-header-full-width .lp-add-listing-btn ul li a:hover,
+    .lp-header-middle .lp-header-add-btn a:hover{
+    background-color: #fff;
+    color: #333;
+    border-color: #fff;
+    }
+    .lp-header-search .price-filter ul li .active,.lp-header-search .price-filter ul li a:hover,.lp-header-search .price-filter ul li:last-child .active,.lp-header-search .price-filter ul li:last-child a:hover,.lp-header-search-filters .open-now-filter .active,.lp-header-search-filters .open-now-filter a:hover{
+	border-color: #DD3333 !important;
+    background-color: #DD3333;
+	}
+
+    .lp-booking-section-time-pill-1,.lp-booking-section-time-pill-2{
+    border-color: #000000;
+    }
+    .lp-booking-section-time-pill-hover:hover,.lp-booking-form-input-confirm{
+    background-color: #000000;
+    }
+    .lp-booking-section-footer-view-switch:hover , .lp-booking-send-request-success{
+    color: #000000;
+    }
+    .lp-booking-form-input:focus {
+    border-left-color: #000000;
+    }
+    .lp-booking-section .ui-datepicker a.ui-state-active,.ui-state-default.ui-state-highlight{
+    border-color: #000000;
+    background-color: #000000 !important;
+    color:#fff;
+    border-collapse: collapse;
+    }
+    
+            .lp-menu-container .lp-menu > div > ul > li > a{
+
+                    font-family: Quicksand;
+                                
+        }
+    
+            body{
+                    font-family: Quicksand;
+                                    font-weight:400;
+                            color:#7f7f7f;
+                        }
+    
+            h1, h1 a, .lp-h1, .lp-h1 a {
+                    font-family: Quicksand;
+                                            color:#333;
+                        }
+    
+            h2, h2 a, .lp-h2, .lp-h2 a {
+                    font-family: Quicksand;
+                                            color:#333;
+                        }
+    
+            h3, h3 a, .lp-h3, .lp-h3 a {
+                    font-family: Quicksand;
+                                            color:#333;
+                        }
+    
+            h4, .lp-h4, h4 a, .lp-h4 a {
+                    font-family: Quicksand;
+                                            color:#333;
+                        }
+    
+            h5, .lp-h5, h5 a, .lp-h5 a {
+                    font-family: Quicksand;
+                                            color:#333;
+                        }
+    
+            h6, .lp-h6, h6 a, .lp-h6 a {
+                    font-family: Quicksand;
+                            font-size:16px;
+                                    color:#333;
+                            line-height:27px;
+                }
+    
+            p,span,input,.post-detail-content,li a,.show a,.lp-grid-box-description ul,.chosen-container,.accordion-title,.lp-grid-box-bottom a,time,label,#input-dropdown li a,#input-dropdown span, .lpdoubltimes em {
+                    font-family: Open Sans;
+                                            color:#7f7f7f;
+                        }
+    
+
+    
+    #header{
+margin: 0 auto;
+}
+    

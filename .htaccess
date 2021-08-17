@@ -1,0 +1,21 @@
+php_value memory_limit 512M 
+php_value upload_max_filesize 512M 
+php_value max_file_uploads 512M 
+php_value post_max_size 512M 
+php_value max_execution_time 1000 
+php_value max_input_time 1000
+
+<IfModule mod_rewrite.c>
+RewriteEngine On   
+RewriteCond %{HTTP_HOST} ^www.gtabu.com$ [NC,OR]     
+RewriteCond %{HTTP_HOST} ^www.gtabu.com$   
+RewriteRule gtabu.com/admin www.gtabu.com/admin 
+RewriteCond %{REQUEST_URI} !public/
+RewriteRule (.*) /public/$1 [L]
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Defina o pacote “ea-php56” como a linguagem padrão de programação “PHP”.
+
+# php -- END cPanel-generated handler, do not edit
+

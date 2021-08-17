@@ -1,0 +1,47 @@
+.morris-hover {
+    position: absolute;
+    z-index: 1000
+}
+
+.morris-hover.morris-default-style {
+    border-radius: 10px;
+    padding: 5px 25px;
+    color: #fff;
+    background: #4D5B6B;
+    border: solid 2px #4D5B6B;
+   
+    font-size: 13px;
+    text-align: center;
+}
+
+.morris-hover.morris-default-style .morris-hover-row-label {
+    font-weight: 700;
+    margin: .25em 0;
+	    text-transform: capitalize;   
+    font-size: 13px;
+}
+
+.morris-hover.morris-default-style .morris-hover-point {
+    white-space: nowrap;
+    margin: .1em 0
+}
+
+.morris-hover-point {
+        color: #ABB4BF !important;
+    font-size: 12px;
+	    text-transform: capitalize;
+}
+.morris-hover.morris-default-style:after{
+	content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-TOP: 10px solid #4D5B6B;
+    position: absolute;
+    BOTTOM: -10px;
+    right: 50%;
+    transform: translateX(50%);
+   
+	
+}

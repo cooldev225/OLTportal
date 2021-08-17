@@ -1,0 +1,97 @@
+.timeline.timeline-3 .timeline-items .timeline-item .timeline-1 .timeline-content:before{
+    border-right: unset;
+    border-bottom: unset;
+    border-left: unset;
+    border-top: unset;
+}
+.timeline.timeline-5 .timeline-items .timeline-item .timeline-media {
+    left: 0;
+}
+.timeline.timeline-3 .timeline-items .timeline-5 .timeline-item {
+    margin-left: 0px;
+    border-left: unset;
+}
+.task-timeline-1 .timeline-item {
+    margin-left: -52px!important;
+    padding: 15px 0 0 52px!important;
+}
+.timeline.task-timeline-1 .timeline-sep{
+    left: 87px;
+}
+.timeline.task-timeline-1 .timeline-item .timeline-label {
+    flex: 0 0 72px;
+}
+.project-tools-dropdown{
+    position: absolute;
+    display: block;
+    right: 19px;
+    top: 0px;
+}
+.document-tools-dropdown{
+    position: absolute;
+    display: block;
+    right: 12px;
+    top: 0px;
+}
+.business-toggle-icon{
+    position: absolute;
+    left:27px;
+    top:35px;
+}
+.project-toggle-icon{
+    position: absolute;
+    left:20px;
+    top:25px;
+}
+#editBusinessModal .form-group, #editGroupModal .form-group {
+    margin-bottom: 1rem;
+}
+#editBusinessModal .modal-body, #editGroupModal .modal-body {
+    padding-bottom: 1rem;
+}
+
+.header {
+    background-color: #ffffff;
+}
+.header .header-menu .menu-nav > .menu-item.menu-item-here > .menu-link, .header .header-menu .menu-nav > .menu-item.menu-item-active > .menu-link {
+    background-color: #ffffff;
+}
+.header .header-menu .menu-nav > .menu-item > .menu-link .menu-text {
+    color: #135615;
+    font-weight: 500;
+}
+
+.datatable-paging-loaded{
+    padding-top:0px!important;
+}
+
+.datatable.datatable-default.datatable-bordered > .datatable-table > .datatable-body .datatable-row-subtable > td{
+    border-width: 1px;
+    border-color: #95e42da1;
+    border-style: solid;
+}
+.datatable.datatable-default > .datatable-table > .datatable-head .datatable-row > .datatable-cell, .datatable.datatable-default > .datatable-table > .datatable-body .datatable-row > .datatable-cell, .datatable.datatable-default > .datatable-table > .datatable-foot .datatable-row > .datatable-cell{
+    padding: 5px 5px;
+}
+
+
+.modal-content .modal-header .card-toolbar ul {
+    position: absolute;
+    margin-top: -27px;
+    right: 70px;
+}
+.tab-pane.fade{
+    display: none;
+}
+.tab-pane.fade{
+    display: none;
+}
+.tab-pane.fade.active{
+    display: block;
+}
+.tab-pane .modal-footer{
+    padding-bottom: 0px;
+}
+#editAdModal #kt_tab_pane_2 .form-group,#editAdModal #kt_tab_pane_3 .form-group{
+    margin-bottom:15px;
+}

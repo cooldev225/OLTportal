@@ -1,0 +1,20 @@
+body.listingpro-loading:after {
+	/* with no content, nothing is rendered */
+	content: "";
+	position: fixed;
+	/* element stretched to cover during rotation an aspect ratio up to 1/10 */
+	top: -500%;
+	left: -500%;
+	right: -500%;
+	bottom: -500%;
+	z-index: 999999999;
+	pointer-events: none; /* to block content use: all */
+	/* background */
+	background-color: rgba(0,0,0,0.6);
+	background-image: url(../images/lp-loading.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100px 100px;
+
+	
+}
