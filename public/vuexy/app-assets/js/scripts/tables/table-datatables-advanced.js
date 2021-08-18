@@ -97,7 +97,7 @@ $(function () {
     dt_filter_table = $('.dt-column-search'),
     dt_adv_filter_table = $('.dt-advanced-search'),
     dt_responsive_table = $('.dt-responsive'),
-    assetPath = '../../../app-assets/';
+    assetPath = '/vuexy/app-assets/';
 
   if ($('body').attr('data-framework') === 'laravel') {
     assetPath = $('body').attr('data-asset-path');

@@ -12,7 +12,7 @@ $(function () {
     updateItemSidebar = $('.update-item-sidebar'),
     addNewInput = $('.add-new-board-input');
 
-  var assetPath = '../../../app-assets/';
+  var assetPath = '/vuexy/app-assets/';
   if ($('body').attr('data-framework') === 'laravel') {
     assetPath = $('body').attr('data-asset-path');
   }

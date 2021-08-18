@@ -39,7 +39,7 @@ $(function () {
   var confirmText = $('#confirm-text');
   var confirmColor = $('#confirm-color');
 
-  var assetPath = '../../../app-assets/';
+  var assetPath = '/vuexy/app-assets/';
   if ($('body').attr('data-framework') === 'laravel') {
     assetPath = $('body').attr('data-asset-path');
   }

@@ -10,7 +10,7 @@
 $(function () {
   'use strict';
 
-  var assetsPath = '../../../app-assets/',
+  var assetsPath = '/vuexy/app-assets/',
     statesData = {
       type: 'FeatureCollection',
       features: [

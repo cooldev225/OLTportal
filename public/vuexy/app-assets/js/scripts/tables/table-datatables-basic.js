@@ -10,7 +10,7 @@ $(function () {
     dt_complex_header_table = $('.dt-complex-header'),
     dt_row_grouping_table = $('.dt-row-grouping'),
     dt_multilingual_table = $('.dt-multilingual'),
-    assetPath = '../../../app-assets/';
+    assetPath = '/vuexy/app-assets/';
 
   if ($('body').attr('data-framework') === 'laravel') {
     assetPath = $('body').attr('data-asset-path');

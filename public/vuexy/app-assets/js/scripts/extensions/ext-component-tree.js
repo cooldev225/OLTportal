@@ -17,7 +17,7 @@ $(function () {
     checkboxTree = $('#jstree-checkbox'),
     ajaxTree = $('#jstree-ajax');
 
-  var assetPath = '../../../app-assets/';
+  var assetPath = '/vuexy/app-assets/';
   if ($('body').attr('data-framework') === 'laravel') {
     assetPath = $('body').attr('data-asset-path');
   }

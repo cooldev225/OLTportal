@@ -12,7 +12,7 @@ $(function () {
   'use strict';
 
   var dtInvoiceTable = $('.invoice-list-table'),
-    assetPath = '../../../app-assets/',
+    assetPath = '/vuexy/app-assets/',
     invoicePreview = 'app-invoice-preview.html',
     invoiceAdd = 'app-invoice-add.html',
     invoiceEdit = 'app-invoice-edit.html';

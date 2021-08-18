@@ -12,7 +12,7 @@
 
 // RTL Support
 var direction = 'ltr',
-  assetPath = '../../../app-assets/';
+  assetPath = '/vuexy/app-assets/';
 if ($('html').data('textdirection') == 'rtl') {
   direction = 'rtl';
 }
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fetch Events from API endpoint reference
     /* $.ajax(
       {
-        url: '../../../app-assets/data/app-calendar-events.js',
+        url: '/vuexy/app-assets/data/app-calendar-events.js',
         type: 'GET',
         success: function (result) {
           // Get requested calendars as Array
