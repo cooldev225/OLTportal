@@ -1,457 +1,744 @@
-@extends('frontend.layouts.home')
+@extends('frontend.layouts.dashboard')
 @inject('dateFormat', 'App\Services\DateService')
 @section('content')
-<body class="home page-template-default page page-id-156 listing-skeleton-view-grid_view wpb-js-composer js-comp-ver-6.4.1 vc_responsive" data-submitlink="/submit-listing/" data-sliderstyle="style2" data-defaultmaplat="0" data-defaultmaplot="-0" data-lpsearchmode="keyword" data-maplistingby="geolocaion" >
-	<input type="hidden" id="lpNonce" name="lpNonce" value="11a180ea92" /><input type="hidden" name="_wp_http_referer" value="/" />    <input type="hidden" id="start_of_weekk" value="1">
-	<div id="page"  data-detail-page-style="lp_detail_page_styles1" data-lpattern="with_region" data-sitelogo="/images/logo.png" data-site-url="/" data-ipapi="ip_api" data-lpcurrentloconhome="1" data-mtoken="0" data-mtype="openstreet" data-mstyle="mapbox.streets-basic"  class="clearfix lp_detail_page_styles1">
-        <div class="pos-relative header-front-page-wrap 1">
-            <div class="header-container 3 lp-header-bg" style="">                    
-                <!--================================full width with blue background====================================-->
-                <header class="header-without-topbar header-normal pos-relative lp-header-full-width">
-                    <div class="lp-header-overlay"></div>
-                    <div id="menu" class="small-screen">
-                        @if(Auth::id())
-                        <a href="/ads" class="lpl-button lpl-add-listing-loggedout">Anunciate</a>
-                        @else
-                        <a class="lpl-button lpl-add-listing-loggedout app-view-popup-style" data-target="#app-view-login-popup">Anunciate</a>
-                        <a class="lpl-button lp-right-15 app-view-popup-style" data-target="#app-view-login-popup">Sign In</a>
-                        @endif                        
-                    </div>
-                    <div class="lp-menu-bar header-bg-color-class">
-                        <div class="fullwidth-header">
-                            <div class="row">
-                                <div class="col-md-2 col-xs-6 lp-logo-container">
-                                    <div class="lp-logo">
-                                        <a href="/">
-                                            <img src="/images/logo.png" alt="image" />
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="header-right-panel clearfix col-md-10 col-sm-10 col-xs-12">
-                                    <div class="col-xs-6 mobile-nav-icon">
-                                        <a href="#menu" class="nav-icon">
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-9 col-xs-12 lp-menu-container clearfix pull-right">
-                                        <div class="pull-right">
-                                            @if(!Auth::id())
-                                            <div class="lp-joinus-icon">
-                                                <div class="lp-join-now">
-                                                    <span>
-                                                        <img class="icon icons8-contacts" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADNElEQVRoge2ZLWhbURTHn3iig8IiIiomIgqrqJiomJgIrCKiomKig4iKioiKioiJiEJExURFRGEbRERMVERkENhE5BgTGUxEVERkUBERURFR8Zu45+5durzk3feRm7H8IRB455z3u9/3nOd5a6317wjYAcrAOdAEroAqcAhsuOabK8AHKsBX5qsP7LrmnSlgE+gasCMZhRpwDJwCDeBGnk+Bt8COa/Y/AjaAn0YDDgA/xNYH3j8YoUaY/VIlPQvwHdiKYO8De0AdGItvcxms86AKwL38rOe9bAoTacyzLBijglQE4jpBjHOJ8TFNNluItkAcJ4ixKzGGKaJZQ/QEopgwDgApYcUC0NtpIWEc5w3R227shQrkVqEhn4ThdYIYTyXGrzTZbCH04fYmQYznEqOfJpstRFUg3qUQ4zJNNluIA4H4nCDGtcQop8lmC1ESiElM/7zcCgD20+azAdE33lpMfx+4kBjttPlsQAYCETu/AIoSo5cmmy1E4vmNylcgwX0tsVDpLMAQqMbwr4mv88XuAx0BuYnhr6/wXVwnV8Aj4IcAvbDweyk+37LksxKqUgJQt/Cpi89VlmxWMnaeCZCLYJ8zplVxCYjRRZCbdObNd1lXOiFzt+WGieC6ohuTn2GTMxoBsOeCda5Qta2pATkGTlAFioL8HxnPR66ZQ2WcCQPCpbNKdzn6IhFcAPOow7ItozBGnRUVYHulG0JQDZkusNvSdqxSydTzPA9VOdTTaWGCBLSMKeh+wcsoNI0pBXARwa9m2N9LjOVWGlHnwCuCO5aGaROUT4/m+O8bdq0HndAFjsjyGwqq6n5GUHgGdTpfAttiUzeeNVBnS15+JbHVqolPAVUInxjPxqhS6sJbgm0jysCt8aIB6pvH5gzbU+COcE2Bs5COqhDUynRH/WUbpwE+6oONVh84jOC3I6PTkd4dy/86EbJJ1Ce6vvHe1qxOs2mIXgd3wEnsQPHfXzZGt0ecnIUgBR0ia8CFUAfoUFjsslDgCcHiK2XEaMOj04QpNgVzgg84X7LDs5MxzaMvfuCDtVPGQu2GAC0bJ3OrXTXdRm1EbmEo93ocd2TXWut/1W9KptrZf/2YyAAAAABJRU5ErkJggg==" alt="contacts">            
-                                                    </span>
-                                                    <a class="app-view-popup-style" data-target="#app-view-login-popup">Sign In</a>
-                                                </div>
-                                            </div>
-                                            @endif
-                                            <div class="pull-right lp-add-listing-btn">
-                                                <ul>
-                                                    <li>
-                                                        @if(Auth::id())
-                                                        <a href="/ads"><i class="fa fa-plus"></i>Anunciate</a>
-                                                        @else
-                                                        <a class="app-view-popup-style" data-target="#app-view-login-popup"><i class="fa fa-plus"></i>Anunciate</a>
-                                                        @endif                                                   
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="pull-right padding-right-10">
-                                            <div class="lp-menu menu"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- ../menu-bar -->
-                </header>
-                <!--==================================Header Close=================================--><!-- Login Popup style2 -->
-                @include('frontend.layouts.login')  							
-                <div class="app-view-popup-style" data-target="#app-view-login-popup">
-                    <!--ajax based content-->
-                </div>
-                <!-- ../Login Popup -->
-                <div class="md-overlay"></div><!-- Overlay for Popup -->
-
-                <!-- top notificaton bar -->
-                <div class="lp-top-notification-bar"></div>
-                <!-- end top notification-bar -->	
-
-                <!-- popup for quick view --->		
-                <div class="md-modal md-effect-3" id="listing-preview-popup">
-                    <div class="container">
-                        <div class="md-content ">
-                            <div class="row popup-inner-left-padding ">
-                            </div>
-                        </div>
-                    </div>
-                    <a class="md-close widget-map-click"><i class="fa fa-close"></i></a>
-                </div>
-                <div class="md-overlay content-loading"></div>
-                <div class="md-modal md-effect-map-btn" id="grid-show-popup">
-                    <div class="container">
-                        <div class="md-content ">
-                            <div class="row grid-show-popup" data-loader="/images/classic/content-loader.gif">
-                                <img src="/images/classic/content-loader.gif" />
-                            </div>
-                        </div>
-                    </div>
-                    <a class="md-close widget-map-click"><i class="fa fa-close"></i></a>
-                </div>
-
-                <!--hidden google map-->
-                <div id="lp-hidden-map" style="width:300px;height:300px;position:absolute;left:-300000px"></div>				   
-                <div class="lp-home-banner-contianer lp-home-banner-with-loc" style="height:610px;">
-                    <div class="page-header-overlay"></div>
-                    <div class="img-curtasy">
-                        <p>Image courtesy of <span>
-                            <a href=""> <i class="fa fa-angle-right"></i></a></span>
-                        </p>
-                    </div>          
-                    <div class="lp-home-banner-contianer-inner ">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 text-center lp_auto_loc_container">
-                                    <h1 data-locnmethod="withip">Busca en  <span class="lp-dyn-city">Your City</span></h1>
-                                    <p class="lp-banner-browse-txt">Encuentra todos tus mas grandes placeres</p>
-                                </div>
-                                <div class="col-md-8 col-xs-12 col-md-offset-2 col-sm-offset-0">
-                                    <div class="lp-search-bar clearfix">
-                                        @include('frontend.layouts.searchfrm')                   
-                                    </div>				
-                                    <div class="text-center lp-search-description">
-                                        <p>Solo estas viendo? Déjanos sugerirte lo mas &quot;hot&quot; del momento!</p>		
-                                        <img src="/images/classic/banner-arrow.png" alt="banner-arrow" class="banner-arrow">		 				 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>		   			
-                </div><!-- ../Home Search Container -->
-            </div>
+<!-- BEGIN: Content-->
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
         </div>
-        <div class="home-categories-area banner-view-classic new-banner-view-category-st">
-            <div class="lp-section-row margin-bottom-60">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ul class="lp-home-categoires padding-left-0 banner-default-view-category3">
-                                @for($i=0;$i<4;$i++)
-                                <li><a href="/listing?select={{$categories[$i]['name']}}" class="lp-border-radius-5"><span>{{$categories[$i]['name']}}</span></a></li>
-                                @endfor
-                            </ul>
+        <div class="content-body">
+            <!-- Dashboard Ecommerce Starts -->
+            <section id="dashboard-ecommerce">
+                <div class="row match-height">
+                    <!-- Medal Card -->
+                    <div class="col-xl-4 col-md-6 col-12">
+                        <div class="card card-congratulation-medal">
+                            <div class="card-body">
+                                <h5>Congratulations 🎉 John!</h5>
+                                <p class="card-text font-small-3">You have won gold medal</p>
+                                <h3 class="mb-75 mt-2 pt-50">
+                                    <a href="#">$48.9k</a>
+                                </h3>
+                                <button type="button" class="btn btn-primary">View Sales</button>
+                                <img src="/vuexy/app-assets/images/illustration/badge.svg" class="congratulation-medal" alt="Medal Pic" />
+                            </div>
                         </div>
                     </div>
+                    <!--/ Medal Card -->
+
+                    <!-- Statistics Card -->
+                    <div class="col-xl-8 col-md-6 col-12">
+                        <div class="card card-statistics">
+                            <div class="card-header">
+                                <h4 class="card-title">Statistics</h4>
+                                <div class="d-flex align-items-center">
+                                    <p class="card-text font-small-2 me-25 mb-0">Updated 1 month ago</p>
+                                </div>
+                            </div>
+                            <div class="card-body statistics-body">
+                                <div class="row">
+                                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                                        <div class="d-flex flex-row">
+                                            <div class="avatar bg-light-primary me-2">
+                                                <div class="avatar-content">
+                                                    <i data-feather="trending-up" class="avatar-icon"></i>
+                                                </div>
+                                            </div>
+                                            <div class="my-auto">
+                                                <h4 class="fw-bolder mb-0">230k</h4>
+                                                <p class="card-text font-small-3 mb-0">Sales</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                                        <div class="d-flex flex-row">
+                                            <div class="avatar bg-light-info me-2">
+                                                <div class="avatar-content">
+                                                    <i data-feather="user" class="avatar-icon"></i>
+                                                </div>
+                                            </div>
+                                            <div class="my-auto">
+                                                <h4 class="fw-bolder mb-0">8.549k</h4>
+                                                <p class="card-text font-small-3 mb-0">Customers</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
+                                        <div class="d-flex flex-row">
+                                            <div class="avatar bg-light-danger me-2">
+                                                <div class="avatar-content">
+                                                    <i data-feather="box" class="avatar-icon"></i>
+                                                </div>
+                                            </div>
+                                            <div class="my-auto">
+                                                <h4 class="fw-bolder mb-0">1.423k</h4>
+                                                <p class="card-text font-small-3 mb-0">Products</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-sm-6 col-12">
+                                        <div class="d-flex flex-row">
+                                            <div class="avatar bg-light-success me-2">
+                                                <div class="avatar-content">
+                                                    <i data-feather="dollar-sign" class="avatar-icon"></i>
+                                                </div>
+                                            </div>
+                                            <div class="my-auto">
+                                                <h4 class="fw-bolder mb-0">$9745</h4>
+                                                <p class="card-text font-small-3 mb-0">Revenue</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Statistics Card -->
                 </div>
-            </div>
+
+                <div class="row match-height">
+                    <div class="col-lg-4 col-12">
+                        <div class="row match-height">
+                            <!-- Bar Chart - Orders -->
+                            <div class="col-lg-6 col-md-3 col-6">
+                                <div class="card">
+                                    <div class="card-body pb-50">
+                                        <h6>Orders</h6>
+                                        <h2 class="fw-bolder mb-1">2,76k</h2>
+                                        <div id="statistics-order-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/ Bar Chart - Orders -->
+
+                            <!-- Line Chart - Profit -->
+                            <div class="col-lg-6 col-md-3 col-6">
+                                <div class="card card-tiny-line-stats">
+                                    <div class="card-body pb-50">
+                                        <h6>Profit</h6>
+                                        <h2 class="fw-bolder mb-1">6,24k</h2>
+                                        <div id="statistics-profit-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/ Line Chart - Profit -->
+
+                            <!-- Earnings Card -->
+                            <div class="col-lg-12 col-md-6 col-12">
+                                <div class="card earnings-card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h4 class="card-title mb-1">Earnings</h4>
+                                                <div class="font-small-2">This Month</div>
+                                                <h5 class="mb-1">$4055.56</h5>
+                                                <p class="card-text text-muted font-small-2">
+                                                    <span class="fw-bolder">68.2%</span><span> more earnings than last month.</span>
+                                                </p>
+                                            </div>
+                                            <div class="col-6">
+                                                <div id="earnings-chart"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/ Earnings Card -->
+                        </div>
+                    </div>
+
+                    <!-- Revenue Report Card -->
+                    <div class="col-lg-8 col-12">
+                        <div class="card card-revenue-budget">
+                            <div class="row mx-0">
+                                <div class="col-md-8 col-12 revenue-report-wrapper">
+                                    <div class="d-sm-flex justify-content-between align-items-center mb-3">
+                                        <h4 class="card-title mb-50 mb-sm-0">Revenue Report</h4>
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex align-items-center me-2">
+                                                <span class="bullet bullet-primary font-small-3 me-50 cursor-pointer"></span>
+                                                <span>Earning</span>
+                                            </div>
+                                            <div class="d-flex align-items-center ms-75">
+                                                <span class="bullet bullet-warning font-small-3 me-50 cursor-pointer"></span>
+                                                <span>Expense</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="revenue-report-chart"></div>
+                                </div>
+                                <div class="col-md-4 col-12 budget-wrapper">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle budget-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            2020
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">2020</a>
+                                            <a class="dropdown-item" href="#">2019</a>
+                                            <a class="dropdown-item" href="#">2018</a>
+                                        </div>
+                                    </div>
+                                    <h2 class="mb-25">$25,852</h2>
+                                    <div class="d-flex justify-content-center">
+                                        <span class="fw-bolder me-25">Budget:</span>
+                                        <span>56,800</span>
+                                    </div>
+                                    <div id="budget-chart"></div>
+                                    <button type="button" class="btn btn-primary">Increase Budget</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Revenue Report Card -->
+                </div>
+
+                <div class="row match-height">
+                    <!-- Company Table Card -->
+                    <div class="col-lg-8 col-12">
+                        <div class="card card-company-table">
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Company</th>
+                                                <th>Category</th>
+                                                <th>Views</th>
+                                                <th>Revenue</th>
+                                                <th>Sales</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar rounded">
+                                                            <div class="avatar-content">
+                                                                <img src="/vuexy/app-assets/images/icons/toolbox.svg" alt="Toolbar svg" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="fw-bolder">Dixons</div>
+                                                            <div class="font-small-2 text-muted">meguc@ruj.io</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar bg-light-primary me-1">
+                                                            <div class="avatar-content">
+                                                                <i data-feather="monitor" class="font-medium-3"></i>
+                                                            </div>
+                                                        </div>
+                                                        <span>Technology</span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-nowrap">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="fw-bolder mb-25">23.4k</span>
+                                                        <span class="font-small-2 text-muted">in 24 hours</span>
+                                                    </div>
+                                                </td>
+                                                <td>$891.2</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <span class="fw-bolder me-1">68%</span>
+                                                        <i data-feather="trending-down" class="text-danger font-medium-1"></i>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar rounded">
+                                                            <div class="avatar-content">
+                                                                <img src="/vuexy/app-assets/images/icons/parachute.svg" alt="Parachute svg" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="fw-bolder">Motels</div>
+                                                            <div class="font-small-2 text-muted">vecav@hodzi.co.uk</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar bg-light-success me-1">
+                                                            <div class="avatar-content">
+                                                                <i data-feather="coffee" class="font-medium-3"></i>
+                                                            </div>
+                                                        </div>
+                                                        <span>Grocery</span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-nowrap">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="fw-bolder mb-25">78k</span>
+                                                        <span class="font-small-2 text-muted">in 2 days</span>
+                                                    </div>
+                                                </td>
+                                                <td>$668.51</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <span class="fw-bolder me-1">97%</span>
+                                                        <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar rounded">
+                                                            <div class="avatar-content">
+                                                                <img src="/vuexy/app-assets/images/icons/brush.svg" alt="Brush svg" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="fw-bolder">Zipcar</div>
+                                                            <div class="font-small-2 text-muted">davcilse@is.gov</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar bg-light-warning me-1">
+                                                            <div class="avatar-content">
+                                                                <i data-feather="watch" class="font-medium-3"></i>
+                                                            </div>
+                                                        </div>
+                                                        <span>Fashion</span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-nowrap">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="fw-bolder mb-25">162</span>
+                                                        <span class="font-small-2 text-muted">in 5 days</span>
+                                                    </div>
+                                                </td>
+                                                <td>$522.29</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <span class="fw-bolder me-1">62%</span>
+                                                        <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar rounded">
+                                                            <div class="avatar-content">
+                                                                <img src="/vuexy/app-assets/images/icons/star.svg" alt="Star svg" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="fw-bolder">Owning</div>
+                                                            <div class="font-small-2 text-muted">us@cuhil.gov</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar bg-light-primary me-1">
+                                                            <div class="avatar-content">
+                                                                <i data-feather="monitor" class="font-medium-3"></i>
+                                                            </div>
+                                                        </div>
+                                                        <span>Technology</span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-nowrap">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="fw-bolder mb-25">214</span>
+                                                        <span class="font-small-2 text-muted">in 24 hours</span>
+                                                    </div>
+                                                </td>
+                                                <td>$291.01</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <span class="fw-bolder me-1">88%</span>
+                                                        <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar rounded">
+                                                            <div class="avatar-content">
+                                                                <img src="/vuexy/app-assets/images/icons/book.svg" alt="Book svg" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="fw-bolder">Cafés</div>
+                                                            <div class="font-small-2 text-muted">pudais@jife.com</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar bg-light-success me-1">
+                                                            <div class="avatar-content">
+                                                                <i data-feather="coffee" class="font-medium-3"></i>
+                                                            </div>
+                                                        </div>
+                                                        <span>Grocery</span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-nowrap">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="fw-bolder mb-25">208</span>
+                                                        <span class="font-small-2 text-muted">in 1 week</span>
+                                                    </div>
+                                                </td>
+                                                <td>$783.93</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <span class="fw-bolder me-1">16%</span>
+                                                        <i data-feather="trending-down" class="text-danger font-medium-1"></i>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar rounded">
+                                                            <div class="avatar-content">
+                                                                <img src="/vuexy/app-assets/images/icons/rocket.svg" alt="Rocket svg" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="fw-bolder">Kmart</div>
+                                                            <div class="font-small-2 text-muted">bipri@cawiw.com</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar bg-light-warning me-1">
+                                                            <div class="avatar-content">
+                                                                <i data-feather="watch" class="font-medium-3"></i>
+                                                            </div>
+                                                        </div>
+                                                        <span>Fashion</span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-nowrap">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="fw-bolder mb-25">990</span>
+                                                        <span class="font-small-2 text-muted">in 1 month</span>
+                                                    </div>
+                                                </td>
+                                                <td>$780.05</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <span class="fw-bolder me-1">78%</span>
+                                                        <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar rounded">
+                                                            <div class="avatar-content">
+                                                                <img src="/vuexy/app-assets/images/icons/speaker.svg" alt="Speaker svg" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="fw-bolder">Payers</div>
+                                                            <div class="font-small-2 text-muted">luk@izug.io</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar bg-light-warning me-1">
+                                                            <div class="avatar-content">
+                                                                <i data-feather="watch" class="font-medium-3"></i>
+                                                            </div>
+                                                        </div>
+                                                        <span>Fashion</span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-nowrap">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="fw-bolder mb-25">12.9k</span>
+                                                        <span class="font-small-2 text-muted">in 12 hours</span>
+                                                    </div>
+                                                </td>
+                                                <td>$531.49</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <span class="fw-bolder me-1">42%</span>
+                                                        <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Company Table Card -->
+
+                    <!-- Developer Meetup Card -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="card card-developer-meetup">
+                            <div class="meetup-img-wrapper rounded-top text-center">
+                                <img src="/vuexy/app-assets/images/illustration/email.svg" alt="Meeting Pic" height="170" />
+                            </div>
+                            <div class="card-body">
+                                <div class="meetup-header d-flex align-items-center">
+                                    <div class="meetup-day">
+                                        <h6 class="mb-0">THU</h6>
+                                        <h3 class="mb-0">24</h3>
+                                    </div>
+                                    <div class="my-auto">
+                                        <h4 class="card-title mb-25">Developer Meetup</h4>
+                                        <p class="card-text mb-0">Meet world popular developers</p>
+                                    </div>
+                                </div>
+                                <div class="mt-0">
+                                    <div class="avatar float-start bg-light-primary rounded me-1">
+                                        <div class="avatar-content">
+                                            <i data-feather="calendar" class="avatar-icon font-medium-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="more-info">
+                                        <h6 class="mb-0">Sat, May 25, 2020</h6>
+                                        <small>10:AM to 6:PM</small>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <div class="avatar float-start bg-light-primary rounded me-1">
+                                        <div class="avatar-content">
+                                            <i data-feather="map-pin" class="avatar-icon font-medium-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="more-info">
+                                        <h6 class="mb-0">Central Park</h6>
+                                        <small>Manhattan, New york City</small>
+                                    </div>
+                                </div>
+                                <div class="avatar-group">
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="Billy Hopkins" class="avatar pull-up">
+                                        <img src="/vuexy/app-assets/images/portrait/small/avatar-s-9.jpg" alt="Avatar" width="33" height="33" />
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="Amy Carson" class="avatar pull-up">
+                                        <img src="/vuexy/app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" width="33" height="33" />
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="Brandon Miles" class="avatar pull-up">
+                                        <img src="/vuexy/app-assets/images/portrait/small/avatar-s-8.jpg" alt="Avatar" width="33" height="33" />
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="Daisy Weber" class="avatar pull-up">
+                                        <img src="/vuexy/app-assets/images/portrait/small/avatar-s-20.jpg" alt="Avatar" width="33" height="33" />
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="Jenny Looper" class="avatar pull-up">
+                                        <img src="/vuexy/app-assets/images/portrait/small/avatar-s-20.jpg" alt="Avatar" width="33" height="33" />
+                                    </div>
+                                    <h6 class="align-self-center cursor-pointer ms-50 mb-0">+42</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Developer Meetup Card -->
+
+                    <!-- Browser States Card -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="card card-browser-states">
+                            <div class="card-header">
+                                <div>
+                                    <h4 class="card-title">Browser States</h4>
+                                    <p class="card-text font-small-2">Counter August 2020</p>
+                                </div>
+                                <div class="dropdown chart-dropdown">
+                                    <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-bs-toggle="dropdown"></i>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="#">Last 28 Days</a>
+                                        <a class="dropdown-item" href="#">Last Month</a>
+                                        <a class="dropdown-item" href="#">Last Year</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="browser-states">
+                                    <div class="d-flex">
+                                        <img src="/vuexy/app-assets/images/icons/google-chrome.png" class="rounded me-1" height="30" alt="Google Chrome" />
+                                        <h6 class="align-self-center mb-0">Google Chrome</h6>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="fw-bold text-body-heading me-1">54.4%</div>
+                                        <div id="browser-state-chart-primary"></div>
+                                    </div>
+                                </div>
+                                <div class="browser-states">
+                                    <div class="d-flex">
+                                        <img src="/vuexy/app-assets/images/icons/mozila-firefox.png" class="rounded me-1" height="30" alt="Mozila Firefox" />
+                                        <h6 class="align-self-center mb-0">Mozila Firefox</h6>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="fw-bold text-body-heading me-1">6.1%</div>
+                                        <div id="browser-state-chart-warning"></div>
+                                    </div>
+                                </div>
+                                <div class="browser-states">
+                                    <div class="d-flex">
+                                        <img src="/vuexy/app-assets/images/icons/apple-safari.png" class="rounded me-1" height="30" alt="Apple Safari" />
+                                        <h6 class="align-self-center mb-0">Apple Safari</h6>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="fw-bold text-body-heading me-1">14.6%</div>
+                                        <div id="browser-state-chart-secondary"></div>
+                                    </div>
+                                </div>
+                                <div class="browser-states">
+                                    <div class="d-flex">
+                                        <img src="/vuexy/app-assets/images/icons/internet-explorer.png" class="rounded me-1" height="30" alt="Internet Explorer" />
+                                        <h6 class="align-self-center mb-0">Internet Explorer</h6>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="fw-bold text-body-heading me-1">4.2%</div>
+                                        <div id="browser-state-chart-info"></div>
+                                    </div>
+                                </div>
+                                <div class="browser-states">
+                                    <div class="d-flex">
+                                        <img src="/vuexy/app-assets/images/icons/opera.png" class="rounded me-1" height="30" alt="Opera Mini" />
+                                        <h6 class="align-self-center mb-0">Opera Mini</h6>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="fw-bold text-body-heading me-1">8.4%</div>
+                                        <div id="browser-state-chart-danger"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Browser States Card -->
+
+                    <!-- Goal Overview Card -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h4 class="card-title">Goal Overview</h4>
+                                <i data-feather="help-circle" class="font-medium-3 text-muted cursor-pointer"></i>
+                            </div>
+                            <div class="card-body p-0">
+                                <div id="goal-overview-radial-bar-chart" class="my-2"></div>
+                                <div class="row border-top text-center mx-0">
+                                    <div class="col-6 border-end py-1">
+                                        <p class="card-text text-muted mb-0">Completed</p>
+                                        <h3 class="fw-bolder mb-0">786,617</h3>
+                                    </div>
+                                    <div class="col-6 py-1">
+                                        <p class="card-text text-muted mb-0">In Progress</p>
+                                        <h3 class="fw-bolder mb-0">13,561</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Goal Overview Card -->
+
+                    <!-- Transaction Card -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="card card-transaction">
+                            <div class="card-header">
+                                <h4 class="card-title">Transactions</h4>
+                                <div class="dropdown chart-dropdown">
+                                    <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-bs-toggle="dropdown"></i>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="#">Last 28 Days</a>
+                                        <a class="dropdown-item" href="#">Last Month</a>
+                                        <a class="dropdown-item" href="#">Last Year</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="transaction-item">
+                                    <div class="d-flex">
+                                        <div class="avatar bg-light-primary rounded float-start">
+                                            <div class="avatar-content">
+                                                <i data-feather="pocket" class="avatar-icon font-medium-3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-percentage">
+                                            <h6 class="transaction-title">Wallet</h6>
+                                            <small>Starbucks</small>
+                                        </div>
+                                    </div>
+                                    <div class="fw-bolder text-danger">- $74</div>
+                                </div>
+                                <div class="transaction-item">
+                                    <div class="d-flex">
+                                        <div class="avatar bg-light-success rounded float-start">
+                                            <div class="avatar-content">
+                                                <i data-feather="check" class="avatar-icon font-medium-3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-percentage">
+                                            <h6 class="transaction-title">Bank Transfer</h6>
+                                            <small>Add Money</small>
+                                        </div>
+                                    </div>
+                                    <div class="fw-bolder text-success">+ $480</div>
+                                </div>
+                                <div class="transaction-item">
+                                    <div class="d-flex">
+                                        <div class="avatar bg-light-danger rounded float-start">
+                                            <div class="avatar-content">
+                                                <i data-feather="dollar-sign" class="avatar-icon font-medium-3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-percentage">
+                                            <h6 class="transaction-title">Paypal</h6>
+                                            <small>Add Money</small>
+                                        </div>
+                                    </div>
+                                    <div class="fw-bolder text-success">+ $590</div>
+                                </div>
+                                <div class="transaction-item">
+                                    <div class="d-flex">
+                                        <div class="avatar bg-light-warning rounded float-start">
+                                            <div class="avatar-content">
+                                                <i data-feather="credit-card" class="avatar-icon font-medium-3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-percentage">
+                                            <h6 class="transaction-title">Mastercard</h6>
+                                            <small>Ordered Food</small>
+                                        </div>
+                                    </div>
+                                    <div class="fw-bolder text-danger">- $23</div>
+                                </div>
+                                <div class="transaction-item">
+                                    <div class="d-flex">
+                                        <div class="avatar bg-light-info rounded float-start">
+                                            <div class="avatar-content">
+                                                <i data-feather="trending-up" class="avatar-icon font-medium-3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-percentage">
+                                            <h6 class="transaction-title">Transfer</h6>
+                                            <small>Refund</small>
+                                        </div>
+                                    </div>
+                                    <div class="fw-bolder text-success">+ $98</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Transaction Card -->
+                </div>
+            </section>
+            <!-- Dashboard Ecommerce ends -->
         </div>
-        <section>
-            <div  id="lp_60c3da7b5a1be" class="lp-section-row">
-                <div class="lp_section_inner clearfix"  style="background-repeat: no-repeat;">
-                    <div class="clearfix container">
-                        <div class="row lp-section-content clearfix">
-                            <div class="lp-section-title-container text-center ">
-                                <h2 style="color:"> Populares</h2>
-                                <div style="color:" class="lp-sub-title">Lo mas visitado del momento</div>
-                            </div>
-                            <div class="padding-top-40 padding-bottom-40 clearfix">
-                                <div class="wpb_column vc_column_container vc_col-sm-12">
-                                    <div class="vc_column-inner">
-                                        <div class="wpb_wrapper">
-                                            <div class="listing-simple listing_grid_view listingcampaings">
-                                                <div class="lp-list-page-grid row" id="content-grids" >
-                                                    <div class="md-overlay"></div>
-                                                </div>
-                                            </div>
-                                            @foreach($announcements as $ann)							
-                                            <div class="col-md-4 col-sm-6 promoted lp-grid-box-contianer grid_view6 grid_view_s5 card1 lp-grid-box-contianer1 listing-grid-view2-outer" 
-                                                data-title="{{$ann['title']}}" data-postid="{{$ann['id']}}" 
-                                                data-lattitue="25.6929895" data-longitute="-100.1712571" 
-                                                data-posturl="/listing/{{$ann['id']}}">
-                                                <div class="lp-grid-box">
-                                                    <div class="lp-grid-box-thumb-container" >
-                                                        <div class="hide">
-                                                            <span class="gaddress">{{$ann->user->ac_address01}}, {{$ann->address()}}, {{$ann->national()->name}}</span>
-                                                        </div>
-                                                        <div class="lp-grid-box-thumb">
-                                                            <div class="show-img">
-                                                                <a href="listing/{{$ann['id']}}">
-                                                                    <img src='data:image/png;base64,{{$ann->DiscoveryImage()}}' style="width: calc(100% + 22px)!important;margin-left: -11px;margin-top: -8px;"/>
-                                                                </a>									
-                                                            </div>
-                                                            <div class="hide-img listingpro-list-thumb">
-                                                                <a href="listing/{{$ann['id']}}">
-                                                                    <img src='data:image/png;base64,{{$ann->DiscoveryImage()}}' style="width: calc(100% + 22px)!important;margin-left: -11px;margin-top: -8px;"/>
-                                                                </a>					
-                                                            </div>
-                                                            <!--<div class="lp-grid6-status">
-                                                                <a class="status-btn">
-                                                                    <span class="grid-closed status-red li-listing-clock-outer"></span>
-                                                                </a>
-                                                            </div>-->
-                                                        </div>
-                                                        <!--<div class="lp-grid-box-quick">
-                                                            <ul class="lp-post-quick-links clearfix">
-                                                                <li class="pull-left">
-                                                                    <a href="listing/{{$ann['id']}}" data-post-type="grids" data-post-id="184" data-success-text="Guardado" class="status-btn add-to-fav lp-add-to-fav">
-                                                                        <i class="fa fa-bookmark-o"></i> <span>Guardar</span>
-                                                                    </a>
-                                                                </li>                                                            
-                                                            </ul>
-                                                        </div>-->
-                                                        <div class="lp-grid6-top-container">
-                                                            <div class="lp-grid6-top-container-inner">
-                                                                <div class="post-row price-range">
-                                                                    <ul class="list-style-none post-price-row line-height-16">
-                                                                        <li>
-                                                                            <span class="post-rice" style="display:block!important;">
-                                                                                <span class="text">{{$ann->national()->name}}</span>
-                                                                                @if($ann->views)
-                                                                                <span class="text" style="right: 92px;position: absolute;color: #ebac2c;font-size: 13px;">{{$ann->views()}} vista</span>
-                                                                                @endif
-                                                                            </span>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                                <h4 class="lp-h4">
-                                                                    <a href="listing/{{$ann['id']}}">
-                                                                        <span class="listing-pro">Ad</span>
-                                                                        {{substr($ann->title,0,20).(strlen($ann->title)>20?'...':'')}}
-                                                                    </a>
-                                                                </h4>	
-                                                                <div class="lp-listing-cats">			
-                                                                    <a href="listing/{{$ann['id']}}">
-                                                                        {{$ann->city_name->name}}, 
-                                                                    </a>
-                                                                    <a href="listing/{{$ann['id']}}">
-                                                                        {{$ann->state_name->name}}
-                                                                    </a>
-                                                                </div>
-                                                                <div class="lp-listing-logo-outer">                                                                
-                                                                    <div class="lp-listing-logo">
-                                                                        <img src="{{$ann->user->avatar==null?'/images/default-avatar.png':'/v1/api/downloadFile?path='.$ann->user->avatar}}" alt="Listing Logo">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="clearfix">
-                                                                <div class="pull-left lp-grid6-cate">											
-                                                                    <a href="listing?cat={{$ann->category}}">
-                                                                    {{$ann->category_name->name}}
-                                                                    </a>			
-                                                                </div>
-                                                                <div class="lp-grid-box-bottom-grid6">
-                                                                    <div class="pull-right">
-                                                                        <div class="show">
-                                                                            <!--<span class="cat-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>-->
-                                                                            <a href="listing/{{$ann['id']}}">
-                                                                                {{$dateFormat->frandlyDate($ann->updated_at)}}
-                                                                            </a>			
-                                                                        </div>                                                                    
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="lp-new-grid-bottom-button">
-                                                        <ul class="clearfix">
-                                                            <li style="">
-                                                                <a href="#" data-lid="{{$ann['id']}}" 
-                                                                data-lat="25.6929895" data-lng="-100.1712571" 
-                                                                class="show-loop-map-popup">
-                                                                    <i class="fa fa-map-pin" aria-hidden="true"></i> Direction
-                                                                </a>
-                                                            </li>
-                                                            @if($ann->callable)
-                                                            <li class="show-number-wrap" onclick="myFuction(this)" style="">
-                                                                <p>
-                                                                    <i class="fa fa-phone" aria-hidden="true"></i> 
-                                                                    <span class="show-number">call Now</span>
-                                                                    <a href="tel:{{$ann->user->ac_phone}}" class="grind-number">{{$ann->user->ac_phone}}</a></p>
-                                                            </li>              
-                                                            @endif                                                                                      
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>	 
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="lp_60c3da7b5e081" class="lp-section-row ">
-                <div class="lp_section_inner  clearfix "  style="background-color: #eff3f6;background-repeat: no-repeat;">
-                    <div class="clearfix container">
-                        <div class="row lp-section-content clearfix">
-                            <div class="lp-section-title-container text-center ">
-                                <h2 style="color:"> Suscríbete y empieza a ganar hoy</h2>
-                                <div style="color:" class="lp-sub-title">Cerca del 80% de los clientes utiliza este tipo de buscadores para encontrar servicios</div>
-                            </div>
-                            <div class="wpb_column vc_column_container vc_col-sm-12">
-                                <div class="vc_column-inner">
-                                    <div class="wpb_wrapper">
-                                        <div class="promotional-element listingpro-columns">
-                                            <div class="listingpro-row padding-top-60 padding-bottom-60">
-                                                <div class="promotiona-col-left">
-                                                    <img src="/images/custom/columns.png" alt="">
-                                                </div>
-                                                <div class="promotiona-col-right">
-                                                    <article>
-                                                        <h3>1- Reclama tu insignia</h3>
-                                                        <p>La mejor manera de empezar a ganar es reclamando tu insignia, ya que esto da mucha seguridad a los clientes.</p>
-                                                    </article>
-                                                    <article>
-                                                        <h3>2- Promociona tu anuncio</h3>
-                                                        <p>Promociona tus servicios dirigiéndote a los clientes que necesitan sus servicios o productos.</p>
-                                                    </article>
-                                                    <article>
-                                                        <h3>3- Convierte tus visitas en dinero</h3>
-                                                        <p>Convierte tus visitas en clientes regulares, que pagan por tus servicios.</p>
-                                                    </article>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="lp_60c3da7b5e619" class="lp-section-row">
-                <div class="lp_section_inner  clearfix container"  style="background-repeat: no-repeat;">
-                    <div class="clearfix ">
-                        <div class="row lp-section-content clearfix">
-                            <div class="lp-section-title-container text-center ">
-                                <h2 style="color:"> Nuestro Blog</h2>
-                                <div style="color:" class="lp-sub-title">Checa lo más ardiente del momento</div>
-                            </div>
-                            <div class="wpb_column vc_column_container vc_col-sm-12">
-                                <div class="vc_column-inner">
-                                    <div class="wpb_wrapper">
-                                        <div class="lp-section-content-container lp-blog-grid-container row">
-                                            <div class="col-md-4 col-sm-4 lp-blog-grid-box">
-                                                <div class="lp-blog-grid-box-container lp-border lp-border-radius-8">
-                                                    <div class="lp-blog-grid-box-thumb">
-                                                        <a href="/">
-                                                            <img src="/images/custom/b1.jpg" alt="blog-grid-1-410x308" />
-                                                        </a>
-                                                    </div>
-                                                    <div class="lp-blog-grid-box-description text-center">
-                                                        <div class="lp-blog-user-thumb margin-top-subtract-25">
-                                                            <img class="avatar" src="http://1.gravatar.com/avatar/71dc3ffe3416a9f7cfbc17ae40e4ed5a?s=51&#038;d=mm&#038;r=g" alt="">
-                                                        </div>
-                                                        <div class="lp-blog-grid-category">
-                                                            <a href="/" >Escorts</a>
-                                                        </div>
-                                                        <div class="lp-blog-grid-title">
-                                                            <h4 class="lp-h4">
-                                                                <a href="/">&#8216;Millennials&#8217; y puteros: por qué los clientes de la prostitución son cada vez más jóvenes</a>
-                                                            </h4>
-                                                        </div>
-                                                        <ul class="lp-blog-grid-author">
-                                                            <li>
-                                                                <a href="/">
-                                                                    <i class="fa fa-user"></i>
-                                                                    <span>rexpirate</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-calendar"></i>
-                                                                <span>enero 23, 2021</span>
-                                                            </li>
-                                                        </ul><!-- ../lp-blog-grid-author -->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 lp-blog-grid-box">
-                                                <div class="lp-blog-grid-box-container lp-border lp-border-radius-8">
-                                                    <div class="lp-blog-grid-box-thumb">
-                                                        <a href="/">
-                                                            <img src="/images/custom/b2.jpeg" alt="blog-grid-1-410x308" />
-                                                        </a>
-                                                    </div>
-                                                    <div class="lp-blog-grid-box-description text-center">
-                                                        <div class="lp-blog-user-thumb margin-top-subtract-25">
-                                                            <img class="avatar" src="http://1.gravatar.com/avatar/71dc3ffe3416a9f7cfbc17ae40e4ed5a?s=51&#038;d=mm&#038;r=g" alt="">
-                                                        </div>
-                                                        <div class="lp-blog-grid-category">
-                                                            <a href="/" >Uncategorized</a>
-                                                        </div>
-                                                        <div class="lp-blog-grid-title">
-                                                            <h4 class="lp-h4">
-                                                                <a href="/">Hello world!</a>
-                                                            </h4>
-                                                        </div>
-                                                        <ul class="lp-blog-grid-author">
-                                                            <li>
-                                                                <a href="/">
-                                                                    <i class="fa fa-user"></i>
-                                                                    <span>rexpirate</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-calendar"></i>
-                                                                <span>enero 17, 2021</span>
-                                                            </li>
-                                                        </ul><!-- ../lp-blog-grid-author -->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 lp-blog-grid-box">
-                                                <div class="lp-blog-grid-box-container lp-border lp-border-radius-8">
-                                                    <div class="lp-blog-grid-box-thumb">
-                                                        <a href="/">
-                                                            <img src="/images/custom/b3.jpeg" alt="blog-grid-1-410x308" />
-                                                        </a>
-                                                    </div>
-                                                    <div class="lp-blog-grid-box-description text-center">
-                                                        <div class="lp-blog-user-thumb margin-top-subtract-25">
-                                                            <img class="avatar" src="http://1.gravatar.com/avatar/71dc3ffe3416a9f7cfbc17ae40e4ed5a?s=51&#038;d=mm&#038;r=g" alt="">
-                                                        </div>
-                                                        <div class="lp-blog-grid-category">
-                                                            <a href="/" >News</a>, <a href="/" >Uncategorized</a>
-                                                        </div>
-                                                        <div class="lp-blog-grid-title">
-                                                            <h4 class="lp-h4">
-                                                                <a href="/">Excited news about arrival fashion.</a>
-                                                            </h4>
-                                                        </div>
-                                                        <ul class="lp-blog-grid-author">
-                                                            <li>
-                                                                <a href="/">
-                                                                    <i class="fa fa-user"></i>
-                                                                    <span>rexpirate</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-calendar"></i>
-                                                                <span>enero 1, 2020</span>
-                                                            </li>
-                                                        </ul><!-- ../lp-blog-grid-author -->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="clearfix">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        @include('frontend.layouts.footer')
     </div>
-</body>
-<script type="text/javascript" src="frontend/js/pages/home.js"></script>
-<script type='text/javascript' src='/frontend/js/js_composer_front.min.js' id='wpb_composer_front_js-js'></script>
+</div>
+<!-- END: Content-->
+<script type="text/javascript" src="/frontend/js/home.js"></script>
 @endsection

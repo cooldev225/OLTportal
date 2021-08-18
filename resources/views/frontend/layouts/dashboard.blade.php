@@ -1,627 +1,749 @@
 <!doctype html>
-<html lang="{{ $lang }}">
+<html class="loading" lang="{{ $lang }}" data-textdirection="ltr">
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Gtubu"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
+    <meta name="description" content="OLT,olt">
+    <meta name="keywords" content="OLT,olt">
+    <meta name="author" content="DongLong Cui">
+
+    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <script src="/frontend/js/lang/{{$lang}}.js"></script>
-    <link rel="shortcut icon" href="/images/logo.ico"/>
 
-    <link rel='stylesheet' id='wp-block-library-css'  href='/frontend/css/style.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='bootstrap-css'  href='/frontend/css/bootstrap.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='Magnific-Popup-css'  href='/frontend/css/magnific-popup.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='popup-component-css'  href='/frontend/css/component.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='Font-awesome-css'  href='/frontend/font/font-awesome.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='Mmenu-css'  href='/frontend/css/jquery.mmenu.all.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='MapBox-css'  href='/frontend/css/mapbox.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='Chosen-css'  href='/frontend/css/chosen.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='bootstrap-datetimepicker-css-css'  href='/frontend/css/bootstrap-datetimepicker.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='Slick-css-css'  href='/frontend/css/slick.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='Slick-theme-css'  href='/frontend/css/slick-theme.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='jquery-ui-css'  href='/frontend/css/jquery-ui.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='css-prettyphoto-css'  href='/frontend/css/prettyphoto.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='icon8-css'  href='/frontend/css/styles.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='Color-css'  href='/frontend/css/colors.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='custom-font-css'  href='/frontend/css/font.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='Main-css'  href='/frontend/css/main.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='Responsive-css'  href='/frontend/css/responsive.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='select2-css'  href='/frontend/css/select2.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='dynamiclocation-css'  href='/frontend/css/city-autocomplete.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='lp-body-overlay-css'  href='/frontend/css/common.loading.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='bootstrapslider-css'  href='/frontend/css/bootstrap-slider.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='mourisjs-css'  href='/frontend/css/morris.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='listingpro-css'  href='/frontend/css/style.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='font-rock-salt-css'  href='https://fonts.googleapis.com/css?family=Rock+Salt' type='text/css' media='all' />
-    <link rel='stylesheet' id='font-quicksand-css'  href='https://fonts.googleapis.com/css?family=Quicksand' type='text/css' media='all' />
-    <link rel='stylesheet' id='version2-countdown-css'  href='/frontend/css/flipclock.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='version2-styles-css'  href='/frontend/css/main-new.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='version2-colors-css'  href='/frontend/css/colors-new.css' type='text/css' media='all' />
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/vendors/css/extensions/toastr.min.css">
+    <!-- END: Vendor CSS-->
 
-    <link rel='stylesheet' id='buttons-css'  href='/frontend/css/buttons.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='mediaelement-css'  href='/frontend/css/mediaelementplayer-legacy.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='wp-mediaelement-css'  href='/frontend/css/wp-mediaelement.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='media-views-css'  href='/frontend/css/media-views.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='imgareaselect-css'  href='/frontend/css/imgareaselect.css' type='text/css' media='all' />
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/themes/bordered-layout.css">
+    <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/themes/semi-dark-layout.css">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/pages/dashboard-ecommerce.css">
+    <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/plugins/charts/chart-apex.css">
+    <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/plugins/extensions/ext-component-toastr.css">
+    <!-- END: Page CSS-->
     
-    <link rel='stylesheet' id='LP_dynamic_php_css-css'  href='/frontend/css/dynamic-css.php.css' type='text/css' media='all' />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700%7COpen%20Sans:300,400,600,700,800,300italic,400italic,600italic,700italic,800italic&#038;subset=latin&#038;display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700%7COpen%20Sans:300,400,600,700,800,300italic,400italic,600italic,700italic,800italic&#038;subset=latin&#038;display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700%7COpen%20Sans:300,400,600,700,800,300italic,400italic,600italic,700italic,800italic&#038;subset=latin&#038;display=swap" /></noscript>
-    <link rel='stylesheet' href='/frontend/css/dropzone.basic.css' type='text/css' media='dropzone.basic' />
-    <link rel='stylesheet' href='/frontend/css/dropzone.css' type='text/css' media='dropzone' />
-    <link rel='stylesheet' href='/frontend/css/custom.css' type='text/css' media='all' />
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="/vuexy/assets/css/style.css">
+    <!-- END: Custom CSS-->
 
+    <link href="/backend/css/common.css" rel="stylesheet">
+    <link href="/backend/css/custom.css" rel="stylesheet">
 
-    <script type="text/javascript">(function(a,d){if(a._nsl===d){a._nsl=[];var c=function(){if(a.jQuery===d)setTimeout(c,33);else{for(var b=0;b<a._nsl.length;b++)a._nsl[b].call(a,a.jQuery);a._nsl={push:function(b){b.call(a,a.jQuery)}}}};c()}})(window);</script>
-    <script type='text/javascript' src='/frontend/js/jquery.js' id='jquery-core-js'></script>
-    <script type='text/javascript' id='ajax-script-js-extra'>
-    /* <![CDATA[ */
-    var ajax_search_term_object = {"ajaxurl":"/listing"};
-    /* ]]> */
-    </script>
-    <script type='text/javascript' src='/frontend/js/search-ajax.js' id='search-ajax-script-js'></script>
-    <script type='text/javascript' src='/frontend/js/checkout.js' id='stripejs-js'></script>
-    <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key={{config("app.google_map_api")}}&libraries=places' id='mapsjs-js'></script>
-    <script type='text/javascript' src='/frontend/js/raphael-min.js' id='raphelmin-js'></script>
-    <script type='text/javascript' src='/frontend/js/morris.js' id='morisjs-js'></script>
-    <script type='text/javascript' src='/frontend/js/utils.min.js' id='utils-js'></script>
-    <script type='text/javascript' src='/frontend/js/moxie.min.js' id='moxiejs-js'></script>
-    <script type='text/javascript' src='/frontend/js/plupload.min.js' id='plupload-js'></script>
-    <!--[if lt IE 8]>
-    <script type='text/javascript' src='/frontend/js/json2.min.js' id='json2-js'></script>
-    <![endif]-->
-    <script src="/metronic/plugins/custom/tinymce/tinymce.bundle.js"></script>
-    <script src="/frontend/js/dropzone.js"></script>
+    <!-- BEGIN: Vendor JS-->
+    <script src="/vuexy/app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+    
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="/vuexy/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="/vuexy/app-assets/vendors/js/extensions/toastr.min.js"></script>
+    <!-- END: Page Vendor JS-->
 
-    <script type='text/javascript' src='/frontend/js/frontend.js' id='frontend-js-js'></script>
-    <script type='text/javascript' src='/frontend/js/common.js' id='common-script-js'></script>    
+    <!-- BEGIN: Theme JS-->
+    <script src="/vuexy/app-assets/js/core/app-menu.js"></script>
+    <script src="/vuexy/app-assets/js/core/app.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="/vuexy/app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
+    <!-- END: Page JS-->
+    
+    <script type="text/javascript" src="/backend/js/common.js"></script>
+    <script src="/frontend/js/lang/{{$lang}}.js"></script>
+    <!-- Styles -->
+    <link rel="shortcut icon" href="/images/logo.ico"/>
 </head>
+<!-- END: Head-->
 @inject('dateFormat', 'App\Services\DateService')
-<body class="page-template page-template-template-dashboard page-template-template-dashboard-php page page-id-96 logged-in admin-bar no-customize-support listing-skeleton-view-grid_view wpb-js-composer js-comp-ver-6.4.1 vc_responsive" data-submitlink="/ads" data-sliderstyle="style2" data-defaultmaplat="0" data-defaultmaplot="-0" data-lpsearchmode="keyword" data-maplistingby="geolocaion" >
-	<input type="hidden" id="lpNonce" name="lpNonce" value="11a180ea92" />
-    <input type="hidden" name="_wp_http_referer" value="/" />    
-    <input type="hidden" id="start_of_weekk" value="1">
-	<div id="page" data-detail-page-style="lp_detail_page_styles1" data-lpattern="with_region" data-sitelogo="/images/logo.png" data-site-url="/" data-ipapi="ip_api" data-lpcurrentloconhome="1" data-mtoken="0" data-mtype="openstreet" data-mstyle="mapbox.streets-basic" class="clearfix lp_detail_page_styles1 mm-page mm-slideout">
-        <div class="pos-relative header-inner-page-wrap">
-            <div class="header-container  3">                    
-                <div class="modal fade lp-modal-list" id="modal-invoice">
-                    <div class="modal-content">                        
-                        <div class="modal-body">Content is loading...</div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                            <a href="#" class="lp-print-list btn-first-hover">Print</a>
+<!-- BEGIN: Body-->
+<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
+    <!-- BEGIN: Header-->
+    <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow container-xxl">
+        <div class="navbar-container d-flex content">
+            <div class="bookmark-wrapper d-flex align-items-center">
+                <ul class="nav navbar-nav d-xl-none">
+                    <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon" data-feather="menu"></i></a></li>
+                </ul>
+                <ul class="nav navbar-nav bookmark-icons">
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-email.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="ficon" data-feather="mail"></i></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-chat.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat"><i class="ficon" data-feather="message-square"></i></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-calendar.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Calendar"><i class="ficon" data-feather="calendar"></i></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-todo.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Todo"><i class="ficon" data-feather="check-square"></i></a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star"><i class="ficon text-warning" data-feather="star"></i></a>
+                        <div class="bookmark-input search-input">
+                            <div class="bookmark-input-icon"><i data-feather="search"></i></div>
+                            <input class="form-control input" type="text" placeholder="Bookmark" tabindex="0" data-search="search">
+                            <ul class="search-list search-list-bookmark"></ul>
                         </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="modal-packages" role="dialog">
-					<div class="modal-dialog  lp-change-plan-popup">
-					  <!-- Modal content-->
-					  <div class="modal-content">
-						<div class="modal-body">
-							<div class="lp-loadingPlans" data-default="Loading..."><p></p></div>
-						</div>
-					  </div>
-					</div>
-				</div>
-                <!-- ../Login Popup -->
-                <div class="md-overlay"></div> <!-- Overlay for Popup -->
-
-                <!-- top notificaton bar -->
-                <div class="lp-top-notification-bar"></div>
-                <!-- end top notification-bar -->	
-
-                <!-- popup for quick view --->		
-                <div class="md-modal md-effect-3" id="listing-preview-popup">
-                    <div class="container">
-                        <div class="md-content ">
-                            <div class="row popup-inner-left-padding ">
-                            </div>
-                        </div>
-                    </div>
-                    <a class="md-close widget-map-click"><i class="fa fa-close"></i></a>
-                </div>
-                <div class="md-overlay content-loading"></div>
-                <div class="md-modal md-effect-map-btn" id="grid-show-popup">
-                    <div class="container">
-                        <div class="md-content ">
-                            <div class="row grid-show-popup" data-loader="/images/classic/content-loader.gif">
-                                <img src="/images/classic/content-loader.gif" />
-                            </div>
-                        </div>
-                    </div>
-                    <a class="md-close widget-map-click"><i class="fa fa-close"></i></a>
-                </div>
-                <!--hidden google map-->
-                <div id="lp-hidden-map" style="width:300px;height:300px;position:absolute;left:-300000px"></div>
-                <div class="page-heading listing-page" style=" ">
-					<div class="page-heading-inner-container text-center">
-						<h1>Dashboard</h1>
-						<ul class="breadcrumbs">
-                            <li><a href="/">Home</a></li>
-                            <li><span>Dashboard</span></li>
-                        </ul>
-                    </div>
-					<div class="page-header-overlay"></div>
-				</div>
+                    </li>
+                </ul>
             </div>
-        </div>
-        
-        <input type="hidden" id="datepicker-lang" value="es_ES">
-        <div class="modal fade lp-modal-content-image-outer" id="imagemodal" tabindex="-1" role="dialog">
-            <div class="modal-dialog  lp-modal-content-image">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <span data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></span>
-                        <img src="" id="imagepreview" class="imagepreview" >
+            <ul class="nav navbar-nav align-items-center ms-auto">
+                <li class="nav-item dropdown dropdown-language"><a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#" data-language="en"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="#" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#" data-language="de"><i class="flag-icon flag-icon-de"></i> German</a><a class="dropdown-item" href="#" data-language="pt"><i class="flag-icon flag-icon-pt"></i> Portuguese</a></div>
+                </li>
+                <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>
+                <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon" data-feather="search"></i></a>
+                    <div class="search-input">
+                        <div class="search-input-icon"><i data-feather="search"></i></div>
+                        <input class="form-control input" type="text" placeholder="Explore Vuexy..." tabindex="-1" data-search="search">
+                        <div class="search-input-close"><i data-feather="x"></i></div>
+                        <ul class="search-list search-list-main"></ul>
                     </div>
-                </div>
-            </div>
-        </div>
-        <section class="aliceblue">
-            <div class="clearfix"></div>
-            <div id="wrapper" class="active lp-dashboard-new clearfix lp-dashboard-new-active">		 
-                <div id="sidebar-wrapper">
-                    <div id="sidebar_menu" class="sidebar-nav">
-                        <div class="sidebar-brand clearfix">
-                            <a href="/">
-                                <img src="/images/logo.png" alt="image" />	
-                            </a>							
-                            <a id="menu-toggle" href="#">
-                                <span id="main_icon" class="glyphicon glyphicon-align-justify"></span>
-                            </a>							
-						</div>
-				    </div>
-				    <ul class="sidebar-nav clearfix" id="sidebar"> 
-                        <li>
-                            <a class="{{Request::is('ads')?'active-dash-menu':''}}" href="/ads"><span class="sub_icon sub_iconfirst"><i class="fa fa-microphone" aria-hidden="true"></i></span> Announcements <span class="sub_icon sub_iconsecond simptip-position-right simptip-movable" data-tooltip="Announcements"> <i class="fa fa-microphone" aria-hidden="true"></i></span></a> 
+                </li>
+                <li class="nav-item dropdown dropdown-cart me-25"><a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="ficon" data-feather="shopping-cart"></i><span class="badge rounded-pill bg-primary badge-up cart-item-count">6</span></a>
+                    <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
+                        <li class="dropdown-menu-header">
+                            <div class="dropdown-header d-flex">
+                                <h4 class="notification-title mb-0 me-auto">My Cart</h4>
+                                <div class="badge rounded-pill badge-light-primary">4 Items</div>
+                            </div>
                         </li>
-                        <li>
-                            <a class="{{Request::is('credit')?'active-dash-menu':''}}" href="/credit">
-                                <span class="sub_icon sub_iconfirst"><i class="fa fa-gift"></i></span> Mi Crédito <span class="sub_icon sub_iconsecond simptip-position-right simptip-movable" data-tooltip="Events"> <i class="fa fa-calendar" aria-hidden="true"></i></span>								   
-                            </a>
-                        </li>
-                        @if(Auth::user()->validate>0)				
-                        <li>
-                            <a class="{{Request::is('profile')?'active-dash-menu':''}}" href="/profile">
-                                <span class="sub_icon sub_iconfirst"><i class="fa fa-user-circle"></i></span> Mi perfil <span class="sub_icon sub_iconsecond simptip-position-right simptip-movable" data-tooltip="Events"> <i class="fa fa-calendar" aria-hidden="true"></i></span>								   
-                            </a>
-                        </li>
-                        @endif
-                        <li>
-                            <a class="" href="/logout"><span class="sub_icon sub_iconfirst"><i class="fa fa-lock" aria-hidden="true"></i></span> Logout <span class="sub_icon sub_iconsecond simptip-position-right simptip-movable" data-tooltip="Announcements"> <i class="fa fa-microphone" aria-hidden="true"></i></span></a> 
-                        </li>
-                    </ul>
-                </div>			  			
-                <div id="page-content-wrapper">
-                    <input type="hidden" id="select2-ajax-noresutls" value="No results found">
-                    <input type="hidden" id="select2-ajax-tooshort" value="Please enter 3 or more characters">
-                    <input type="hidden" id="select2-ajax-searching" value="Searching...">
-                    
-                    <div class="page-content inset dashboard-content">
-                        <div class="lp-user-header clearfix">		
-                            @if(Auth::id())				
-                            <div class="pull-right lp-section-app-head-area">
-                                <div class="lp-user-meta">
-                                    <ul class="clearfix">
-                                        <li>
-                                            <p>{{Auth::user()->friendlyName}}</p>
-                                        </li>
-                                        <li>
-                                            <div class="user-meta-image ">
-                                                <a href=""><img src="{{Auth::user()->avatar==null?'/images/default-avatar.png':'/v1/api/downloadFile?path='.Auth::user()->avatar}}"></a>
-                                            </div>									
-								        </li>
-                                        @if(Auth::user()->validate>0)
-                                        <li>
-                                            <div class="lp-user-header-details lp-dot-extra-buttons">
-                                                <a href="javascript:void();"><i class="fa fa-bars" aria-hidden="true"></i></a>
-                                                <ul class="lp-user-menu list-style-none">
-                                                    <li>
-                                                        <a href="/profile"> <i class="fa fa-user-circle"></i> Mi Perfil </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="/logout">
-                                                            <span><i class="fa fa-lock" aria-hidden="true"></i>Logout</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        @endif
-                                    </ul>
+                        <li class="scrollable-container media-list">
+                            <div class="list-item align-items-center"><img class="d-block rounded me-1" src="/vuexy/app-assets/images/pages/eCommerce/1.png" alt="donuts" width="62">
+                                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                                    <div class="media-heading">
+                                        <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> Apple watch 5</a></h6><small class="cart-item-by">By Apple</small>
+                                    </div>
+                                    <div class="cart-item-qty">
+                                        <div class="input-group">
+                                            <input class="touchspin-cart" type="number" value="1">
+                                        </div>
+                                    </div>
+                                    <h5 class="cart-item-price">$374.90</h5>
                                 </div>
                             </div>
-                            @endif
-                            <!--div class="lp-contact-support-outer pull-right">
-                                <a target="_blank" href="#" >
-                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                    Contact Support
-                                </a>
+                            <div class="list-item align-items-center"><img class="d-block rounded me-1" src="/vuexy/app-assets/images/pages/eCommerce/7.png" alt="donuts" width="62">
+                                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                                    <div class="media-heading">
+                                        <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> Google Home Mini</a></h6><small class="cart-item-by">By Google</small>
+                                    </div>
+                                    <div class="cart-item-qty">
+                                        <div class="input-group">
+                                            <input class="touchspin-cart" type="number" value="3">
+                                        </div>
+                                    </div>
+                                    <h5 class="cart-item-price">$129.40</h5>
+                                </div>
                             </div>
-                            <div class="lp-contact-support-outer pull-right">
-                                @if(Auth::id())
-                                <a href="/ads"><i class="fa fa-plus"></i>Anunciate</a>
-                                @else
-                                <a class="app-view-popup-style" data-target="#app-view-login-popup"><i class="fa fa-plus"></i>Anunciate</a>
-                                @endif  
-                            </div-->	
-                        </div>	
-                        @yield('content')
+                            <div class="list-item align-items-center"><img class="d-block rounded me-1" src="/vuexy/app-assets/images/pages/eCommerce/2.png" alt="donuts" width="62">
+                                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                                    <div class="media-heading">
+                                        <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> iPhone 11 Pro</a></h6><small class="cart-item-by">By Apple</small>
+                                    </div>
+                                    <div class="cart-item-qty">
+                                        <div class="input-group">
+                                            <input class="touchspin-cart" type="number" value="2">
+                                        </div>
+                                    </div>
+                                    <h5 class="cart-item-price">$699.00</h5>
+                                </div>
+                            </div>
+                            <div class="list-item align-items-center"><img class="d-block rounded me-1" src="/vuexy/app-assets/images/pages/eCommerce/3.png" alt="donuts" width="62">
+                                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                                    <div class="media-heading">
+                                        <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> iMac Pro</a></h6><small class="cart-item-by">By Apple</small>
+                                    </div>
+                                    <div class="cart-item-qty">
+                                        <div class="input-group">
+                                            <input class="touchspin-cart" type="number" value="1">
+                                        </div>
+                                    </div>
+                                    <h5 class="cart-item-price">$4,999.00</h5>
+                                </div>
+                            </div>
+                            <div class="list-item align-items-center"><img class="d-block rounded me-1" src="/vuexy/app-assets/images/pages/eCommerce/5.png" alt="donuts" width="62">
+                                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                                    <div class="media-heading">
+                                        <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> MacBook Pro</a></h6><small class="cart-item-by">By Apple</small>
+                                    </div>
+                                    <div class="cart-item-qty">
+                                        <div class="input-group">
+                                            <input class="touchspin-cart" type="number" value="1">
+                                        </div>
+                                    </div>
+                                    <h5 class="cart-item-price">$2,999.00</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="dropdown-menu-footer">
+                            <div class="d-flex justify-content-between mb-1">
+                                <h6 class="fw-bolder mb-0">Total:</h6>
+                                <h6 class="text-primary fw-bolder mb-0">$10,999.00</h6>
+                            </div><a class="btn btn-primary w-100" href="app-ecommerce-checkout.html">Checkout</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown dropdown-notification me-25"><a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge rounded-pill bg-danger badge-up">5</span></a>
+                    <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
+                        <li class="dropdown-menu-header">
+                            <div class="dropdown-header d-flex">
+                                <h4 class="notification-title mb-0 me-auto">Notifications</h4>
+                                <div class="badge rounded-pill badge-light-primary">6 New</div>
+                            </div>
+                        </li>
+                        <li class="scrollable-container media-list"><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar"><img src="/vuexy/app-assets/images/portrait/small/avatar-s-15.jpg" alt="avatar" width="32" height="32"></div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">Congratulation Sam 🎉</span>winner!</p><small class="notification-text"> Won the monthly best seller badge.</small>
+                                    </div>
+                                </div>
+                            </a><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar"><img src="/vuexy/app-assets/images/portrait/small/avatar-s-3.jpg" alt="avatar" width="32" height="32"></div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">New message</span>&nbsp;received</p><small class="notification-text"> You have 10 unread messages</small>
+                                    </div>
+                                </div>
+                            </a><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar bg-light-danger">
+                                            <div class="avatar-content">MD</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">Revised Order 👋</span>&nbsp;checkout</p><small class="notification-text"> MD Inc. order updated</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-item d-flex align-items-center">
+                                <h6 class="fw-bolder me-auto mb-0">System Notifications</h6>
+                                <div class="form-check form-check-primary form-switch">
+                                    <input class="form-check-input" id="systemNotification" type="checkbox" checked="">
+                                    <label class="form-check-label" for="systemNotification"></label>
+                                </div>
+                            </div><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar bg-light-danger">
+                                            <div class="avatar-content"><i class="avatar-icon" data-feather="x"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">Server down</span>&nbsp;registered</p><small class="notification-text"> USA Server is down due to high CPU usage</small>
+                                    </div>
+                                </div>
+                            </a><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar bg-light-success">
+                                            <div class="avatar-content"><i class="avatar-icon" data-feather="check"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">Sales report</span>&nbsp;generated</p><small class="notification-text"> Last month sales report generated</small>
+                                    </div>
+                                </div>
+                            </a><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar bg-light-warning">
+                                            <div class="avatar-content"><i class="avatar-icon" data-feather="alert-triangle"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">High memory</span>&nbsp;usage</p><small class="notification-text"> BLR Server using high memory</small>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-menu-footer"><a class="btn btn-primary w-100" href="#">Read all notifications</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="/vuexy/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a class="dropdown-item" href="page-profile.html"><i class="me-50" data-feather="user"></i> Profile</a><a class="dropdown-item" href="app-email.html"><i class="me-50" data-feather="mail"></i> Inbox</a><a class="dropdown-item" href="app-todo.html"><i class="me-50" data-feather="check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="me-50" data-feather="message-square"></i> Chats</a>
+                        <div class="dropdown-divider"></div><a class="dropdown-item" href="page-account-settings.html"><i class="me-50" data-feather="settings"></i> Settings</a><a class="dropdown-item" href="page-pricing.html"><i class="me-50" data-feather="credit-card"></i> Pricing</a><a class="dropdown-item" href="page-faq.html"><i class="me-50" data-feather="help-circle"></i> FAQ</a><a class="dropdown-item" href="page-auth-login-v2.html"><i class="me-50" data-feather="power"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <ul class="main-search-list-defaultlist d-none">
+        <li class="d-flex align-items-center"><a href="#">
+                <h6 class="section-label mt-75 mb-0">Files</h6>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+                <div class="d-flex">
+                    <div class="me-75"><img src="/vuexy/app-assets/images/icons/xls.png" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Two new item submitted</p><small class="text-muted">Marketing Manager</small>
+                    </div>
+                </div><small class="search-data-size me-50 text-muted">&apos;17kb</small>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+                <div class="d-flex">
+                    <div class="me-75"><img src="/vuexy/app-assets/images/icons/jpg.png" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">52 JPG file Generated</p><small class="text-muted">FontEnd Developer</small>
+                    </div>
+                </div><small class="search-data-size me-50 text-muted">&apos;11kb</small>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+                <div class="d-flex">
+                    <div class="me-75"><img src="/vuexy/app-assets/images/icons/pdf.png" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">25 PDF File Uploaded</p><small class="text-muted">Digital Marketing Manager</small>
+                    </div>
+                </div><small class="search-data-size me-50 text-muted">&apos;150kb</small>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+                <div class="d-flex">
+                    <div class="me-75"><img src="/vuexy/app-assets/images/icons/doc.png" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Anna_Strong.doc</p><small class="text-muted">Web Designer</small>
+                    </div>
+                </div><small class="search-data-size me-50 text-muted">&apos;256kb</small>
+            </a></li>
+        <li class="d-flex align-items-center"><a href="#">
+                <h6 class="section-label mt-75 mb-0">Members</h6>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
+                <div class="d-flex align-items-center">
+                    <div class="avatar me-75"><img src="/vuexy/app-assets/images/portrait/small/avatar-s-8.jpg" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">John Doe</p><small class="text-muted">UI designer</small>
                     </div>
                 </div>
-                <div class="clearfix"></div> 						
-		    </div>		
-	    </section>
-		<!--==================================Section Close=================================-->
-	    <div class="md-overlay"></div>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
+                <div class="d-flex align-items-center">
+                    <div class="avatar me-75"><img src="/vuexy/app-assets/images/portrait/small/avatar-s-1.jpg" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Michal Clark</p><small class="text-muted">FontEnd Developer</small>
+                    </div>
+                </div>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
+                <div class="d-flex align-items-center">
+                    <div class="avatar me-75"><img src="/vuexy/app-assets/images/portrait/small/avatar-s-14.jpg" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Milena Gibson</p><small class="text-muted">Digital Marketing Manager</small>
+                    </div>
+                </div>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
+                <div class="d-flex align-items-center">
+                    <div class="avatar me-75"><img src="/vuexy/app-assets/images/portrait/small/avatar-s-6.jpg" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Anna Strong</p><small class="text-muted">Web Designer</small>
+                    </div>
+                </div>
+            </a></li>
+    </ul>
+    <ul class="main-search-list-defaultlist-other-list d-none">
+        <li class="auto-suggestion justify-content-between"><a class="d-flex align-items-center justify-content-between w-100 py-50">
+                <div class="d-flex justify-content-start"><span class="me-75" data-feather="alert-circle"></span><span>No results found.</span></div>
+            </a></li>
+    </ul>
+    <!-- END: Header-->
+
+
+    <!-- BEGIN: Main Menu-->
+    <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item me-auto"><a class="navbar-brand" href="/vuexy/html/ltr/vertical-menu-template/index.html"><span class="brand-logo">
+                            <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
+                                <defs>
+                                    <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
+                                        <stop stop-color="#000000" offset="0%"></stop>
+                                        <stop stop-color="#FFFFFF" offset="100%"></stop>
+                                    </lineargradient>
+                                    <lineargradient id="linearGradient-2" x1="64.0437835%" y1="46.3276743%" x2="37.373316%" y2="100%">
+                                        <stop stop-color="#EEEEEE" stop-opacity="0" offset="0%"></stop>
+                                        <stop stop-color="#FFFFFF" offset="100%"></stop>
+                                    </lineargradient>
+                                </defs>
+                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="Artboard" transform="translate(-400.000000, -178.000000)">
+                                        <g id="Group" transform="translate(400.000000, 178.000000)">
+                                            <path class="text-primary" id="Path" d="M-5.68434189e-14,2.84217094e-14 L39.1816085,2.84217094e-14 L69.3453773,32.2519224 L101.428699,2.84217094e-14 L138.784583,2.84217094e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L6.71554594,44.4188507 C2.46876683,39.9813776 0.345377275,35.1089553 0.345377275,29.8015838 C0.345377275,24.4942122 0.230251516,14.560351 -5.68434189e-14,2.84217094e-14 Z" style="fill:currentColor"></path>
+                                            <path id="Path1" d="M69.3453773,32.2519224 L101.428699,1.42108547e-14 L138.784583,1.42108547e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L32.8435758,70.5039241 L69.3453773,32.2519224 Z" fill="url(#linearGradient-1)" opacity="0.2"></path>
+                                            <polygon id="Path-2" fill="#000000" opacity="0.049999997" points="69.3922914 32.4202615 32.8435758 70.5039241 54.0490008 16.1851325"></polygon>
+                                            <polygon id="Path-21" fill="#000000" opacity="0.099999994" points="69.3922914 32.4202615 32.8435758 70.5039241 58.3683556 20.7402338"></polygon>
+                                            <polygon id="Path-3" fill="url(#linearGradient-2)" opacity="0.099999994" points="101.428699 0 83.0667527 94.1480575 130.378721 47.0740288"></polygon>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg></span>
+                        <h2 class="brand-text">Vuexy</h2>
+                    </a></li>
+                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i></a></li>
+            </ul>
+        </div>
+        <div class="shadow-bottom"></div>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning rounded-pill ms-auto me-1">2</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="dashboard-analytics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">Analytics</span></a>
+                        </li>
+                        <li class="active"><a class="d-flex align-items-center" href="dashboard-ecommerce.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="eCommerce">eCommerce</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-email.html"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">Email</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-chat.html"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Chat</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-todo.html"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="Todo">Todo</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-calendar.html"><i data-feather="calendar"></i><span class="menu-title text-truncate" data-i18n="Calendar">Calendar</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-kanban.html"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Kanban">Kanban</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Invoice</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">List</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Preview</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Edit</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-invoice-add.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">Add</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-file-manager.html"><i data-feather="save"></i><span class="menu-title text-truncate" data-i18n="File Manager">File Manager</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="shopping-cart"></i><span class="menu-title text-truncate" data-i18n="eCommerce">eCommerce</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="app-ecommerce-shop.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Shop">Shop</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-ecommerce-details.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Details">Details</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-ecommerce-wishlist.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Wish List">Wish List</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-ecommerce-checkout.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Checkout">Checkout</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">User</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="app-user-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">List</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-user-view.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="View">View</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-user-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Edit</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Pages">Pages</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Authentication">Authentication</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="page-auth-login-v1.html" target="_blank"><span class="menu-item text-truncate" data-i18n="LoginV1">Login v1</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-auth-login-v2.html" target="_blank"><span class="menu-item text-truncate" data-i18n="LoginV2">Login v2</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-auth-register-v1.html" target="_blank"><span class="menu-item text-truncate" data-i18n="RegisterV1">Register v1</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-auth-register-v2.html" target="_blank"><span class="menu-item text-truncate" data-i18n="RegisterV2">Register v2</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-auth-forgot-password-v1.html" target="_blank"><span class="menu-item text-truncate" data-i18n="ForgotPasswordV1">Forgot Password v1</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-auth-forgot-password-v2.html" target="_blank"><span class="menu-item text-truncate" data-i18n="ForgotPasswordV2">Forgot Password v2</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-auth-reset-password-v1.html" target="_blank"><span class="menu-item text-truncate" data-i18n="ResetPasswordV1">Reset Password v1</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-auth-reset-password-v2.html" target="_blank"><span class="menu-item text-truncate" data-i18n="ResetPasswordV2">Reset Password v2</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-account-settings.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-profile.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Profile">Profile</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-faq.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="FAQ">FAQ</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-knowledge-base.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Knowledge Base">Knowledge Base</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-pricing.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pricing">Pricing</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Blog">Blog</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="page-blog-list.html"><span class="menu-item text-truncate" data-i18n="List">List</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-blog-detail.html"><span class="menu-item text-truncate" data-i18n="Detail">Detail</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-blog-edit.html"><span class="menu-item text-truncate" data-i18n="Edit">Edit</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Mail Template">Mail Template</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-welcome.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Welcome">Welcome</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-reset-password.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Reset Password">Reset Password</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-verify-email.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Verify Email">Verify Email</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-deactivate-account.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Deactivate Account">Deactivate Account</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-invoice.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Invoice">Invoice</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-promotional.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Promotional">Promotional</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Miscellaneous">Miscellaneous</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="page-misc-coming-soon.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Coming Soon">Coming Soon</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-misc-not-authorized.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Not Authorized">Not Authorized</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-misc-under-maintenance.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Maintenance">Maintenance</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-misc-error.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Error">Error</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" navigation-header"><span data-i18n="User Interface">User Interface</span><i data-feather="more-horizontal"></i>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="ui-typography.html"><i data-feather="type"></i><span class="menu-title text-truncate" data-i18n="Typography">Typography</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="ui-feather.html"><i data-feather="eye"></i><span class="menu-title text-truncate" data-i18n="Feather">Feather</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i><span class="menu-title text-truncate" data-i18n="Card">Card</span><span class="badge badge-light-success rounded-pill ms-auto me-1">New</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="card-basic.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="card-advance.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Advance">Advance</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="card-statistics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Statistics">Statistics</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="card-analytics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">Analytics</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="card-actions.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Card Actions">Card Actions</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="briefcase"></i><span class="menu-title text-truncate" data-i18n="Components">Components</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="component-accordion.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Accordion">Accordion</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-alerts.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Alerts">Alerts</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-avatar.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Avatar">Avatar</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-badges.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Badges">Badges</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-breadcrumbs.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Breadcrumbs">Breadcrumbs</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-buttons.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Buttons">Buttons</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-carousel.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Carousel">Carousel</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-collapse.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Collapse">Collapse</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-divider.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Divider">Divider</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-dropdowns.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Dropdowns">Dropdowns</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-list-group.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List Group">List Group</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-modals.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Modals">Modals</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-navs-component.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Navs Component">Navs Component</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-offcanvas.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Offcanvas">Offcanvas</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-pagination.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pagination">Pagination</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-pill-badges.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pill Badges">Pill Badges</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-pills-component.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pills Component">Pills Component</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-popovers.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Popovers">Popovers</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-progress.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Progress">Progress</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-spinner.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Spinner">Spinner</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-tabs-component.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tabs Component">Tabs Component</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-timeline.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Timeline">Timeline</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-bs-toast.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Toasts">Toasts</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-tooltips.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tooltips">Tooltips</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="box"></i><span class="menu-title text-truncate" data-i18n="Extensions">Extensions</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="ext-component-sweet-alerts.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Sweet Alert">Sweet Alert</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-blockui.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Block UI">BlockUI</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-toastr.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Toastr">Toastr</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-sliders.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Sliders">Sliders</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-drag-drop.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Drag &amp; Drop">Drag &amp; Drop</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-tour.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tour">Tour</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-clipboard.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Clipboard">Clipboard</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-media-player.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Media player">Media Player</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-context-menu.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Context Menu">Context Menu</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-swiper.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="swiper">Swiper</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-tree.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tree">Tree</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-ratings.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Ratings">Ratings</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-i18n.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="l18n">l18n</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="layout"></i><span class="menu-title text-truncate" data-i18n="Page Layouts">Page Layouts</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="layout-collapsed-menu.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Collapsed Menu">Collapsed Menu</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="layout-full.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Layout Full">Layout Full</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="layout-without-menu.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Without Menu">Without Menu</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="layout-empty.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Layout Empty">Layout Empty</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="layout-blank.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Layout Blank">Layout Blank</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" navigation-header"><span data-i18n="Forms &amp; Tables">Forms &amp; Tables</span><i data-feather="more-horizontal"></i>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="copy"></i><span class="menu-title text-truncate" data-i18n="Form Elements">Form Elements</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="form-input.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Input">Input</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-input-groups.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Input Groups">Input Groups</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-input-mask.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Input Mask">Input Mask</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-textarea.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Textarea">Textarea</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-checkbox.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Checkbox">Checkbox</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-radio.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Radio">Radio</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-switch.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Switch">Switch</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-select.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Select">Select</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-number-input.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Number Input">Number Input</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-file-uploader.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="File Uploader">File Uploader</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-quill-editor.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Quill Editor">Quill Editor</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-date-time-picker.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Date &amp; Time Picker">Date &amp; Time Picker</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="form-layout.html"><i data-feather="box"></i><span class="menu-title text-truncate" data-i18n="Form Layout">Form Layout</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="form-wizard.html"><i data-feather="package"></i><span class="menu-title text-truncate" data-i18n="Form Wizard">Form Wizard</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="form-validation.html"><i data-feather="check-circle"></i><span class="menu-title text-truncate" data-i18n="Form Validation">Form Validation</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="form-repeater.html"><i data-feather="rotate-cw"></i><span class="menu-title text-truncate" data-i18n="Form Repeater">Form Repeater</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="table-bootstrap.html"><i data-feather="server"></i><span class="menu-title text-truncate" data-i18n="Table">Table</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Datatable">Datatable</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="table-datatable-basic.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="table-datatable-advanced.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Advanced">Advanced</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" navigation-header"><span data-i18n="Charts &amp; Maps">Charts &amp; Maps</span><i data-feather="more-horizontal"></i>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="pie-chart"></i><span class="menu-title text-truncate" data-i18n="Charts">Charts</span><span class="badge badge-light-danger rounded-pill ms-auto me-2">2</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="chart-apex.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Apex">Apex</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="chart-chartjs.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Chartjs">Chartjs</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="maps-leaflet.html"><i data-feather="map"></i><span class="menu-title text-truncate" data-i18n="Leaflet Maps">Leaflet Maps</span></a>
+                </li>
+                <li class=" navigation-header"><span data-i18n="Misc">Misc</span><i data-feather="more-horizontal"></i>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="menu"></i><span class="menu-title text-truncate" data-i18n="Menu Levels">Menu Levels</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Second Level">Second Level 2.1</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Second Level">Second Level 2.2</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="#"><span class="menu-item text-truncate" data-i18n="Third Level">Third Level 3.1</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="#"><span class="menu-item text-truncate" data-i18n="Third Level">Third Level 3.2</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="disabled nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="eye-off"></i><span class="menu-title text-truncate" data-i18n="Disabled Menu">Disabled Menu</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation" target="_blank"><i data-feather="folder"></i><span class="menu-title text-truncate" data-i18n="Documentation">Documentation</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="https://pixinvent.ticksy.com/" target="_blank"><i data-feather="life-buoy"></i><span class="menu-title text-truncate" data-i18n="Raise Support">Raise Support</span></a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <input type="hidden" id="select2-ajax-noresutls" value="No results found">
-    <input type="hidden" id="select2-ajax-tooshort" value="Please enter 3 or more characters">
-    <input type="hidden" id="select2-ajax-searching" value="Searching...">
+    <!-- END: Main Menu-->
+
+    @yield('content')
+    
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    @include('frontend.layouts.footer')
+
+    <script>
+        $(window).on('load', function() {
+            if (feather) {
+                feather.replace({
+                    width: 14,
+                    height: 14
+                });
+            }
+        })
+    </script>
 </body>
-
-<script type="text/html" id="tmpl-media-frame">
-    <div class="media-frame-title" id="media-frame-title"></div>
-    <h2 class="media-frame-menu-heading">Acciones</h2>
-    <button type="button" class="button button-link media-frame-menu-toggle" aria-expanded="false">
-        Menú<span class="dashicons dashicons-arrow-down" aria-hidden="true"></span>
-    </button>
-    <div class="media-frame-menu"></div>
-    <div class="media-frame-tab-panel">
-        <div class="media-frame-router"></div>
-        <div class="media-frame-content"></div>
-    </div>
-    <h2 class="media-frame-actions-heading screen-reader-text">
-    Acciones de los medios seleccionados		</h2>
-    <div class="media-frame-toolbar"></div>
-    <div class="media-frame-uploader"></div>
-</script>
-<script type="text/html" id="tmpl-media-modal">
-    <div tabindex="0" class="media-modal wp-core-ui" role="dialog" aria-labelledby="media-frame-title">
-        <# if ( data.hasCloseButton ) { #>
-            <button type="button" class="media-modal-close"><span class="media-modal-icon"><span class="screen-reader-text">Cerrar el diálogo</span></span></button>
-        <# } #>
-        <div class="media-modal-content" role="document"></div>
-    </div>
-    <div class="media-modal-backdrop"></div>
-</script>
-
-<script type="text/html" id="tmpl-uploader-window">
-    <div class="uploader-window-content">
-        <div class="uploader-editor-title">Arrastra los archivos para subirlos</div>
-    </div>
-</script>
-
-<script type="text/html" id="tmpl-uploader-editor">
-    <div class="uploader-editor-content">
-        <div class="uploader-editor-title">Arrastra los archivos para subirlos</div>
-    </div>
-</script>
-
-
-<script type="text/html" id="tmpl-media-library-view-switcher">
-    <a href="/listing-author/?dashboard=announcements&#038;mode=list" class="view-list">
-        <span class="screen-reader-text">Vista de lista</span>
-    </a>
-    <a href="/listing-author/?dashboard=announcements&#038;mode=grid" class="view-grid current" aria-current="page">
-        <span class="screen-reader-text">Vista de cuadrícula</span>
-    </a>
-</script>
-
-<script type="text/html" id="tmpl-uploader-status">
-    <h2>Subiendo</h2>
-    <button type="button" class="button-link upload-dismiss-errors"><span class="screen-reader-text">Descartar los errores</span></button>
-
-    <div class="media-progress-bar"><div></div></div>
-    <div class="upload-details">
-        <span class="upload-count">
-            <span class="upload-index"></span> / <span class="upload-total"></span>
-        </span>
-        <span class="upload-detail-separator">&ndash;</span>
-        <span class="upload-filename"></span>
-    </div>
-    <div class="upload-errors"></div>
-</script>
-
-<script type="text/html" id="tmpl-edit-attachment-frame">
-    <div class="edit-media-header">
-        <button class="left dashicons"<# if ( ! data.hasPrevious ) { #> disabled<# } #>><span class="screen-reader-text">Editar el medio anterior</span></button>
-        <button class="right dashicons"<# if ( ! data.hasNext ) { #> disabled<# } #>><span class="screen-reader-text">Editar el siguiente medio</span></button>
-        <button type="button" class="media-modal-close"><span class="media-modal-icon"><span class="screen-reader-text">Cerrar el diálogo</span></span></button>
-    </div>
-    <div class="media-frame-title"></div>
-    <div class="media-frame-content"></div>
-</script>
-
-<script type="text/html" id="tmpl-media-selection">
-    <div class="selection-info">
-        <span class="count"></span>
-        <# if ( data.editable ) { #>
-            <button type="button" class="button-link edit-selection">Editar la selección</button>
-        <# } #>
-        <# if ( data.clearable ) { #>
-            <button type="button" class="button-link clear-selection">Borrar</button>
-        <# } #>
-    </div>
-    <div class="selection-view"></div>
-</script>
-
-<script type="text/html" id="tmpl-gallery-settings">
-    <h2>Ajustes de la galería</h2>
-
-    <span class="setting">
-        <label for="gallery-settings-link-to" class="name">Enlazado a</label>
-        <select id="gallery-settings-link-to" class="link-to"
-            data-setting="link"
-            <# if ( data.userSettings ) { #>
-                data-user-setting="urlbutton"
-            <# } #>>
-
-            <option value="post" <# if ( ! wp.media.galleryDefaults.link || 'post' === wp.media.galleryDefaults.link ) {
-                #>selected="selected"<# }
-            #>>
-                Página de adjuntos				</option>
-            <option value="file" <# if ( 'file' === wp.media.galleryDefaults.link ) { #>selected="selected"<# } #>>
-                Archivo de medios				</option>
-            <option value="none" <# if ( 'none' === wp.media.galleryDefaults.link ) { #>selected="selected"<# } #>>
-                Ninguna				</option>
-        </select>
-    </span>
-
-    <span class="setting">
-        <label for="gallery-settings-columns" class="name select-label-inline">Columnas</label>
-        <select id="gallery-settings-columns" class="columns" name="columns"
-            data-setting="columns">
-                                <option value="1" <#
-                    if ( 1 == wp.media.galleryDefaults.columns ) { #>selected="selected"<# }
-                #>>
-                    1					</option>
-                                <option value="2" <#
-                    if ( 2 == wp.media.galleryDefaults.columns ) { #>selected="selected"<# }
-                #>>
-                    2					</option>
-                                <option value="3" <#
-                    if ( 3 == wp.media.galleryDefaults.columns ) { #>selected="selected"<# }
-                #>>
-                    3					</option>
-                                <option value="4" <#
-                    if ( 4 == wp.media.galleryDefaults.columns ) { #>selected="selected"<# }
-                #>>
-                    4					</option>
-                                <option value="5" <#
-                    if ( 5 == wp.media.galleryDefaults.columns ) { #>selected="selected"<# }
-                #>>
-                    5					</option>
-                                <option value="6" <#
-                    if ( 6 == wp.media.galleryDefaults.columns ) { #>selected="selected"<# }
-                #>>
-                    6					</option>
-                                <option value="7" <#
-                    if ( 7 == wp.media.galleryDefaults.columns ) { #>selected="selected"<# }
-                #>>
-                    7					</option>
-                                <option value="8" <#
-                    if ( 8 == wp.media.galleryDefaults.columns ) { #>selected="selected"<# }
-                #>>
-                    8					</option>
-                                <option value="9" <#
-                    if ( 9 == wp.media.galleryDefaults.columns ) { #>selected="selected"<# }
-                #>>
-                    9					</option>
-                        </select>
-    </span>
-
-    <span class="setting">
-        <input type="checkbox" id="gallery-settings-random-order" data-setting="_orderbyRandom" />
-        <label for="gallery-settings-random-order" class="checkbox-label-inline">Orden aleatorio</label>
-    </span>
-
-    <span class="setting size">
-        <label for="gallery-settings-size" class="name">Tamaño</label>
-        <select id="gallery-settings-size" class="size" name="size"
-            data-setting="size"
-            <# if ( data.userSettings ) { #>
-                data-user-setting="imgsize"
-            <# } #>
-            >
-                                <option value="thumbnail">
-                    Miniatura					</option>
-                                <option value="medium">
-                    Medio					</option>
-                                <option value="large">
-                    Grande					</option>
-                                <option value="full">
-                    Tamaño completo					</option>
-                        </select>
-    </span>
-</script>
-
-<script type="text/html" id="tmpl-playlist-settings">
-    <h2>Ajustes de la lista de reproducción</h2>
-
-    <# var emptyModel = _.isEmpty( data.model ),
-        isVideo = 'video' === data.controller.get('library').props.get('type'); #>
-
-    <span class="setting">
-        <input type="checkbox" id="playlist-settings-show-list" data-setting="tracklist" <# if ( emptyModel ) { #>
-            checked="checked"
-        <# } #> />
-        <label for="playlist-settings-show-list" class="checkbox-label-inline">
-            <# if ( isVideo ) { #>
-            Mostrar la lista de vídeos				<# } else { #>
-            Mostrar la lista de reproducción				<# } #>
-        </label>
-    </span>
-
-    <# if ( ! isVideo ) { #>
-    <span class="setting">
-        <input type="checkbox" id="playlist-settings-show-artist" data-setting="artists" <# if ( emptyModel ) { #>
-            checked="checked"
-        <# } #> />
-        <label for="playlist-settings-show-artist" class="checkbox-label-inline">
-            Mostrar el nombre del artista en la lista de pistas			</label>
-    </span>
-    <# } #>
-
-    <span class="setting">
-        <input type="checkbox" id="playlist-settings-show-images" data-setting="images" <# if ( emptyModel ) { #>
-            checked="checked"
-        <# } #> />
-        <label for="playlist-settings-show-images" class="checkbox-label-inline">
-            Mostrar las imágenes			</label>
-    </span>
-</script>
-
-<script type="text/html" id="tmpl-embed-link-settings">
-    <span class="setting link-text">
-        <label for="embed-link-settings-link-text" class="name">Texto del enlace</label>
-        <input type="text" id="embed-link-settings-link-text" class="alignment" data-setting="linkText" />
-    </span>
-    <div class="embed-container" style="display: none;">
-        <div class="embed-preview"></div>
-    </div>
-</script>
-
-<script type='text/javascript' id='listingpro-submit-listing-js-extra'>
-    /* <![CDATA[ */
-    var ajax_listingpro_submit_object = {"ajaxurl":"http:\/\/localhost\/wp-admin\/admin-ajax.php"};
-    /* ]]> */
-</script>
-<script type='text/javascript' src='/frontend/js/submit-listing.js' id='listingpro-submit-listing-js'></script>
-<script type='text/javascript' src='/frontend/js/auto-places.js' id='lpAutoPlaces-js'></script>
-<script type='text/javascript' src='/frontend/js/home-map.js' id='Mapbox-js'></script>
-<script type='text/javascript' src='/frontend/js/mapbox.js' id='Mapbox-js'></script>
-<script type='text/javascript' src='/frontend/js/leaflet.markercluster.js' id='Mapbox-leaflet-js'></script>
-<script type='text/javascript' src='/frontend/js/chosen.jquery.js' id='Chosen-js'></script>
-<script type='text/javascript' src='/frontend/js/bootstrap.min.js' id='bootstrap-js'></script>
-<script type='text/javascript' src='/frontend/js/jquery.mmenu.min.all.js' id='Mmenu-js'></script>
-<script type='text/javascript' src='/frontend/js/jquery.magnific-popup.min.js' id='magnific-popup-js'></script>
-<script type='text/javascript' src='/frontend/js/select2.full.min.js' id='select2-js'></script>
-<script type='text/javascript' src='/frontend/js/classie.js' id='popup-classie-js'></script>
-<script type='text/javascript' src='/frontend/js/modalEffects.js' id='modalEffects-js'></script>
-<script type='text/javascript' src='/frontend/js/2co.min.js' id='2checkout-js'></script>
-<script type='text/javascript' src='/frontend/js/moment.js' id='bootstrap-moment-js'></script>
-<script type='text/javascript' src='/frontend/js/bootstrap-datetimepicker.min.js' id='bootstrap-datetimepicker-js'></script>
-<script type='text/javascript' src='/frontend/js/pagination.js' id='pagination-js'></script>
-<!--[if lt IE 9]>
-<script type='text/javascript' src='https://html5shim.googlecode.com/svn/trunk/html5.js' id='html5shim-js'></script>
-<![endif]-->
-<script type='text/javascript' src='/frontend/js/jquery.nicescroll.min.js' id='nicescroll-js'></script>
-<script type='text/javascript' src='/frontend/js/chosen.jquery.min.js' id='chosen-jquery-js'></script>
-<script type='text/javascript' src='/frontend/js/jquery-ui.js' id='jquery-ui-js'></script>
-<script type='text/javascript' src='/frontend/js/bootstrap-rating.js' id='bootstrap-rating-js'></script>
-<script type='text/javascript' src='/frontend/js/drop-pin.js' id='droppin-js'></script>
-<script type='text/javascript' src='/frontend/js/slick.min.js' id='Slick-js'></script>
-<script type='text/javascript' src='/frontend/js/jquery.city-autocomplete.js' id='dyn-location-js-js'></script>
-<script type='text/javascript' src='/frontend/js/bootstrap-slider.js' id='bootstrapsliderjs-js'></script>
-<script type='text/javascript' src='/frontend/js/lp-iconcolor.js' id='lp-icons-colors-js'></script>
-<script type='text/javascript' src='/frontend/js/lp-gps.js' id='lp-current-loc-js'></script>
-<script type='text/javascript' src='/frontend/js/pricing.js' id='Pricing-js'></script>
-<script type='text/javascript' src='/frontend/js/main.js' id='Main-js'></script>
-<script type='text/javascript' src='/frontend/js/flipclock.min.js' id='version-countdown-js-js'></script>
-<script type='text/javascript' src='/frontend/js/main-new.js' id='Main-Version2-js'></script>
-
-<script type='text/javascript' src='/frontend/js/underscore.min.js' id='underscore-js'></script>
-<script type='text/javascript' src='/frontend/js/shortcode.min.js' id='shortcode-js'></script>
-<script type='text/javascript' src='/frontend/js/backbone.min.js' id='backbone-js'></script>
-<script type='text/javascript' id='wp-util-js-extra'>
-/* <![CDATA[ */
-var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
-/* ]]> */
-</script>
-<script type='text/javascript' src='/frontend/js/wp-util.min.js' id='wp-util-js'></script>
-<script type='text/javascript' src='/frontend/js/wp-backbone.min.js' id='wp-backbone-js'></script>
-<script type='text/javascript' id='media-models-js-extra'>
-/* <![CDATA[ */
-var _wpMediaModelsL10n = {"settings":{"ajaxurl":"\/wp-admin\/admin-ajax.php","post":{"id":0}}};
-/* ]]> */
-</script>
-<script type='text/javascript' src='/frontend/js/media-models.min.js' id='media-models-js'></script>
-<script type='text/javascript' id='wp-plupload-js-extra'>
-/* <![CDATA[ */
-var pluploadL10n = {"queue_limit_exceeded":"Has intentado poner en cola demasiados archivos.","file_exceeds_size_limit":"El tama\u00f1o del archivo %s excede el tama\u00f1o permitido en este sitio.","zero_byte_file":"Este archivo est\u00e1 vac\u00edo. Por favor, prueba con otro.","invalid_filetype":"Lo siento, este tipo de archivo no est\u00e1 permitido por motivos de seguridad.","not_an_image":"Este archivo no es una imagen. Por favor, prueba con otro.","image_memory_exceeded":"Memoria excedida. Por favor, prueba con otro archivo m\u00e1s peque\u00f1o.","image_dimensions_exceeded":"Supera el tama\u00f1o permitido. Por favor, prueba con otro.","default_error":"Ha habido un error en la subida. Por favor, int\u00e9ntalo m\u00e1s tarde.","missing_upload_url":"Ha habido un error de configuraci\u00f3n. Por favor, contacta con el  administrador del servidor.","upload_limit_exceeded":"Solo puedes subir 1 archivo.","http_error":"Respuesta inesperada del servidor. El archivo puede haber sido subido correctamente. Comprueba la biblioteca de medios o recarga la p\u00e1gina.","http_error_image":"El posproceso de la imagen ha fallado probablemente porque el servidor est\u00e1 ocupado o no tiene suficientes recursos. Puede ayudar el subir una imagen m\u00e1s peque\u00f1a. El tama\u00f1o m\u00e1ximo sugerido es de 2500 p\u00edxeles.","upload_failed":"Subida fallida.","big_upload_failed":"Por favor, intenta subir este archivo a trav\u00e9s del %1$snavegador%2$s.","big_upload_queued":"%s excede el tama\u00f1o m\u00e1ximo de subida del cargador de m\u00faltiples archivos del navegador.","io_error":"Error de entrada\/salida.","security_error":"Error de seguridad.","file_cancelled":"Archivo cancelado.","upload_stopped":"Subida detenida.","dismiss":"Descartar","crunching":"Calculando\u2026","deleted":"movidos a la papelera.","error_uploading":"Ha habido un error al subir \u00ab%s\u00bb","unsupported_image":"Esta imagen no se puede mostrar en un navegador web. Antes de subirla, para un mejor resultado, convi\u00e9rtela a JPEG."};
-var _wpPluploadSettings = {"defaults":{"file_data_name":"async-upload","url":"\/wp-admin\/async-upload.php","filters":{"max_file_size":"4194304000b","mime_types":[{"extensions":"jpg,jpeg,jpe,gif,png,bmp,tiff,tif,ico,heic,asf,asx,wmv,wmx,wm,avi,divx,flv,mov,qt,mpeg,mpg,mpe,mp4,m4v,ogv,webm,mkv,3gp,3gpp,3g2,3gp2,txt,asc,c,cc,h,srt,csv,tsv,ics,rtx,css,htm,html,vtt,dfxp,mp3,m4a,m4b,aac,ra,ram,wav,ogg,oga,flac,mid,midi,wma,wax,mka,rtf,js,pdf,class,tar,zip,gz,gzip,rar,7z,psd,xcf,doc,pot,pps,ppt,wri,xla,xls,xlt,xlw,mdb,mpp,docx,docm,dotx,dotm,xlsx,xlsm,xlsb,xltx,xltm,xlam,pptx,pptm,ppsx,ppsm,potx,potm,ppam,sldx,sldm,onetoc,onetoc2,onetmp,onepkg,oxps,xps,odt,odp,ods,odg,odc,odb,odf,wp,wpd,key,numbers,pages,redux"}]},"heic_upload_error":true,"multipart_params":{"action":"upload-attachment","_wpnonce":"a31c368ea8"}},"browser":{"mobile":false,"supported":true},"limitExceeded":false};
-/* ]]> */
-</script>
-<script type='text/javascript' src='/frontend/js/wp-plupload.min.js' id='wp-plupload-js'></script>
-<script type='text/javascript' src='/frontend/js/core.min.js' id='jquery-ui-core-js'></script>
-<script type='text/javascript' src='/frontend/js/widget.min.js' id='jquery-ui-widget-js'></script>
-<script type='text/javascript' src='/frontend/js/mouse.min.js' id='jquery-ui-mouse-js'></script>
-<script type='text/javascript' src='/frontend/js/sortable.min.js' id='jquery-ui-sortable-js'></script>
-<script type='text/javascript' id='mediaelement-core-js-before'>
-    var mejsL10n = {"language":"es","strings":{"mejs.download-file":"Descargar archivo","mejs.install-flash":"Est\u00e1s usando un navegador que no tiene Flash activo o instalado. Por favor, activa el componente del reproductor Flash o descarga la \u00faltima versi\u00f3n desde https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen":"Pantalla completa","mejs.play":"Reproducir","mejs.pause":"Pausa","mejs.time-slider":"Control de tiempo","mejs.time-help-text":"Usa las teclas de direcci\u00f3n izquierda\/derecha para avanzar un segundo y las flechas arriba\/abajo para avanzar diez segundos.","mejs.live-broadcast":"Transmisi\u00f3n en vivo","mejs.volume-help-text":"Utiliza las teclas de flecha arriba\/abajo para aumentar o disminuir el volumen.","mejs.unmute":"Activar el sonido","mejs.mute":"Silenciar","mejs.volume-slider":"Control de volumen","mejs.video-player":"Reproductor de v\u00eddeo","mejs.audio-player":"Reproductor de audio","mejs.captions-subtitles":"Pies de foto \/ Subt\u00edtulos","mejs.captions-chapters":"Cap\u00edtulos","mejs.none":"Ninguna","mejs.afrikaans":"Afrik\u00e1ans","mejs.albanian":"Albano","mejs.arabic":"\u00c1rabe","mejs.belarusian":"Bielorruso","mejs.bulgarian":"B\u00falgaro","mejs.catalan":"Catal\u00e1n","mejs.chinese":"Chino","mejs.chinese-simplified":"Chino (Simplificado)","mejs.chinese-traditional":"Chino (Tradicional)","mejs.croatian":"Croata","mejs.czech":"Checo","mejs.danish":"Dan\u00e9s","mejs.dutch":"Holand\u00e9s","mejs.english":"Ingl\u00e9s","mejs.estonian":"Estonio","mejs.filipino":"Filipino","mejs.finnish":"Fin\u00e9s","mejs.french":"Franc\u00e9s","mejs.galician":"Gallego","mejs.german":"Alem\u00e1n","mejs.greek":"Griego","mejs.haitian-creole":"Creole haitiano","mejs.hebrew":"Hebreo","mejs.hindi":"Indio","mejs.hungarian":"H\u00fangaro","mejs.icelandic":"Island\u00e9s","mejs.indonesian":"Indonesio","mejs.irish":"Irland\u00e9s","mejs.italian":"Italiano","mejs.japanese":"Japon\u00e9s","mejs.korean":"Coreano","mejs.latvian":"Let\u00f3n","mejs.lithuanian":"Lituano","mejs.macedonian":"Macedonio","mejs.malay":"Malayo","mejs.maltese":"Malt\u00e9s","mejs.norwegian":"Noruego","mejs.persian":"Persa","mejs.polish":"Polaco","mejs.portuguese":"Portugu\u00e9s","mejs.romanian":"Rumano","mejs.russian":"Ruso","mejs.serbian":"Serbio","mejs.slovak":"Eslovaco","mejs.slovenian":"Esloveno","mejs.spanish":"Espa\u00f1ol","mejs.swahili":"Swahili","mejs.swedish":"Sueco","mejs.tagalog":"Tagalo","mejs.thai":"Tailand\u00e9s","mejs.turkish":"Turco","mejs.ukrainian":"Ukraniano","mejs.vietnamese":"Vietnamita","mejs.welsh":"Gal\u00e9s","mejs.yiddish":"Yiddish"}};
-</script>
-<script type='text/javascript' src='/frontend/js/mediaelement-and-player.min.js' id='mediaelement-core-js'></script>
-<script type='text/javascript' src='/frontend/js/mediaelement-migrate.min.js' id='mediaelement-migrate-js'></script>
-<script type='text/javascript' id='mediaelement-js-extra'>
-/* <![CDATA[ */
-var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='/frontend/js/wp-mediaelement.min.js' id='wp-mediaelement-js'></script>
-<script type='text/javascript' id='wp-api-request-js-extra'>
-/* <![CDATA[ */
-var wpApiSettings = {"root":"http:\/\/localhost\/wp-json\/","nonce":"9083fccf66","versionString":"wp\/v2\/"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='/frontend/js/api-request.min.js' id='wp-api-request-js'></script>
-<script type='text/javascript' src='/frontend/js/wp-polyfill.min.js' id='wp-polyfill-js'></script>
-<script type='text/javascript' id='wp-polyfill-js-after'>
-( 'fetch' in window ) || document.write( '<script src="/frontend/js/wp-polyfill-fetch.min.js"></scr' + 'ipt>' );
-( document.contains ) || document.write( '<script src="/frontend/js/wp-polyfill-node-contains.min.js"></scr' + 'ipt>' );
-( window.DOMRect ) || document.write( '<script src="/frontend/js/wp-polyfill-dom-rect.min.js"></scr' + 'ipt>' );
-( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script src="/frontend/js/wp-polyfill-url.min.js"></scr' + 'ipt>' );
-( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="/frontend/js/wp-polyfill-formdata.min.js"></scr' + 'ipt>' );
-( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="/frontend/js/wp-polyfill-element-closest.min.js"></scr' + 'ipt>' );
-</script>
-<script type='text/javascript' src='/frontend/js/dom-ready.min.js' id='wp-dom-ready-js'></script>
-<script type='text/javascript' src='/frontend/js/i18n.min.js' id='wp-i18n-js'></script>
-<script type='text/javascript' id='wp-a11y-js-translations'>
-( function( domain, translations ) {
-	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
-	localeData[""].domain = domain;
-	wp.i18n.setLocaleData( localeData, domain );
-} )( "default", {"translation-revision-date":"2021-05-12 12:43:41+0000","generator":"GlotPress\/3.0.0-alpha.2","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"es"},"Notifications":["Avisos"]}},"comment":{"reference":"wp-includes\/js\/dist\/a11y.js"}} );
-</script>
-<script type='text/javascript' src='/frontend/js/a11y.min.js' id='wp-a11y-js'></script>
-<script type='text/javascript' src='/frontend/js/clipboard.min.js' id='clipboard-js'></script>
-<script type='text/javascript' id='media-views-js-extra'>
-/* <![CDATA[ */
-var _wpMediaViewsL10n = {"mediaFrameDefaultTitle":"Medios","url":"URL","addMedia":"A\u00f1adir medios","search":"Buscar","select":"Seleccionar","cancel":"Cancelar","update":"Actualizar","replace":"Reemplazar","remove":"Eliminar","back":"Volver","selected":"%d seleccionados","dragInfo":"Arrastra y suelta para reordenar los archivos de medios.","uploadFilesTitle":"Subir archivos","uploadImagesTitle":"Subir im\u00e1genes","mediaLibraryTitle":"Biblioteca de medios","insertMediaTitle":"A\u00f1adir medios","createNewGallery":"Crea una nueva galer\u00eda","createNewPlaylist":"Crear una nueva lista de reproducci\u00f3n","createNewVideoPlaylist":"Crear una nueva lista de reproducci\u00f3n de v\u00eddeo","returnToLibrary":"\u2190 Return to library","allMediaItems":"Todos los medios","allDates":"Todas las fechas","noItemsFound":"No se han encontrado elementos.","insertIntoPost":"Insertar en la entrada","unattached":"Sin adjuntar","mine":"M\u00edos","trash":"Papelera","uploadedToThisPost":"Subido a esta entrada","warnDelete":"Est\u00e1s a punto de borrar permanentemente este elemento de tu sitio.\nEsta acci\u00f3n es irreversible.\n\u00abCancelar\u00bb para parar, \u00abAceptar\u00bb para borrar.","warnBulkDelete":"Est\u00e1s a punto de borrar permanentemente estos elementos de tu sitio.\nEsta acci\u00f3n es irreversible.\n\u00abCancelar\u00bb para parar, \u00abAceptar\u00bb para borrar.","warnBulkTrash":"Est\u00e1s a punto de enviar a la papelera estos elementos.\n  \u00abCancelar\u00bb para parar, \u00abAceptar\u00bb para borrar.","bulkSelect":"Selecci\u00f3n en lotes","trashSelected":"Mover a la papelera","restoreSelected":"Restaurar de la papelera","deletePermanently":"Borrar permanentemente","apply":"Aplicar","filterByDate":"Filtrar por fecha","filterByType":"Filtrar por tipo","searchLabel":"Buscar","searchMediaLabel":"Buscar medios","searchMediaPlaceholder":"Buscar medios...","mediaFound":"N\u00famero de elementos de medios encontrados: %d","mediaFoundHasMoreResults":"N\u00famero de elementos de medios mostrados: %d. Haz scroll en la p\u00e1gina para ver m\u00e1s resultados.","noMedia":"No se han encontrado archivos de medios.","noMediaTryNewSearch":"No se han encontrado elementos de medios. Prueba con una b\u00fasqueda diferente.","attachmentDetails":"Detalles del adjunto","insertFromUrlTitle":"Insertar desde una URL","setFeaturedImageTitle":"Imagen destacada","setFeaturedImage":"Establecer la imagen destacada","createGalleryTitle":"Crear una galer\u00eda","editGalleryTitle":"Editar galer\u00eda","cancelGalleryTitle":"\u2190 Cancelar la galer\u00eda","insertGallery":"Insertar galer\u00eda","updateGallery":"Actualizar la galer\u00eda","addToGallery":"A\u00f1adir a la galer\u00eda","addToGalleryTitle":"A\u00f1adir a la galer\u00eda","reverseOrder":"Orden inverso","imageDetailsTitle":"Detalles de la imagen","imageReplaceTitle":"Reemplazar la imagen","imageDetailsCancel":"Cancelar la edici\u00f3n","editImage":"Editar la imagen","chooseImage":"Elige la imagen","selectAndCrop":"Seleccionar y recortar","skipCropping":"Omitir el recorte","cropImage":"Recortar la imagen","cropYourImage":"Recorta tu imagen","cropping":"Recortando\u2026","suggestedDimensions":"Dimensiones de imagen sugeridas: %1$s por %2$s p\u00edxeles.","cropError":"Se ha producido un error recortando la imagen.","audioDetailsTitle":"Detalles del audio","audioReplaceTitle":"Reemplazar el audio","audioAddSourceTitle":"A\u00f1adir el origen del audio","audioDetailsCancel":"Cancelar la edici\u00f3n","videoDetailsTitle":"Detalles del v\u00eddeo","videoReplaceTitle":"Reemplazar el v\u00eddeo","videoAddSourceTitle":"A\u00f1adir el origen del v\u00eddeo","videoDetailsCancel":"Cancelar la edici\u00f3n","videoSelectPosterImageTitle":"Seleccionar la imagen del p\u00f3ster","videoAddTrackTitle":"A\u00f1adir subt\u00edtulos","playlistDragInfo":"Arrastrar y soltar para reordenar las pistas.","createPlaylistTitle":"Crear una lista de reproducci\u00f3n de audio","editPlaylistTitle":"Editar la lista de reproducci\u00f3n de audio","cancelPlaylistTitle":"\u2190 Cancelar la lista de reproducci\u00f3n de audio","insertPlaylist":"Insertar la lista de reproducci\u00f3n de audio","updatePlaylist":"Actualizar la lista de reproducci\u00f3n de audio","addToPlaylist":"A\u00f1adir a la lista de reproducci\u00f3n de audio","addToPlaylistTitle":"A\u00f1adir a la lista de reproducci\u00f3n de audio","videoPlaylistDragInfo":"Arrastrar y soltar para reordenar los v\u00eddeos.","createVideoPlaylistTitle":"Crear una lista de reproducci\u00f3n de v\u00eddeo","editVideoPlaylistTitle":"Editar la lista de reproducci\u00f3n de v\u00eddeo","cancelVideoPlaylistTitle":"\u2190 Cancelar la lista de reproducci\u00f3n de v\u00eddeo","insertVideoPlaylist":"Insertar la lista de reproducci\u00f3n de v\u00eddeo","updateVideoPlaylist":"Actualizar la lista de reproducci\u00f3n de v\u00eddeo","addToVideoPlaylist":"A\u00f1adir a lista de reproducci\u00f3n de v\u00eddeo","addToVideoPlaylistTitle":"A\u00f1adir a lista de reproducci\u00f3n de v\u00eddeo","filterAttachments":"Filtrar los medios","attachmentsList":"Lista de medios","settings":{"tabs":[],"tabUrl":"http:\/\/localhost\/wp-admin\/media-upload.php?chromeless=1","mimeTypes":{"image":"Im\u00e1genes","audio":"Audio","video":"V\u00eddeo","application\/msword,application\/vnd.openxmlformats-officedocument.wordprocessingml.document,application\/vnd.ms-word.document.macroEnabled.12,application\/vnd.ms-word.template.macroEnabled.12,application\/vnd.oasis.opendocument.text,application\/vnd.apple.pages,application\/pdf,application\/vnd.ms-xpsdocument,application\/oxps,application\/rtf,application\/wordperfect,application\/octet-stream":"Documentos","application\/vnd.apple.numbers,application\/vnd.oasis.opendocument.spreadsheet,application\/vnd.ms-excel,application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application\/vnd.ms-excel.sheet.macroEnabled.12,application\/vnd.ms-excel.sheet.binary.macroEnabled.12":"Hojas de c\u00e1lculo","application\/x-gzip,application\/rar,application\/x-tar,application\/zip,application\/x-7z-compressed":"Archivos"},"captions":true,"nonce":{"sendToEditor":"c2cde7728e"},"post":{"id":0},"defaultProps":{"link":"none","align":"","size":""},"attachmentCounts":{"audio":1,"video":1},"oEmbedProxyUrl":"http:\/\/localhost\/wp-json\/oembed\/1.0\/proxy","embedExts":["mp3","ogg","flac","m4a","wav","mp4","m4v","webm","ogv","flv"],"embedMimes":{"mp3":"audio\/mpeg","ogg":"audio\/ogg","flac":"audio\/flac","m4a":"audio\/mpeg","wav":"audio\/wav","mp4":"video\/mp4","m4v":"video\/mp4","webm":"video\/webm","ogv":"video\/ogg","flv":"video\/x-flv"},"contentWidth":900,"months":[{"year":"2021","month":"5","text":"mayo 2021"},{"year":"2021","month":"3","text":"marzo 2021"},{"year":"2021","month":"1","text":"enero 2021"},{"year":"2020","month":"1","text":"enero 2020"}],"mediaTrash":0}};
-/* ]]> */
-</script>
-<script type='text/javascript' id='media-views-js-translations'>
-( function( domain, translations ) {
-	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
-	localeData[""].domain = domain;
-	wp.i18n.setLocaleData( localeData, domain );
-} )( "default", {"translation-revision-date":"2021-05-12 12:43:41+0000","generator":"GlotPress\/3.0.0-alpha.2","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"es"},"The file URL has been copied to your clipboard":["La URL del archivo ha sido copiada a tu portapapeles"],"%s item selected":["%s elemento seleccionado","%s elementos seleccionados"]}},"comment":{"reference":"wp-includes\/js\/media-views.js"}} );
-</script>
-<script type='text/javascript' src='/frontend/js/media-views.min.js' id='media-views-js'></script>
-<script type='text/javascript' id='media-editor-js-translations'>
-( function( domain, translations ) {
-	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
-	localeData[""].domain = domain;
-	wp.i18n.setLocaleData( localeData, domain );
-} )( "default", {"translation-revision-date":"2021-05-12 12:43:41+0000","generator":"GlotPress\/3.0.0-alpha.2","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"es"},"Could not set that as the thumbnail image. Try a different attachment.":["No se ha podido establecer como imagen de miniatura. Prueba con otro adjunto."]}},"comment":{"reference":"wp-includes\/js\/media-editor.js"}} );
-</script>
-<script type='text/javascript' src='/frontend/js/media-editor.min.js' id='media-editor-js'></script>
-<script type='text/javascript' src='/frontend/js/media-audiovideo.min.js' id='media-audiovideo-js'></script>
-<script type='text/javascript' src='/frontend/js/wp-embed.min.js' id='wp-embed-js'></script>
-<script type='text/javascript' src='/frontend/js/jspdf.min.js' id='lp-pdflib-js'></script>
-<script type='text/javascript' src='/frontend/js/pdf-function.js' id='lp-pdffunc-js'></script>
-<script>
-jQuery(document).ready(function(){
-    var geocoder =  new google.maps.Geocoder();
-    geocoder.geocode( { 'address': 'mexico'}, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-            // /alert("location : " + results[0].geometry.location.lat() + " " +results[0].geometry.location.lng()); 
-          } else {
-            //alert("Something got wrong " + status);
-          }
-        });
-    });
-</script>
+<!-- END: Body-->
 </html>

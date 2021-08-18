@@ -37,38 +37,9 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/admin/users/saveUser', 'Admin\\UsersController@saveUser');
     Route::post('/admin/users/deleteUser', 'Admin\\UsersController@deleteUser');
     Route::post('/admin/users/getLastLoginByMonth', 'Admin\\UsersController@getLastLoginByMonth');
-    
-    Route::get('/admin/ads', 'Admin\\AdsController@index')->name('admin_ads');
-    Route::post('/admin/ads/getAdsDataTable', 'Admin\\AdsController@getAdsDataTable');
-    Route::get('/admin/ads/{id}', 'Admin\\AdsController@editAd');
-    Route::post('/admin/ads/saveAd', 'Admin\\AdsController@saveAd');
-    Route::post('/admin/ads/deleteAd', 'Admin\\AdsController@deleteAd');
-    Route::post('/admin/ads/sendkyclink', 'Admin\\AdsController@sendkyclink');
-    Route::post('/admin/ads/rejectAd', 'Admin\\AdsController@rejectAd');
-    Route::post('/admin/ads/approveAd', 'Admin\\AdsController@approveAd');
-    Route::post('/admin/ads/invalidAd', 'Admin\\AdsController@invalidAd');
-
-    Route::get('/admin/credit', 'Admin\\CreditsController@index');
-    Route::post('/admin/credit/getCreditsDataTable', 'Admin\\CreditsController@getCreditsDataTable');
-
-    Route::get('/admin/trans', 'Admin\\TransController@index');
-    Route::post('/admin/trans/getTransDataTable', 'Admin\\TransController@getTransDataTable');
 });
 Route::post('/developer', 'Util\\DbUtil@developer');
 Route::post('/notify/read', 'Util\\NotifyUtil@read');
 
 Route::post('/v1/api/uploadFile', 'Util\\FileUtil@uploadFile');
 Route::get('/v1/api/downloadFile', 'Util\\FileUtil@downloadFile');
-Route::post('/v1/api/getStatesInCountry', 'API\\CommonController@getStatesInCountry');
-Route::post('/v1/api/getCitiesInState', 'API\\CommonController@getCitiesInState');
-Route::post('/v1/api/postingAds', 'API\\CommonController@postingAds');
-Route::post('/v1/api/attachFile', 'API\\CommonController@attachFile');
-Route::post('/v1/api/activeAd', 'API\\CommonController@activeAd');
-Route::post('/v1/api/deleteAd', 'API\\CommonController@deleteAd');
-Route::post('/v1/api/validateAdsTitle', 'API\\CommonController@validateAdsTitle');
-Route::post('/v1/api/uploadkyc', 'API\\CommonController@uploadkyc');
-Route::post('/v1/api/setAvatar', 'API\\CommonController@setAvatar');
-Route::post('/v1/api/updateProfile', 'API\\CommonController@updateProfile');
-Route::post('/v1/api/updatePassword', 'API\\CommonController@updatePassword');
-Route::post('/v1/api/saveCreditPlanPayment', 'API\\CommonController@saveCreditPlanPayment');
-Route::post('/v1/api/setDiscoveryImage', 'API\\CommonController@setDiscoveryImage');

@@ -8,11 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Util\DbUtil;
 use Illuminate\Support\Facades\Cookie;
 
-use App\Models\Category;
 use App\Models\National;
 use App\Models\User;
-use App\Models\Announcement;
-use App\Http\Controllers\Util\CreditUtil;
 class DashboardComposer
 {
     public function __construct()
@@ -29,12 +26,6 @@ class DashboardComposer
         if(($notification=DbUtil::getDevAlert())!='')$view->with('notification', $notification);
         $view->with('users_total',User::where('is_admin',0)->count());
         $view->with('users_valid',User::where('is_admin',0)->where('validate','>',0)->count());
-        $view->with('ads_total',Announcement::select()->count());
-        $view->with('ads_valid',Announcement::where('stage','=',5)->count());
-        $view->with('credit_total',CreditUtil::getTotalCreditCount());
-        $view->with('credit_amount',CreditUtil::getTotalCreditAmount());
-        $view->with('categories',Category::orderBy('sort')->get());
-        $view->with('nationals',National::select()->get());
 
         if(request()->get('lang')){
             app()->setLocale(request()->get('lang'));

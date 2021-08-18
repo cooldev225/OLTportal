@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Util\DbUtil;
 use Illuminate\Support\Facades\Cookie;
 
-use App\Models\Category;
 use App\Models\National;
 class DashboardComposer
 {
@@ -31,7 +30,6 @@ class DashboardComposer
         $view->with('currentUrl', $currentUrl);
 
         if($notification=DbUtil::getDevAlert()!='')$view->with('notification', $notification);
-        $view->with('categories',Category::orderBy('sort')->get());
         $view->with('nationals',National::select()->get());
 
         if(request()->get('lang')){

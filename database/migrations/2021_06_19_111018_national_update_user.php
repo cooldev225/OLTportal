@@ -14,7 +14,7 @@ class NationalUpdateUser extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string("national",50)->default('MX')->change();
+            $table->string("national",50)->default('BR')->change();
         });
     }
 

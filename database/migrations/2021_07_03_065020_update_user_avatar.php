@@ -15,7 +15,6 @@ class UpdateUserAvatar extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
         });
-        DB::statement('ALTER TABLE `announcement_states` CHANGE `body` `body` LONGBLOB NULL DEFAULT NULL;');
         DB::statement('ALTER TABLE `users` CHANGE `avatar` `avatar` BLOB NULL DEFAULT NULL;');
     }
 

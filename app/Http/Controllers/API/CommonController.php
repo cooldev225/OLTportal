@@ -10,10 +10,7 @@ use App\Http\Controllers\Util\FileUtil;
 use App\Models\Country;
 use App\Models\State;
 use App\Models\City;
-use App\Models\Announcement;
-use App\Models\AnnouncementState;
 use App\Models\User;
-use App\Models\CreditHistory;
 use DB;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Helper\MailHelper;
@@ -44,149 +41,6 @@ class CommonController extends Controller
         $query=City::where('state_id',$state->id);//->where('name','!=',$state->name);
         if($q!='')$query=$query->whereRaw("name like '%{$q}%'");
         return $query->orderBy('id')->get();
-    }
-    public function postingAds(Request $request){
-        $id=$request->input('id');
-        $userid=$request->input('userid');
-        $title=$request->input('title');
-        $category=$request->input('category');
-        $state=$request->input('state');
-        $city=$request->input('city');
-        $street=$request->input('street');
-        $description=$request->input('description');
-        $emailable=$request->input('emailable');
-        $callable=$request->input('callable');
-        $whatsable=$request->input('whatsable');
-        //if($id==0){
-            if(Announcement::where('title',$title)->where('id','!=',$id)->count())
-                return json_encode(array('status'=>'error','msg'=>'double_title','id'=>0));
-        //}
-        $announcement=$id>0?Announcement::find($id):new Announcement;
-        $announcement->updated_by=Auth::id();
-        $announcement->updated_at=date("Y-m-d H:i:s");    
-        $is_update=$announcement->stage;  
-        if($emailable==null){
-            $announcement->userid=$userid;
-            $announcement->title=$title;
-            $announcement->category=$category;
-            $announcement->state=$state;
-            $announcement->city=$city;
-            $announcement->street=$street;
-            $announcement->description=$description;
-        }else{
-            $announcement->stage=1;
-            $announcement->emailable=$emailable=='true'?1:0;
-            $announcement->callable=$callable=='true'?1:0;
-            $announcement->whatsable=$whatsable=='true'?1:0;
-        }
-        if($id==0){
-            $announcement->created_by=$announcement->updated_by;        
-            $announcement->created_at=$announcement->updated_at;
-        }
-        $announcement->save();
-        if($id&&!$is_update){
-            try{
-                $body=$request->input('body');                
-                $user=User::find($announcement->userid);
-                $fromemail=$user->email;
-                $toemail=config('mail.from.address');
-                $token=Crypt::encryptString("{$toemail}###SUPERADMIN");
-                $body="please check new posting of an ad in admin panel.(<a href=\"http://www.gtabu.com/admin/login?token={$token}\">aquí.</a>)";
-                AnnouncementState::create([
-                    'userid'=>$announcement->userid,
-                    'adid'=>$id,
-                    'kind'=>1,
-                    'params'=>$announcement->title,
-                    'body'=>$body,
-                    'fromemail'=>$fromemail,
-                    'toemail'=>$toemail,
-                    'created_by'=>$announcement->userid,
-                    'updated_by'=>$announcement->userid,
-                    'created_at'=>date('Y-m-d H:i:s'),
-                    'updated_at'=>date('Y-m-d H:i:s'),
-                ]);
-
-                $mailData = new MailData();
-                $mailData->template='temps.common';
-                $mailData->fromEmail = $fromemail;
-                $mailData->userName = 'Gtubu Support';
-                $mailData->toEmail = $toemail;
-                $mailData->subject = $announcement->title;
-                $mailData->mailType = 'MAGIC_LINK_TYPE';
-                $mailData->content = $body;
-                Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
-            }catch(ConnectException $e){}
-        }
-        return json_encode(array('status'=>'success','msg'=>'ok','id'=>$announcement->id,'is_update'=>$is_update));
-    }
-    public function uploadkyc(Request $request){
-        $id=$request->input('id');
-        $userid=$request->input('userid');
-        //$file=str_replace('data:image/png;base64,','',$request->input('file'));
-        $file=$request->file('file')->store('upload/avatar/kyc');
-        $toemail=config('mail.from.address');
-        $user=User::find($userid);
-        $fromemail=$user->email;
-        $token=Crypt::encryptString("{$toemail}###SUPERADMIN");
-        $body="The User sent a KYC photo.<br>Please check admin panel(<a href=\"http://www.gtabu.com/admin/login?token={$token}\">aquí</a>).";
-        AnnouncementState::create([
-            'userid'=>$userid,
-            'adid'=>$id,
-            'kind'=>4,
-            'params'=>'',
-            'body'=>$file,
-            'fromemail'=>$fromemail,
-            'toemail'=>$toemail,
-            'created_by'=>Auth::id(),
-            'updated_by'=>Auth::id(),
-            'created_at'=>date('Y-m-d H:i:s'),
-            'updated_at'=>date('Y-m-d H:i:s'),
-        ]);
-
-        $ann=Announcement::find($id);
-        $ann->stage=4;
-        $ann->updated_by=Auth::id();
-        $ann->updated_at=date('Y-m-d H:i:s');
-        $ann->save();
-
-        $mailData = new MailData();
-        $mailData->template='temps.common';
-        $mailData->fromEmail = $fromemail;
-        $mailData->userName = 'Gtubu Support';
-        $mailData->toEmail = $toemail;
-        $mailData->subject = 'KYC photo arrived';
-        $mailData->mailType = 'MAGIC_LINK_TYPE';
-        $mailData->content = $body;
-        Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
-
-        $mailData = new MailData();
-        $mailData->template='temps.common';
-        $mailData->fromEmail = $toemail;
-        $mailData->userName = 'Gtubu Support';
-        $mailData->toEmail = $fromemail;
-        $mailData->subject = 'KYC photo uploaded';
-        $mailData->mailType = 'MAGIC_LINK_TYPE';
-        $mailData->content = 'Su fotografía se encuentra en revisión, espere nuestra respuesta de confirmación, si no le llega el correo no olvide buscar en su bandeja de correo no deseado.';
-        Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
-        
-        return json_encode(array('status'=>'success','msg'=>'ok'));
-    }
-    public function activeAd(Request $request){
-        $ann=Announcement::find($request->input('id'));
-        $ann->active=$request->input('active')=='true'?1:0;
-        $ann->save();
-        return json_encode(array('status'=>'success','msg'=>'ok'));
-    }
-    public function deleteAd(Request $request){
-        Announcement::find($request->input('id'))->delete();
-        //delete related uploading files here later!!!
-        return json_encode(array('status'=>'success','msg'=>'ok'));
-    }
-    public function validateAdsTitle(Request $request){
-        $res=true;
-        if(Announcement::where('title',$request->input('title'))->count())$res=false;
-        //delete related uploading files here later!!!
-        return json_encode(array('status'=>'success','valid'=>$res));
     }
     public function attachFile(Request $request){
         $res=json_encode(array('msg'=>'error'));
@@ -251,23 +105,6 @@ class CommonController extends Controller
         Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
 
         exit(json_encode(array('msg'=>'ok')));
-    }
-    public function saveCreditPlanPayment(Request $request){
-        $userid=$request->input('userid');
-        $plans=$request->input('plans');
-        $amount=$request->input('amount');
-        $method=$request->input('method');
-        $adid=$request->input('adid');
-        $id=CreditHistory::firstOrCreate(array(
-            'adid'=>$adid,
-            'userid'=>$userid,
-            'plans'=>$plans,
-            'amount'=>$amount,
-            'method'=>$method,
-            'created_at'=>date('Y-m-d H:i:s'),
-            'updated_at'=>date('Y-m-d H:i:s'),
-        ));
-        exit(json_encode(array('msg'=>'ok','id'=>$id)));
     }
     public function setDiscoveryImage(Request $request){
         FileUtil::setFlag($request->input('id'),1);

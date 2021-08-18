@@ -1,45 +1,6 @@
-<footer class="text-center footer-style1">
-	<div class="footer-bottom-bar">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<!-- company info -->
-					<ul class="footer-about-company">
-						<li>Copyright © 2021 Lust Finder</li>
-						<li>Miguel Hidalgo 2404, Centro, 64000 Monterrey, N.L.</li>
-						<li>Tel +52 (81) 8877-6666</li>
-					</ul>
-					<p class="credit-links">Elaborado por <a href="http://www.reynoweb.com/" target="_blank">Reynoweb</a></p>				<!-- social shares -->
-					<ul class="social-icons footer-social-icons">
-						<li>
-							<a href="#" target="_blank">
-								<img class="icon icons8-facebook" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAC10lEQVRoQ+1ai3HTQBTc7QAqgFQQqADoAFcAHZBUAFRAUgGkApIKCBUkqYCkA6hgmVXuPGf7ZF0snyTP6GY8ceyT7+17+z7Se0TLkvQBwFsAr8KrbesQn98C8OuS5FXuQK5/KOk9gG8AXg4h4Q5n3AM4JXmZXrsCRJIBnIQNDwDOAFyTtDZGW5LMCrPDsr0IgpyRPI1CLYFIstCfwhdG7P8ntyQZjBXudU6yUXwDJNDpZ/jy9dgW6NJesNBN2LcwzSKQP8EnJmuJjC9Hy9yTPKKkjwC+A3ggOVUHzxpJkh3fPrMwkB8AHGoPxhoRVeIvFwZirjkqTN43MvSy3Jb/1kDUeD25kVO6nG4K3y/lHwNIqBqceK3R1C+vAZj3zlu/S6LnKEBC2HSYLw0qTUTaZvnBgQQQvwA8s7YBOMi4dvqbOK+zt0H6rwNQJ+XHABKDygVJh/ytq5TygwJJKofiXDVVIE/OVVMF4mj0BsA7kn6/XJLsM58BOIptBIGutDA0tVpzVVJZZH3mkIA0IHPW6goIoXJ/VFIpF0t+tG3PtjP6nj8lavUqkaoDiQekVsrxPbdvzbLP06SZKRzrUmtfQEZ39j7cl+QSxeWMC0e/b12DUatLozkJJX0JuaWznJk6kFgJfCVpUAdrkdZK4FCd/Yikb7TGt0iP8PuPpOuwrau6j6Snz5m9yxyPT0nrJsTZIgVWyCqpTwYuPXP2kQJNzT5SoKSNLTO1CrQ2U6tASTO1eilJkh/hH9ds9NRy9qQpejdI660ikNgQbVpvflTpnkVnL2IX0/uaikBiN3oR29OxO1qlIVoDSNIIbZ7wDzIwsG8grQMDwfzpCMcJyfNdqdR6X51puD61aJXkMZM4XrI6whEPXptHMd18QVFTsui+ekcgwQJuS9i5Y+thCcJnt405GUCcwtmXYfb1O55aMmPax5zWblgczWIL2XlmzHWXDJ6tAIhC/QfJdOM+5ZDCYAAAAABJRU5ErkJggg==" alt="facebook">				
-							</a>
-						</li>
-						<li>
-							<a href="#" target="_blank">
-								<img class="icon icons8-tw-footer" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADKUlEQVRoge2Z0XWrMAyGOwIjMAIbXDZoNkg2aDYIGzQbwAbJBnSDZIOyQbPBdx8s1wKcYMAhfeA/h4emtqRfkmUh3t5WrFix4tkAUuAdOMjzAfx7tV3BALbAhfv4EWLJgIwa2Pj+mQOnRwJmEsiAb2XwDTgDhTxH4NohtFP7EyGgZVQ+RXbBJTYZYCOGATReT7q1KVApY8sHEcx8ijSikZFIWBLViH25RE3jS8k6+zZZD1QqvFHIqEgHk1B7M0zabSRSpSL1KTbWPmU5Jhc1meyBriFDCuvJqTJEToI53D40eqFFojae5bfWoRtpwK+DZhI548et5Wj7q0fAUW2qgXSE8qznselENpi036so03Mw7lD10giTbo3aXIYQUgqPc4komR93ScgCGzpvWZRU09GxhPIAIkUkElp/n4Qs2suCfklrr+vWeDDn4BPTbiRqbWwiFvmjRYlKrzRAaCoe6tZ5MMWhxh30qERCFloPXkYqyOm3FxrVVOM7eoaJSGqclPJyhsIcU2VsDzX5HurIDSLiQ/Seayok9YOI2Fzv5vzd5m5JSJRhqEPANGMAO8xFtgH2y5g5DLELBqqqPuiPF74IuJL/2LmYcmqRLmNeOHClfLhwKNb14OIFgevZbqEbElxPNbn8xgau66jGbMpU5Sr/QvlVaTWugnbI2IlG+hwzB22xr+DN1M3WCxrR2vERttRB1erO5r2HxOJEcJfgbVKKo9oBIZW/4qzgRkDFHCG2FH+/iIS9oJtZ+mlPUuolyeDuDZg5tNACbfWaNRYaoTNRKVXFFJzSfmGqMa+0TyGFeye6PiULJGd9r7XR2nzcFLE9q3oG6A8eohBZjISkU60INDEOIu1RaHwSuK9Jn/S/aRQx8leKySUKCTlcdnxT40b2XTSxCIjeg5J9ZW4vx/0RzhUzfdzPVtLWt+1E+BjFOZKj3Yp0At4j2G11pBIBTeCLGJedR5lvtvuDqSbbsV7D5P+B/jeNhomfKEZBCO3upJw9SyfcJ2X7lLTHpF1UT4lAIKkUc0bOtD8rhOCKifCGP/CW2YIQy+XZ4Uaihfyds0A/tmLFgvgPcxT6AgmLZxoAAAAASUVORK5CYII=" alt="tw-footer">				
-							</a>
-						</li>
-						<li>
-							<a href="#" target="_blank">
-								<img class="icon icons8-instagram" src="data:image/png;base64,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" alt="instagram">				
-							</a>
-						</li>
-						<li>
-							<a href="#" target="_blank">
-								<img class="icon icons8-ytwite" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAEDElEQVRoQ+2a+1XVQBDGv6kAqECpQKhAqECoQKlArUCoQKhAqACsQKxArUCoQKlgPL89uzmbzeM+kvvE/YeEbLLzzePb2Zlr2pJhW4JDzwOIu7+XdCLpaMWWu5d0Z2ZXXXK0WsTdDyTdSnq5YgDl8g+STs3sZ/mgASSC+CZpV9J3SZeS7s3s7ypAuTty4BHnkl5JQo7jEkwbkN/REjdm9m4Vwnet6e7Xkt5KejCz/XxeDYi7f5D0GUuYWW9cuDvmRUNXZsZ7yhb6ZWa45+gjW/fMzAAWRgmEoHod/fCuTwp3x1pfMLWZ7UUgf6JL1hYZE427Qz7Eb03ZJRCPi+5NionouwTfDsDjeyzwhGtOen9ecHFdFCYzq+RvBZJPmGCV5LM3cR7+W8WWu3/KqBvCuIiWg0wQ5LjtfhJIdw8KHxMIcfAjMgnfhmEOYRR3h2UA8hgFeyHpwszOS0HaBJugwHGBRG2moOe2CnJ3T/ES4kcS94Ft1hVICnqErYK8T9h1BYI7heCTVJHExgGJ7tXw2W0CQiqxk5glAnsys90cZEyJIIwaCy092Hsskqg5baxsZIGa3T2AJKOF5STBaGsBhIwAQaq0Jm5cUHDK1wB2zkYZqZm0Bsbj73pYZNIGNvbz0TfEsQWc9nv/gSRNuTsnxjcxf2L/SIPredN24iQ/tHFNzH01M5LSxhhkEXcnkMlucwDTesM88wDEsTYQST7mBhIZiJPjskAkuQGzXx4JhgDJ86l5tDvkncYhbQiQtLmFNLzDb1Pa3nhc7O6zgmrUDoYASUfgVQBp1A+GAElni0qbs2h5lrkt5qpqAhl7znewShrIF2kRLhxj46mQv9V9NpfgxU2hVVyRfItB/SyxE+xIAaShtKUAKYHl99n1QSqsZdUQ9gsSymq4O8kk+1UYZQ1hiGul6kqna00JhJoZFZbTrBqSzvgpcTyMGy90v7ZAar6NZvsUsJFAyiDP43IdXavPIpSO8lHtV5sGJMUhDMaomGtMIHntqhaAHUWGvL41KQ5C5aWrWNFWUB/CWmlnn4a12AcoxIUUvAhojgGw1n3GTCGXip0AqPYyZtqhrDo2kJRrdQKR9DEKgbC3ZkZRoQRC9Z55WIBrktFauh5B8Cx1y0bNtTYz+80rhlGrnENSC6FkykXeN1oU07YVOhs9sZDG85QfLRIA3wbEUdkrzBpMvY2e1HqjlxF6F/mI2iAv4nxentHx6VBom2EgbNmhxfL877qtWeTupDKs3d16i27EhxCID53NINTCp2YE8WhmtdZ5V3s6uRCaYYfFjKtsT7M5IgeWaHW5vh8MkErP6iqLtgrdr5OpfjBQxAQxQ0zUDjqLlrbl+6QtuHrVji7nPI8f1axA83MvuTUW+QfxxcBgugWIhAAAAABJRU5ErkJggg==" alt="ytwite">				
-							</a>
-						</li>
-						<li>
-							<a href="#" target="_blank">
-								<img class="icon icons8-tumbler" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADeUlEQVRoQ+2ajXHTQBCF91UAVACpAKgAOgBXQFIBSQWECkgqIKkgSQWECnAqIKmApIJlPs2d5uScrL8jthndjMdjSzrtu919tz8naxnu/snM3pvZm/Bpu/Up/l+aGZ9LSVe5F2r1T3f/aGbfzOzVU0g44h23ZnYk6TJ9tgHE3QFwGG64M7MTM7uWxGpsbLg7VoF1INvLIMiJpKMoVA3E3RH6c7gAYn5v3XB3wLDgjFNJ1cJXQII5XYSLbzetga7VCxr6Fe5bYGYRyO/gE1uriYwvR83cStqTu++b2Xczu5O0rQ6eVZK74/j4zAIgZ2YG1e6MNiKqxF/OAYKtwQqTfcPdj83sS2b5aqfssv8h1xNfWQLEK6+XHu0pQyYNpPHHzJ7nnisxf27eWv5SQNwdAAB5kFSDKTV/26L+CyBEBFD4T0lsXtXYRSBZ0tgpIInTPbAfSbrfOY0E34D52IO+SoK56rETGnF3hMcvoO8bSXw3xtYDCfkKgSUMdUN0mprUqmmtofIzSQdDqf6R6Q5dseAPRJ+RmUh09nMgAmtdm9m7dYJO2WNG06+7xwCTfOVYEmw1agxdxKIbYomXl2S0KRopGdJMnmsGEldgxV6pbixabPhHQgxZX9qUs6e5fS1YmzAtwFNA55JI7kaN0aY1dMMrSQ5FWWsGUiBxmzXSx/u6fKDrep93rLtndvbZ2WdnX+9Fs4+M8BF6K6+r+uxKcyYkXiRotDMIVRrNmz6MVlIjUdBsyTWpz1JZoYJO4Zlcn/yeWlgsnN9LetFH+PSekkBYxQ9mdtCWLSaF8pycZJpVF2pMFFwSSOxTXElihbMjNJOiBtAKH8L/5ZRNsySQWPMFwJ4kBBw0tgJIcNhYLm1NsHqFGSP2mmIaCUBwWJz+mZn1rlO5O4xFP4XvRhW/r0pTIGtZZ8CECIPjAwbzonRK9bFubbs79S1MkXvjYQReQc2Y2tgg+k1qzjdFW29hYoSJvfCudYCxMEt65nXhu+uheH219Rb7GlV3tO8kHTZPDs68rDoaioPSKtqKxzEmHURIioWL2J6O3dGdaYgm2qi60f/XgYHAPGmZ51DSaQkzKz2HuxOXxeMlzSMcifOkYDA3ftMTnGTLU8EEEoHxiCJibNZoebcdcwJAX+aZKufQ52E6LKb9mFM6YxIbEaUShm9ywHaR6bJ7zV8Cie0+55PMmQAAAABJRU5ErkJggg==" alt="tumbler">				
-							</a>
-						</li>				
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /footer-bottom-bar -->
-</footer>   
+<!-- BEGIN: Footer-->
+<footer class="footer footer-static footer-light">
+	<p class="clearfix mb-0"><span class="float-md-start d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2021<a class="ms-25" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a><span class="d-none d-sm-inline-block">, All rights Reserved</span></span><span class="float-md-end d-none d-md-block">Hand-crafted & Made with<i data-feather="heart"></i></span></p>
+</footer>
+<button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
+<!-- END: Footer-->
