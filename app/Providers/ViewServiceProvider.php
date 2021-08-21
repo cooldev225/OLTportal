@@ -26,19 +26,20 @@ class ViewServiceProvider extends ServiceProvider
     {
         View::composer(
             [
-                'frontend.layouts.home',
+                'frontend.layouts.dashboard',
                 'frontend.home',
-                'frontend.listing',
-                'frontend.listingview',
+                'frontend.auth.login',
+                'frontend.auth.forgot',
+                'frontend.auth.register',
+                'frontend.home',
+                'frontend.waiting',
+                'frontend.chart',
+                'frontend.log',
+                'frontend.onu',
+                'frontend.onu_edit',
+                'frontend.setting',
             ],
             'App\Http\Binds\HomeComposer'
-        );
-        View::composer(
-            [
-                'frontend.layouts.dashboard',
-                'frontend.ads',
-            ],
-            'App\Http\Binds\DashboardComposer'
         );
         View::composer(
             [

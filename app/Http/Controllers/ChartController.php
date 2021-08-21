@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Country;
 use App\Models\State;
 use App\Models\City;
-class HomeController extends Controller
+class ChartController extends Controller
 {
     public function __construct()
     {
@@ -19,7 +19,7 @@ class HomeController extends Controller
     }
     public function index(Request $request)
     {
-        return view('frontend.home',[
+        return view('frontend.chart',[
 //            'announcements'=>$anns
         ]);
     }

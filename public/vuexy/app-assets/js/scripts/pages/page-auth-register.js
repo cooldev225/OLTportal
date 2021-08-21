@@ -27,17 +27,57 @@ $(function () {
         $(element).valid();
       }, */
       rules: {
-        'register-username': {
+        'firstName': {
           required: true
         },
-        'register-email': {
+        'cnpj': {
+          required: true,
+        },
+        'email': {
           required: true,
           email: true
         },
-        'register-password': {
+        'phone': {
+          required: true
+        },'privacy-policy': {
           required: true
         }
       }
     });
   }
+
+  pageResetForm.on('submit',function(e){
+    e.preventDefault();
+    var form_data = new FormData();
+    form_data.append('firstName',$('#firstName').val());
+    form_data.append('cnpj',$('#cnpj').val());
+    form_data.append('email',$('#email').val());
+    form_data.append('phone',$('#phone').val());
+    $.ajax({
+        url: '/register',
+        headers: {
+            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        },
+        data: form_data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        type: 'POST',
+        dataType: "json",
+        success: function (response) {
+            if(!response.loggedin){
+              $('.alert-danger').html(response.message);
+              $('.alert-danger').fadeIn();
+              $('.alert-normal').fadeOut();
+            }else{
+              $('.alert-danger').fadeOut();
+              $('.alert-normal').fadeIn();
+              location.href='/login';
+            }
+        },
+        error: function (response) {
+
+        }
+    });
+  });
 });

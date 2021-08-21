@@ -27,7 +27,7 @@ $(function () {
         $(element).valid();
       }, */
       rules: {
-        'forgot-password-email': {
+        'email': {
           required: true,
           email: true
         }

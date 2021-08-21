@@ -1,6 +1,11 @@
-@extends('backend.layouts.dashboard')
+@extends('frontend.layouts.dashboard')
 @inject('dateFormat', 'App\Services\DateService')
 @section('content')
+<link rel="stylesheet" type="text/css" href="/vuexy/app-assets/vendors/css/charts/apexcharts.css">
+<link rel="stylesheet" type="text/css" href="/vuexy/app-assets/vendors/css/extensions/toastr.min.css">
+<link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/pages/dashboard-ecommerce.css">
+<link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/plugins/charts/chart-apex.css">
+<link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/plugins/extensions/ext-component-toastr.css">
 <!-- BEGIN: Content-->
 <div class="app-content content ">
     <div class="content-overlay"></div>
@@ -740,5 +745,15 @@
     </div>
 </div>
 <!-- END: Content-->
-<script type="text/javascript" src="/backend/js/home.js"></script>
+
+<!-- BEGIN: Page Vendor JS-->
+<script src="/vuexy/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+<script src="/vuexy/app-assets/vendors/js/extensions/toastr.min.js"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Page JS-->
+<script src="/vuexy/app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
+<!-- END: Page JS-->
+
+<script type="text/javascript" src="/frontend/js/home.js"></script>
 @endsection

@@ -20,5 +20,5 @@ return [
     'forgotten'=>'Palavra-chave esquecida ?',
     'enteremail'=>'Insira seu e-mail para redefinir sua senha',
     'right-panel-text'=>"Experiência do usuário e design de interface, estratégia de produto, soluções de SaaS para aplicativos da Web",
-    'right-panel-title'=>"Portal do cliente Gtubu",
+    'right-panel-title'=>"Portal do cliente MiHUB OLT",
 ];

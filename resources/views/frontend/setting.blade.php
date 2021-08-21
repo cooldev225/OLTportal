@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/pages/dashboard-ecommerce.css">
 <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/plugins/charts/chart-apex.css">
 <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/plugins/extensions/ext-component-toastr.css">
+<link rel="stylesheet" type="text/css" href="/vuexy/app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
 <link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/plugins/forms/pickers/form-flat-pickr.css">
 <!-- BEGIN: Content-->
 <div class="app-content content ">
@@ -174,6 +175,7 @@
 <!-- BEGIN: Page Vendor JS-->
 <script src="/vuexy/app-assets/vendors/js/charts/chart.min.js"></script>
 <script src="/vuexy/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+<script src="/vuexy/app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
 <script src="/vuexy/app-assets/vendors/js/extensions/toastr.min.js"></script>
 <!-- END: Page Vendor JS-->
 

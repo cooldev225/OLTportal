@@ -4,7 +4,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Gtubu</title>
+  <title>MiHUB OLT</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style type="text/css">
   @media screen {
@@ -190,7 +190,7 @@
           <!-- start copy -->
           <tr>
             <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-bottom: 3px solid #d4dadf">
-              <p style="margin: 0;">Gracias,<br>El equipo de soporte de Gtubu</p>
+              <p style="margin: 0;">Gracias,<br>El equipo de soporte de MiHUB OLT</p>
             </td>
           </tr>
           <!-- end copy -->
@@ -226,7 +226,7 @@
           <tr>
             <td align="center" bgcolor="#e9ecef" style="padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #666;">
               <!-- <p style="margin: 0;">To stop receiving these emails, you can <a href="https://sendgrid.com" target="_blank">unsubscribe</a> at any time.</p> -->
-              <p style="margin: 0;">© 2020 Gtubu. Reservados todos los derechos</p>
+              <p style="margin: 0;">© 2020 MiHUB OLT. Reservados todos los derechos</p>
             </td>
           </tr>
           <!-- end unsubscribe -->

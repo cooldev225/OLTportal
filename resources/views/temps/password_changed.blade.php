@@ -241,7 +241,7 @@
           <!-- start copy -->
           <tr>
             <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-bottom: 3px solid #d4dadf">
-              <p style="margin: 0;">Thanks,<br>The Gtubu support team</p>
+              <p style="margin: 0;">Thanks,<br>The MiHUB OLT support team</p>
             </td>
           </tr>
           <!-- end copy -->
@@ -278,7 +278,7 @@
           <tr>
             <td align="center" bgcolor="#e9ecef" style="padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #666;">
               <!-- <p style="margin: 0;">To stop receiving these emails, you can <a href="https://sendgrid.com" target="_blank">unsubscribe</a> at any time.</p> -->
-              <p style="margin: 0;">© 2020 Gtubu. All rights reserved</p>
+              <p style="margin: 0;">© 2020 MiHUB OLT. All rights reserved</p>
             </td>
           </tr>
           <!-- end unsubscribe -->

@@ -21,7 +21,7 @@ return [
     'forgotten'=>'Forgotten password ?',
     'enteremail'=>'Enter your email to reset your password',
     'right-panel-text'=>"",//User Experience & Interface Design, Product Strategy, Web Application SaaS Solutions",
-    'right-panel-title'=>"Gtubu Admin Panel",
+    'right-panel-title'=>"MiHUB OLT Admin Panel",
 
 
 

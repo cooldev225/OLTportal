@@ -14,7 +14,7 @@ use App\Models\City;
 class User extends Authenticatable
 {
     use Notifiable;
-    protected $fillable = ['username','email','password','national','phone_mobile','sms_allow','remember_token','is_admin'];
+    protected $fillable = ['username','firstName','email','password','national','phone_mobile','sms_allow','remember_token','is_admin'];
     public function roles()
     {
         //return $this->belongsToMany('App\Models\RoleUser','user_id');

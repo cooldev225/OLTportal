@@ -4,17 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\AdminAuthenticate;
 
-Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/listing', 'HomeController@listing')->name('listing');
-Route::get('/listing/{id}', 'HomeController@adview');
-Route::get('/ads', 'HomeController@ads')->name('ads');
-Route::get('/credit', 'HomeController@credit')->name('credit');
-Route::get('/profile', 'HomeController@profile')->name('profile');
-Route::get('/ads/kyc', 'HomeController@kycupload')->name('kycupload');
 Auth::routes();
 Route::get('/login', 'AuthController')->name('login');
 Route::post('/login', 'AuthController@login');
+Route::get('/register', 'AuthController@register')->name('register');
+Route::post('/register', 'AuthController@register');
 Route::post('/logout', 'AuthController@logout');
 Route::get('/forgot', 'AuthController@forgot')->name('forgot');
 Route::post('/forgot', 'AuthController@forgot');
@@ -26,6 +20,21 @@ Route::post('/admin/logout', 'Admin\\AuthController@logout');
 Route::get('/admin/forgot', 'Admin\\AuthController@forgot')->name('admin_forgot');
 Route::post('/admin/forgot', 'Admin\\AuthController@forgot');
 Route::get('/admin/logout', 'Admin\\AuthController@logout')->name('admin_logout');
+
+Route::group(['middleware' => ['login']], function () {
+    Route::get('/', 'HomeController@index');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/waiting', 'WaitingController@index');
+    Route::post('/waiting/getDataTable', 'WaitingController@getDataTable');
+    Route::post('/waiting/saveSlot', 'WaitingController@saveSlot');
+    Route::post('/waiting/deleteSlot', 'WaitingController@deleteSlot');
+    Route::get('/onu', 'OnuController@index');
+    Route::post('/onu/getDataTable', 'OnuController@getDataTable');
+    Route::get('/onu/editOnu/{id}', 'OnuController@editOnu'); 
+    Route::get('/chart', 'ChartController@index');
+    Route::get('/log', 'LogController@index');
+    Route::get('/setting', 'SettingController@index');
+});
 
 Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin', 'Admin\\HomeController@index');

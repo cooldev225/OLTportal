@@ -97,7 +97,7 @@ class CommonController extends Controller
         $mailData = new MailData();
         $mailData->template='temps.common';
         $mailData->fromEmail = config('mail.from.address');
-        $mailData->userName = 'Gtubu Support';
+        $mailData->userName = 'OLT Support';
         $mailData->toEmail = $user->email;
         $mailData->subject = 'Password reset';
         $mailData->mailType = 'MAGIC_LINK_TYPE';

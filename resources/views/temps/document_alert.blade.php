@@ -189,7 +189,7 @@
           </tr>
           <tr>
             <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-bottom: 3px solid #d4dadf">
-              <p style="margin: 0;">Thanks,<br>The Gtubu support team</p>
+              <p style="margin: 0;">Thanks,<br>The MiHUB OLT support team</p>
             </td>
           </tr>
 

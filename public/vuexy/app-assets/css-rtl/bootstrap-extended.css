@@ -1419,7 +1419,8 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 
 @media (max-width: 767.98px) {
   .header-navbar.floating-nav {
-    width : calc(    100vw - (100vw - 100%) - calc(2rem + 0.4rem)) !important;
+    width : calc(
+    100vw - (100vw - 100%) - calc(2rem + 0.4rem)) !important;
     margin-right : calc(2rem - 0.8rem);
     margin-left : calc(2rem - 0.8rem);
   }

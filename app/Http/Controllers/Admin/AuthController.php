@@ -181,7 +181,7 @@ class AuthController extends Controller
             $mailData->fromEmail = config('mail.from.address');
             $mailData->userName = $user->userName;
             $mailData->toEmail = $email;
-            $mailData->subject = 'Gtubu - Password Reset';
+            $mailData->subject = 'MiHUB OLT - Password Reset';
             $mailData->mailType = 'RESET_LINK_TYPE';
             $mailData->content = $newPassword;
 

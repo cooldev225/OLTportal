@@ -24,8 +24,8 @@ class AuthController extends Controller
 {
     public function __invoke(Request $request)
     {
-        //if (Auth::check()&&Auth::user()->is_admin) return redirect()->intended('dashboard');
-        //else return view('frontend.auth.login', ['page_title' => 'Login']);
+        if (Auth::check()&&Auth::user()->is_admin) return redirect()->intended('dashboard');
+        else return view('frontend.auth.login', ['page_title' => 'Login']);
     }
 
     protected function selectAuthType(Request $request)
@@ -44,128 +44,81 @@ class AuthController extends Controller
         }
     }
 
+    public function register(Request $request)
+    {
+        $email = $request->input('email');
+        if($email==null)return view('frontend.auth.register',['page_title' => 'Register']);
+
+        $username=self::getRandomString();
+        if(count(User::select()->where('username',$request->input('cnpj'))->get()))
+            return array(
+                'message'=> 'The CNPJ is exist already.',
+                'loggedin'=> false,
+                'password'=>''
+            );
+        if(count(User::select()->where('email',$request->input('email'))->get()))
+            return array(
+                'message'=> 'The email is exist already.',
+                'loggedin'=> false,
+                'password'=>''
+            );
+        $password=self::getRandomString();//Str::random(7);
+        $cryptpass=Hash::make($password);
+        $email=$request->input('email');
+        $token=Crypt::encryptString($email.'###'.$password);  
+        $user = User::create([
+            'username' => $request->input('cnpj'),
+            'email' => $email,
+            'password' => $cryptpass,
+            'firstName'=>$request->input('firstName'),
+            'phone_mobile'=>$request->input('phone'),
+            'remember_token'=>$token
+        ]);
+        try{
+            $mailData = new MailData();
+            $mailData->template='temps.magiclink';
+            $mailData->fromEmail = config('mail.from.address');
+            $mailData->userName = $request->input('phone');
+            $mailData->toEmail = $email;
+            $mailData->subject = 'Gracias por crear una cuenta.';
+            $mailData->mailType = 'MAGIC_LINK_TYPE';
+            $mailData->content = $token;
+            Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
+        }catch(ConnectException $e){}
+
+        try{
+            $toemail=config('mail.from.address');
+            $token=Crypt::encryptString("{$toemail}###SUPERADMIN");
+            $body="please check new user signup in admin panel.(<a href=\"http://www.gtabu.com/admin/login?token={$token}&p=users\">aquí.</a>)";
+
+            $mailData = new MailData();
+            $mailData->template='temps.common';
+            $mailData->fromEmail = $email;
+            $mailData->userName = "User ".$request->input('telephone')." signup";
+            $mailData->toEmail = $toemail;
+            $mailData->subject = 'Notificación de registro de nuevo usuario';
+            $mailData->mailType = 'MAGIC_LINK_TYPE';
+            $mailData->content = $body;
+            Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
+        }catch(ConnectException $e){}
+        return array(
+            'message'=> 'We sent your password to your email.',
+            'loggedin'=> true,
+            'password'=>''
+        );
+    }
+
     public function login(Request $request)
     {
-        if($request->input('action')=='ajax_register'){
-            $ip=$this->get_client_ip();	
-            $country = Location::get($ip=='127.0.0.1'?'':$ip)->countryCode;
-            $national=National::find($request->input('national'));
-            if((!$national)||$national->code!=$country)
-              return array(
-                'message'=> '<span class="alert alert-danger">lo siento, su acceso no permite en su ubicación.</span>',
-                'loggedin'=> false
-            );
-            if($request->input('email')=='')
-              return array(
-                'message'=> '<span class="alert alert-danger">El campo de correo electrónico está vacío.</span>',
-                'loggedin'=> false
-            );
-            if(!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $request->input('email')))
-              return array(
-                'message'=> '<span class="alert alert-danger">El campo de correo electrónico no es válido.</span>',
-                'loggedin'=> false
-            );
-            if($request->input('telephone')=='')
-              return array(
-                'message'=> '<span class="alert alert-danger">El campo de teléfono está vacío.</span>',
-                'loggedin'=> false
-            );
-            $username=self::getRandomString();
-            if(count(User::select()->where('username',$request->input('username'))->get()))
-                return array(
-                    'message'=> '<span class="alert alert-danger">El nombre de usuario ya existe.</span>',
-                    'loggedin'=> false,
-                    'password'=>''
-                );
-            if(count(User::select()->where('email',$request->input('email'))->get()))
-                return array(
-                    'message'=> '<span class="alert alert-danger">La dirección de correo electrónico ya existe.</span>',
-                    'loggedin'=> false,
-                    'password'=>''
-                );
-            $password=self::getRandomString();//Str::random(7);
-            $cryptpass=Hash::make($password);
-            $email=$request->input('email');
-            $token=Crypt::encryptString($email.'###'.$password);  
-            $user = User::create([
-                'username' => $username,
-                'email' => $email,
-                'password' => $cryptpass,
-                'national'=>$national->code,
-                'phone_mobile'=>$request->input('telephone'),
-                'sms_allow'=>$request->input('smsallow')=='on'||$request->input('smsallow')=='true'?true:false,
-                'remember_token'=>$token
-            ]);
-            /*
-            if (Auth::attempt(
-                $request->validate([
-                    'email'     => 'required',
-                    'password'  => 'required'
-                ])
-            ))
-             if(auth::check()){
-                $session=new Session;
-                $session->id=session()->getId();
-                $session->user_id=Auth::id();
-                $session->ip_address=$this->get_client_ip();
-                $session->user_agent='';
-                $session->payload='login';
-                $session->last_activity=1;
-                $session->save();
-
-                $request->session()->regenerate();
-                $row=new LastLogin;
-                $row->userId=Auth::id();
-                $row->time=date("Y-m-d H:i:s");
-                $row->save();
-            }else return array(
-                'message'=> '<span class="alert alert-danger">Error.</span>',
-                'loggedin'=> false,
-                'password'=>''
-            );
-            */
-            try{
-                $mailData = new MailData();
-                $mailData->template='temps.magiclink';
-                $mailData->fromEmail = config('mail.from.address');
-                $mailData->userName = $request->input('telephone');
-                $mailData->toEmail = $email;
-                $mailData->subject = 'Gracias por crear una cuenta.';
-                $mailData->mailType = 'MAGIC_LINK_TYPE';
-                $mailData->content = $token;
-                Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
-            }catch(ConnectException $e){}
-
-            try{
-                $toemail=config('mail.from.address');
-                $token=Crypt::encryptString("{$toemail}###SUPERADMIN");
-                $body="please check new user signup in admin panel.(<a href=\"http://www.gtabu.com/admin/login?token={$token}&p=users\">aquí.</a>)";
-
-                $mailData = new MailData();
-                $mailData->template='temps.common';
-                $mailData->fromEmail = $email;
-                $mailData->userName = "User ".$request->input('telephone')." signup";
-                $mailData->toEmail = $toemail;
-                $mailData->subject = 'Notificación de registro de nuevo usuario';
-                $mailData->mailType = 'MAGIC_LINK_TYPE';
-                $mailData->content = $body;
-                Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
-            }catch(ConnectException $e){}
-            return array(
-                'message'=> '<span class="alert alert-success">Por favor revise su correo electronico, si no recibe el mensaje de confirmación busque en su bandeja de correo no deseado.</span>',
-                'loggedin'=> false,
-                'password'=>''
-            );
-        }
         //login
         if($request->input('username')=='')
           return array(
-            'message'=> '<span class="alert alert-danger">El campo de nombre de usuario está vacío.</span>',
+            'message'=> 'Please fill username or email field.',
             'loggedin'=> false
         );
         if($request->input('password')=='')
           return array(
-            'message'=> '<span class="alert alert-danger">El campo de contraseña está vacío.</span>',
+            'message'=> 'Please, type password.',
             'loggedin'=> false
         );
         $validator = $this->selectAuthType($request) ?
@@ -189,10 +142,7 @@ class AuthController extends Controller
                         $login[0]->delete();
                     }else{
                         Session::select()->where('user_id',Auth::id())->delete();//Auth::logoutUsingId(Auth::id());
-                        Auth::logout();                        
-                        //$user = Auth::user();
-                        //$user->logout = 1;
-                        //$user->save();
+                        Auth::logout();     
                         session()->flash('logout', "You are Logged in on other devices");
                         return array(
                             'message'=> 'You are Logged in on other devices',
@@ -221,7 +171,7 @@ class AuthController extends Controller
             $row->time=date("Y-m-d H:i:s");
             $row->save();
             return array(
-                'message'=> '<span class="alert alert-success">¡¡Exitosa!</span>',
+                'message'=> 'success',
                 'loggedin'=> true
             );
         }
@@ -229,8 +179,8 @@ class AuthController extends Controller
         {
             $msg='error';
             if(!User::select()->where('email',$request->input('username'))->count())
-                $msg='<span class="alert alert-danger">No existe el correo electrónico.</span>';
-            else $msg='<span class="alert alert-danger">La contraseña es incorrecta.</span>';
+                $msg='The email is not exist.';
+            else $msg='Password is wrong.';
             return array(
                 'message'=> $msg,
                 'loggedin'=> false
@@ -250,9 +200,9 @@ class AuthController extends Controller
     public function forgot(Request $request)
     {
         $email = $request->input('email');
-        if($email==null)return view('frontend.auth.login',['page_title' => 'Forgot']);
+        if($email==null)return view('frontend.auth.forgot',['page_title' => 'Forgot']);
         $_user = User::where('email', $email)
-            ->select('id as userId', 'email as userEmail', 'username as userName', 'first_name as firstName', 'last_name as lastName')
+            ->select('id as userId', 'email as userEmail', 'username as userName', 'firstName', 'lastName')
             ->get();
         if($_user && count($_user) === 1)
         {
@@ -269,7 +219,7 @@ class AuthController extends Controller
             $mailData->fromEmail = config('mail.from.address');
             $mailData->userName = $user->userName;
             $mailData->toEmail = $email;
-            $mailData->subject = 'Gtubu - Password Reset';
+            $mailData->subject = 'OLT - Password Reset';
             $mailData->mailType = 'RESET_LINK_TYPE';
             $mailData->content = $newPassword;
 

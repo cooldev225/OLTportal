@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Country;
 use App\Models\State;
 use App\Models\City;
-class HomeController extends Controller
+class LogController extends Controller
 {
     public function __construct()
     {

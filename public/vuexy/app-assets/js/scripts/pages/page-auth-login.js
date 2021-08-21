@@ -37,4 +37,37 @@ $(function () {
       }
     });
   }
+
+  pageLoginForm.on('submit',function(e){
+    e.preventDefault();
+    var form_data = new FormData();
+    form_data.append('username',$('#login-email').val());
+    form_data.append('password',$('#login-password').val());
+    $.ajax({
+        url: '/login',
+        headers: {
+            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        },
+        data: form_data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        type: 'POST',
+        dataType: "json",
+        success: function (response) {
+            if(!response.loggedin){
+              $('.alert-danger').html(response.message);
+              $('.alert-danger').fadeIn();
+              $('.alert-normal').fadeOut();
+            }else{
+              $('.alert-danger').fadeOut();
+              $('.alert-normal').fadeIn();
+              location.href='/home';
+            }
+        },
+        error: function (response) {
+
+        }
+    });
+  });
 });
