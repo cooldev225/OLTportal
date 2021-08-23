@@ -33,7 +33,15 @@ Route::group(['middleware' => ['login']], function () {
     Route::get('/onu/editOnu/{id}', 'OnuController@editOnu'); 
     Route::get('/chart', 'ChartController@index');
     Route::get('/log', 'LogController@index');
+    Route::post('/log/getDataTable', 'LogController@getDataTable');
     Route::get('/setting', 'SettingController@index');
+    Route::post('/setting/getCardDataTable', 'SettingController@getCardDataTable');
+    Route::post('/setting/getPonDataTable', 'SettingController@getPonDataTable');
+    Route::post('/setting/getUplinkDataTable', 'SettingController@getUplinkDataTable');
+    Route::post('/setting/getVlanDataTable', 'SettingController@getVlanDataTable');
+    Route::get('/user', 'UserController@index');
+    Route::post('/user/getDataTable', 'UserController@getDataTable');
+    Route::get('/user/editUser/{id}', 'UserController@editUser');
 });
 
 Route::group(['middleware' => ['admin']], function () {

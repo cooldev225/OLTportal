@@ -337,6 +337,8 @@
                     </li>
                     <li class="<?php echo Request::path()=='setting'||Request::path()=='setting/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting"><i data-feather="settings"></i><span data-i18n="Configuration">Configuration</span></a>
                     </li>
+                    <li class="<?php echo Request::path()=='user'||Request::path()=='user/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/user"><i data-feather="user"></i><span data-i18n="Users">Users</span></a>
+                    </li>
 
                     <li class="dropdown nav-item active" data-menu="dropdown" style="right: 5px;position: absolute;">
                         <a class="dropdown-toggle nav-link d-flex align-items-center" href="javascript:;" data-bs-toggle="dropdown"><i data-feather="layers"></i><span>OLT_One</span></a>
@@ -380,6 +382,7 @@
     <script src="/vuexy/app-assets/js/core/app-menu.js"></script>
     <script src="/vuexy/app-assets/js/core/app.js"></script>
     <!-- END: Theme JS-->
+    <script src="/frontend/js/common.js"></script>
 
     
     <script>

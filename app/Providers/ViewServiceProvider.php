@@ -38,6 +38,8 @@ class ViewServiceProvider extends ServiceProvider
                 'frontend.onu',
                 'frontend.onu_edit',
                 'frontend.setting',
+                'frontend.user',
+                'frontend.user_edit',
             ],
             'App\Http\Binds\HomeComposer'
         );

@@ -1,13 +1,6 @@
 @extends('frontend.layouts.dashboard_horizontal')
 @inject('dateFormat', 'App\Services\DateService')
 @section('content')
-<link rel="stylesheet" type="text/css" href="/vuexy/app-assets/vendors/css/charts/apexcharts.css">
-<link rel="stylesheet" type="text/css" href="/vuexy/app-assets/vendors/css/extensions/toastr.min.css">
-<link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/pages/dashboard-ecommerce.css">
-<link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/plugins/charts/chart-apex.css">
-<link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/plugins/extensions/ext-component-toastr.css">
-<link rel="stylesheet" type="text/css" href="/vuexy/app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
-<link rel="stylesheet" type="text/css" href="/vuexy/app-assets/css/plugins/forms/pickers/form-flat-pickr.css">
 <!-- BEGIN: Content-->
 <div class="app-content content ">
     <div class="content-overlay"></div>
@@ -16,168 +9,213 @@
         <div class="content-header row">
         </div>
         <div class="content-body">
-            <!-- Dashboard Ecommerce Starts -->
-            <section id="dashboard-ecommerce">
-                <div class="row match-height">
-                    <!-- Statistics Card -->
-                    <div class="col-xl-12 col-md-12 col-12">
-                        <div class="card card-statistics">
-                            <div class="card-header">
-                                <h4 class="card-title">OLT: OLT_One Uptiome: 110d</h4>
-                                <div class="d-flex align-items-center">
-                                    <p class="card-text font-small-2 me-25 mb-0">Updated 1 month ago</p>
-                                </div>
-                            </div>
-                            <div class="card-body statistics-body">
-                                <div class="row">
-                                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
-                                        <div class="d-flex flex-row">
-                                            <div class="avatar bg-light-primary me-2">
-                                                <div class="avatar-content">
-                                                    <img src="/images/waiting.png" class="avatar-icon" style="width: 100%;height: 100%;"/>
-                                                </div>
-                                            </div>
-                                            <div class="my-auto">
-                                                <h4 class="fw-bolder mb-0">10</h4>
-                                                <p class="card-text font-small-3 mb-0">Waiting Authorization</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
-                                        <div class="d-flex flex-row">
-                                            <div class="avatar bg-light-info me-2">
-                                                <div class="avatar-content">
-                                                    <img src="/images/online.png" class="avatar-icon" style="width: 100%;height: 100%;"/>
-                                                </div>
-                                            </div>
-                                            <div class="my-auto">
-                                                <h4 class="fw-bolder mb-0">1234</h4>
-                                                <p class="card-text font-small-3 mb-0">Online</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
-                                        <div class="d-flex flex-row">
-                                            <div class="avatar bg-light-danger me-2">
-                                                <div class="avatar-content">
-                                                    <img src="/images/offline.png" class="avatar-icon" style="width: 100%;height: 100%;"/>
-                                                </div>
-                                            </div>
-                                            <div class="my-auto">
-                                                <h4 class="fw-bolder mb-0">5</h4>
-                                                <p class="card-text font-small-3 mb-0">Offline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-sm-6 col-12">
-                                        <div class="d-flex flex-row">
-                                            <div class="avatar bg-light-success me-2">
-                                                <div class="avatar-content">
-                                                    <img src="/images/lowsignal.png" class="avatar-icon" style="width: 100%;height: 100%;"/>
-                                                </div>
-                                            </div>
-                                            <div class="my-auto">
-                                                <h4 class="fw-bolder mb-0">-</h4>
-                                                <p class="card-text font-small-3 mb-0">Low Signal</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/ Statistics Card -->
-                </div>
-
+            <section id="page-account-settings">
                 <div class="row">
-                    <div class="col-8">
-                        <div class="card">
-                            <div class="card-header d-flex justify-content-between align-items-baseline flex-sm-row flex-column">
-                                <h4 class="card-title">OLT Uplink Bandwidth usage</h4>
-                                <div class="header-right d-flex align-items-center mt-sm-0 mt-1">
-                                    <i data-feather="calendar"></i>
-                                    <input type="text" class="form-control flat-picker border-0 shadow-none bg-transparent pe-0" placeholder="YYYY-MM-DD" />
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <canvas class="line-area-chart-ex chartjs" data-height="450" style="height:555px;"></canvas>
-                            </div>
-                        </div>
+                    <div class="col-md-3 mb-2 mb-md-0">
+                        <ul class="nav nav-pills flex-column nav-left">
+                            <li class="nav-item">
+                                <a class="nav-link" id="account-pill-cli" data-bs-toggle="pill" href="javascript:;" aria-expanded="false">
+                                    <i data-feather="terminal" class="font-medium-3 me-1"></i>
+                                    <span class="fw-bold">Open OLT Cli</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" id="account-pill-settings" data-bs-toggle="pill" href="#account-vertical-settings" aria-expanded="true">
+                                    <i data-feather="settings" class="font-medium-3 me-1"></i>
+                                    <span class="fw-bold">OLT Settings</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="account-pill-card" data-bs-toggle="pill" href="#account-vertical-card" aria-expanded="false">
+                                    <i data-feather="credit-card" class="font-medium-3 me-1"></i>
+                                    <span class="fw-bold">Cards</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="account-pill-pon" data-bs-toggle="pill" href="#account-vertical-pon" aria-expanded="false">
+                                    <i data-feather="disc" class="font-medium-3 me-1"></i>
+                                    <span class="fw-bold">PON</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="account-pill-uplink" data-bs-toggle="pill" href="#account-vertical-uplink" aria-expanded="false">
+                                    <i data-feather="share-2" class="font-medium-3 me-1"></i>
+                                    <span class="fw-bold">Uplink</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="account-pill-vlan" data-bs-toggle="pill" href="#account-vertical-vlan" aria-expanded="false">
+                                    <i data-feather="info" class="font-medium-3 me-1"></i>
+                                    <span class="fw-bold">VLAN</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
-                    <!-- Goal Overview Card -->
-                    <div class="col-4">
+                    <div class="col-md-9">
                         <div class="card">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <h4 class="card-title">CPU Temperature</h4>
-                                <i data-feather="help-circle" class="font-medium-3 text-muted cursor-pointer"></i>
-                            </div>
-                            <div class="card-body p-0">
-                                <div id="goal-overview-radial-bar-chart" class="my-2"></div>
-                                <div class="row border-top border-bottom text-center mx-0">
-                                    <div class="col-6 border-end py-1">
-                                        <p class="card-text text-muted mb-0">Best</p>
-                                        <h3 class="fw-bolder mb-0">32º</h3>
-                                    </div>
-                                    <div class="col-6 py-1">
-                                        <p class="card-text text-muted mb-0">Worst</p>
-                                        <h3 class="fw-bolder mb-0">79º</h3>
-                                    </div>
-                                </div>
-                                <div class="card card-browser-states">
-                                    <div class="card-header">
-                                        <div>
-                                            <p class="card-text font-small-2">TOP 3 Worst Slots Temperature</p>
+                            <div class="card-body">
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="account-vertical-settings" aria-labelledby="account-pill-settings" aria-expanded="true">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <form class="validate-form mt-2">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="mb-1">
+                                                                <label class="form-label">Name</label>
+                                                                <div style="padding: 10px 0px 10px 0px;"><span>OLT_One</span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mb-1">
+                                                                <label class="form-label">IP Address</label>
+                                                                <div style="padding: 10px 0px 10px 0px;"><span>85.192.132.25</span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mb-1">
+                                                                <label class="form-label" for="olt_telnet_port">Telnet Port</label>
+                                                                <input type="number" class="form-control" id="olt_telnet_port" name="olt_telnet_port" value="8721" placeholder="port number"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mb-1">
+                                                                <label class="form-label" for="olt_telnet_username">Telnet Username</label>
+                                                                <input type="text" class="form-control" id="olt_telnet_username" name="olt_telnet_username" value="admin" placeholder="username"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mb-1">
+                                                                <label class="form-label" for="olt_telnet_password">Telnet Password</label>
+                                                                <input type="password" class="form-control" id="olt_telnet_password" name="olt_telnet_password" value="123456" placeholder="password" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mb-1">
+                                                                <label class="form-label" for="olt_snmp_r">SNMP Read-Only Community</label>
+                                                                <input type="text" class="form-control" id="olt_snmp_r" name="olt_snmp_r" value="" placeholder="Community" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mb-1">
+                                                                <label class="form-label" for="olt_snmp_rw">SNMP Read-Write Community</label>
+                                                                <input type="text" class="form-control" id="olt_snmp_rw" name="olt_snmp_rw" value="" placeholder="Community" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mb-1">
+                                                                <label class="form-label" for="olt_snmp_udp_port">SNMP UDP Port</label>
+                                                                <input type="number" class="form-control" id="olt_snmp_udp_port" name="olt_snmp_udp_port" placeholder="port number" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mb-1">
+                                                                <label class="form-label" for="olt_manufacturer">OLT Manufacturer</label>
+                                                                <input type="text" class="form-control" id="olt_manufacturer" name="olt_manufacturer" value="" placeholder="manufacturer" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mb-1">
+                                                                <label class="form-label" for="olt_model">Model</label>
+                                                                <input type="text" class="form-control" id="olt_model" name="olt_model" value="" placeholder="model" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mb-1">
+                                                                <label class="form-label" for="olt_version">Software Version</label>
+                                                                <input type="text" class="form-control" id="olt_version" name="olt_version"  value="" placeholder="version" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <button type="submit" class="btn btn-primary mt-2 me-1">Save changes</button>
+                                                            <button type="reset" class="btn btn-outline-secondary mt-2">Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="col-6" style="text-align:center;">
+                                                <div class="mt-2">
+                                                    <img src="/images/olt.png" style="width:70%;"/>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="card-body">
-                                        <div class="browser-states">
-                                            <div class="d-flex">
-                                                <h6 class="align-self-center mb-0">Slot 9</h6>
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <div class="fw-bold text-body-heading me-1">57º</div>
-                                                <div id="browser-state-chart-primary"></div>
-                                            </div>
-                                        </div>
-                                        <div class="browser-states">
-                                            <div class="d-flex">
-                                                <h6 class="align-self-center mb-0">Slot 12</h6>
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <div class="fw-bold text-body-heading me-1">49º</div>
-                                                <div id="browser-state-chart-warning"></div>
-                                            </div>
-                                        </div>
-                                        <div class="browser-states">
-                                            <div class="d-flex">
-                                                <h6 class="align-self-center mb-0">Slot 1</h6>
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <div class="fw-bold text-body-heading me-1">45º</div>
-                                                <div id="browser-state-chart-secondary"></div>
-                                            </div>
-                                        </div>
+
+                                    <div class="tab-pane fade" id="account-vertical-card" role="tabpanel" aria-labelledby="account-pill-card" aria-expanded="false">
+                                        <table class="datatables-card table">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>SLOT</th>
+                                                    <th>TYPE</th>
+                                                    <th>PORTS</th>
+                                                    <th>STATUS</th>
+                                                    <th>LAST UPDATE</th>
+                                                    <th>ACTION</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="account-vertical-pon" role="tabpanel" aria-labelledby="account-pill-pon" aria-expanded="false">
+                                        <table class="datatables-pon table">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>PORT</th>
+                                                    <th>ADMIN</th>
+                                                    <th>STATUS</th>
+                                                    <th>ONUS</th>
+                                                    <th>DESCRIPTION</th>
+                                                    <th>TX POWER</th>
+                                                    <th>LAST UPDATE</th>
+                                                    <th>ACTION</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="account-vertical-uplink" role="tabpanel" aria-labelledby="account-pill-uplink" aria-expanded="false">
+                                        <table class="datatables-uplink table">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>PORT</th>
+                                                    <th>ADMIN</th>
+                                                    <th>STATUS</th>
+                                                    <th>MTU</th>
+                                                    <th>DESCRIPTION</th>
+                                                    <th>PVID</th>
+                                                    <th>VLANS</th>
+                                                    <th>ACTION</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="account-vertical-vlan" role="tabpanel" aria-labelledby="account-pill-vlan" aria-expanded="false">
+                                        <table class="datatables-vlan table">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>VLAN ID</th>
+                                                    <th>DESCRIPTION</th>
+                                                    <th>ACTION</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--/ Goal Overview Card -->
                 </div>
             </section>
-            <!-- Dashboard Ecommerce ends -->
+            <!-- / account setting page -->
         </div>
     </div>
 </div>
 <!-- END: Content-->
-
-<!-- BEGIN: Page Vendor JS-->
-<script src="/vuexy/app-assets/vendors/js/charts/chart.min.js"></script>
-<script src="/vuexy/app-assets/vendors/js/charts/apexcharts.min.js"></script>
-<script src="/vuexy/app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
-<script src="/vuexy/app-assets/vendors/js/extensions/toastr.min.js"></script>
-<!-- END: Page Vendor JS-->
-
-<script type="text/javascript" src="/frontend/js/home.js"></script>
+<script type="text/javascript" src="/frontend/js/setting.js"></script>
 @endsection

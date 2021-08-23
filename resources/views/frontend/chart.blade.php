@@ -50,12 +50,11 @@
                             <div class="card-header d-flex justify-content-between align-items-baseline flex-sm-row flex-column">
                                 <h4 class="card-title">OLT Uplink Bandwidth usage</h4>
                                 <div class="header-right d-flex align-items-center mt-sm-0 mt-1">
-                                    <label class="form-label" for="selectLarge">Interface</label>
-                                    <select class="form-select form-select-lg" id="selectLarge">
-                                        <option selected>Open this select menu</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <label class="form-label me-1" style="font-size:17px;" for="sel_interface">Interface</label>
+                                    <select class="form-select form-select-lg" id="sel_interface">
+                                        <option selected>XFP1</option>
+                                        <option>XFP2</option>
+                                        <option>XFP3</option>
                                     </select>
                                 </div>
                                 <div class="header-right d-flex align-items-center mt-sm-0 mt-1">
@@ -70,6 +69,22 @@
                         <div class="card card-charts chart-pon">
                             <div class="card-header d-flex justify-content-between align-items-baseline flex-sm-row flex-column">
                                 <h4 class="card-title">OLT PON Bandwidth usage</h4>
+                                <div class="header-right d-flex align-items-center mt-sm-0 mt-1">
+                                    <label class="form-label me-1" style="font-size:17px;" for="sel_interface">Slot</label>
+                                    <select class="form-select form-select-lg" id="sel_interface">
+                                        @for($i=1;$i<4;$i++)
+                                        <option>{{$i}}</option>
+                                        @endfor
+                                    </select>
+                                </div>
+                                <div class="header-right d-flex align-items-center mt-sm-0 mt-1">
+                                    <label class="form-label me-1" style="font-size:17px;" for="sel_interface">PON</label>
+                                    <select class="form-select form-select-lg" id="sel_interface">
+                                        @for($i=1;$i<31;$i++)
+                                        <option>{{$i}}</option>
+                                        @endfor
+                                    </select>
+                                </div>
                                 <div class="header-right d-flex align-items-center mt-sm-0 mt-1">
                                     <i data-feather="calendar"></i>
                                     <input type="text" class="form-control flat-picker-pon border-0 shadow-none bg-transparent pe-0" placeholder="YYYY-MM-DD" />
