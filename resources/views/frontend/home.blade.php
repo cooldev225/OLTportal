@@ -89,7 +89,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-xl-8 col-md-8 col-12">
                         <div class="card">
                             <div class="card-header d-flex justify-content-between align-items-baseline flex-sm-row flex-column">
                                 <h4 class="card-title">OLT Uplink Bandwidth usage</h4>
@@ -105,7 +105,7 @@
                     </div>
 
                     <!-- Goal Overview Card -->
-                    <div class="col-4">
+                    <div class="col-xl-4 col-md-4 col-12">
                         <div class="card">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <h4 class="card-title">CPU Temperature</h4>

@@ -35,7 +35,9 @@
                                 <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <i data-feather="align-justify" class="font-medium-5"></i>
                                 </button>
-
+                                @php
+                                
+                                @endphp
                                 <!-- collapse  -->
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <div class="profile-tabs d-flex justify-content-between flex-wrap mt-1 mt-md-0">
@@ -45,12 +47,24 @@
                                         <!-- edit button -->
                                         <div class="navbar-container main-menu-content" data-menu="menu-container">
                                         <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
-                                            <li class="dropdown nav-item active" data-menu="dropdown">
-                                                <a class="dropdown-toggle nav-link d-flex align-items-center" href="javascript:;" data-bs-toggle="dropdown">
-                                                    <i data-feather="settings"></i><span class="ms-1">OLT_One</span></a>
+                                            <li class="dropdown nav-item active" data-menu="dropdown" style="width:168px;">
+                                                <a class="dropdown-toggle active-action nav-link d-flex align-items-center" href="javascript:;" data-bs-toggle="dropdown">
+                                                    <i data-feather="settings"></i><span class="ms-1">Reboot</span></a>
                                                 <ul class="dropdown-menu" data-bs-popper="none" style="min-width: 138px;">
                                                     <li data-menu="">
-                                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;" data-bs-toggle=""><i data-feather="activity"></i><span>OLT_One</span></a>
+                                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;" onclick="selectAction(0);" data-bs-toggle=""><span>Reboot</span></a>
+                                                    </li>
+                                                    <li data-menu="">
+                                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;" onclick="selectAction(1);" data-bs-toggle=""><span>Resync</span></a>
+                                                    </li>
+                                                    <li data-menu="">
+                                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;" onclick="selectAction(2);" data-bs-toggle=""><span>Restore Default</span></a>
+                                                    </li>
+                                                    <li data-menu="">
+                                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;" onclick="selectAction(3);" data-bs-toggle=""><span>Disable</span></a>
+                                                    </li>
+                                                    <li data-menu="">
+                                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;" onclick="selectAction(4);" data-bs-toggle=""><span>Delete</span></a>
                                                     </li>
                                                 </ul>
                                             </li>

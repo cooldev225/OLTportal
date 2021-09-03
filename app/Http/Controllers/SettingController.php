@@ -23,8 +23,10 @@ class SettingController extends Controller
     }
     public function index(Request $request)
     {
+        $a=$request->input('a');
+        if($a==null||$a=='')$a=0;
         return view('frontend.setting',[
-//            'announcements'=>$anns
+            'active'=>$a
         ]);
     }
     public function getCardDataTable(Request $request){

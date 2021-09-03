@@ -327,7 +327,7 @@
                 <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
                     <li class="<?php echo Request::path()=='/'||Request::path()=='home'||Request::path()=='home/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/home"><i data-feather="home"></i><span data-i18n="Dashboard">Dashboards</span></a>
                     </li>
-                    <li class="<?php echo Request::path()=='waiting'||Request::path()=='waiting/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/waiting"><i data-feather="pie-chart"></i><span data-i18n="Authorization">Waiting Authorization</span></a>
+                    <li class="<?php echo Request::path()=='waiting'||Request::path()=='waiting/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/waiting"><i data-feather="share"></i><span data-i18n="Authorization">Waiting Authorization</span></a>
                     </li>
                     <li class="<?php echo Request::path()=='onu'||Request::path()=='onu/index'||strpos(Request::path(),'editOnu/')!==false?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/onu"><i data-feather="box"></i><span data-i18n="ONU List">ONU List</span></a>
                     </li>
@@ -335,10 +335,29 @@
                     </li>
                     <li class="<?php echo Request::path()=='log'||Request::path()=='log/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/log"><i data-feather="file-text"></i><span data-i18n="LOGs">LOGs</span></a>
                     </li>
-                    <li class="<?php echo Request::path()=='setting'||Request::path()=='setting/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting"><i data-feather="settings"></i><span data-i18n="Configuration">Configuration</span></a>
-                    </li>
-                    <li class="<?php echo Request::path()=='user'||Request::path()=='user/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/user"><i data-feather="user"></i><span data-i18n="Users">Users</span></a>
-                    </li>
+                    <li data-menu="dropdown" class="dropdown nav-item <?php echo Request::path()=='user'||Request::path()=='user/index'||Request::path()=='setting'||strpos(Request::path(),'setting/index')!==false?'active':'';?>" data-menu="">
+                        <a class="dropdown-toggle nav-link d-flex align-items-center" href="/setting"><i data-feather="settings"></i><span data-i18n="Configuration">Configuration</span></a>
+                        <ul class="dropdown-menu" data-bs-popper="none">
+                            <li class="<?php echo Request::path()=='setting'&&!isset($active)?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting/index" data-bs-toggle="" data-i18n="OLTSettings"><i data-feather="settings"></i><span data-i18n="OLTSettings">OLT Settings</span></a>
+                            </li>
+                            <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==1?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=1" data-bs-toggle="" data-i18n="Cards"><i data-feather="credit-card"></i><span data-i18n="Cards">Cards</span></a>
+                            </li>
+                            <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==2?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=2" data-bs-toggle="" data-i18n="PON"><i data-feather="disc"></i><span data-i18n="PON">PON</span></a>
+                            </li>
+                            <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==3?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=3" data-bs-toggle="" data-i18n="Uplink"><i data-feather="share-2"></i><span data-i18n="Uplink">Uplink</span></a>
+                            </li>
+                            <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==4?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=4" data-bs-toggle="" data-i18n="VLAN"><i data-feather="info"></i><span data-i18n="VLAN">VLAN</span></a>
+                            </li>
+                            <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==5?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=5" data-bs-toggle="" data-i18n="ONUTYPE"><i data-feather="info"></i><span data-i18n="ONUTYPE">ONU TYPE</span></a>
+                            </li>
+                            <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==6?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=6" data-bs-toggle="" data-i18n="BILLING"><i data-feather="info"></i><span data-i18n="BILLING">BILLING</span></a>
+                            </li>
+                            <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==7?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=7" data-bs-toggle="" data-i18n="OLTs"><i data-feather="info"></i><span data-i18n="OLTs">OLTs</span></a>
+                            </li>
+                            <li class="<?php echo Request::path()=='user'||Request::path()=='user/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/user" data-bs-toggle="" data-i18n="Users"><i data-feather="user"></i><span data-i18n="Users">Users</span></a>
+                            </li>
+                        </ul>
+                    </li>                   
 
                     <li class="dropdown nav-item active" data-menu="dropdown" style="right: 5px;position: absolute;">
                         <a class="dropdown-toggle nav-link d-flex align-items-center" href="javascript:;" data-bs-toggle="dropdown"><i data-feather="layers"></i><span>OLT_One</span></a>

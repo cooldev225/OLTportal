@@ -69,7 +69,7 @@ $(function () {
               $('.alert-danger').html(response.message);
               $('.alert-danger').fadeIn();
               $('.alert-normal').fadeOut();
-            }else{
+            }else{alert('We have sent your password, please check your mailbox.');
               $('.alert-danger').fadeOut();
               $('.alert-normal').fadeIn();
               location.href='/login';

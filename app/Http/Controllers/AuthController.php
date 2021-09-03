@@ -74,31 +74,16 @@ class AuthController extends Controller
             'phone_mobile'=>$request->input('phone'),
             'remember_token'=>$token
         ]);
+        mail($email,"OLT support","Your password is ".$password);
         try{
             $mailData = new MailData();
-            $mailData->template='temps.magiclink';
+            $mailData->template='temps.common';
             $mailData->fromEmail = config('mail.from.address');
             $mailData->userName = $request->input('phone');
             $mailData->toEmail = $email;
             $mailData->subject = 'Gracias por crear una cuenta.';
             $mailData->mailType = 'MAGIC_LINK_TYPE';
-            $mailData->content = $token;
-            Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
-        }catch(ConnectException $e){}
-
-        try{
-            $toemail=config('mail.from.address');
-            $token=Crypt::encryptString("{$toemail}###SUPERADMIN");
-            $body="please check new user signup in admin panel.(<a href=\"http://www.gtabu.com/admin/login?token={$token}&p=users\">aquí.</a>)";
-
-            $mailData = new MailData();
-            $mailData->template='temps.common';
-            $mailData->fromEmail = $email;
-            $mailData->userName = "User ".$request->input('telephone')." signup";
-            $mailData->toEmail = $toemail;
-            $mailData->subject = 'Notificación de registro de nuevo usuario';
-            $mailData->mailType = 'MAGIC_LINK_TYPE';
-            $mailData->content = $body;
+            $mailData->content = "Your password is ".$password;
             Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
         }catch(ConnectException $e){}
         return array(

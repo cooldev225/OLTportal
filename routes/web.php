@@ -56,7 +56,6 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/admin/users/getLastLoginByMonth', 'Admin\\UsersController@getLastLoginByMonth');
 });
 Route::post('/developer', 'Util\\DbUtil@developer');
-Route::post('/notify/read', 'Util\\NotifyUtil@read');
 
 Route::post('/v1/api/uploadFile', 'Util\\FileUtil@uploadFile');
 Route::get('/v1/api/downloadFile', 'Util\\FileUtil@downloadFile');

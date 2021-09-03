@@ -1,5 +1,6 @@
 $(window).on('load', function () {
     $('.btn-uplink').trigger('click');
+    $('.card.card-charts.chart-pon').fadeOut();
     $('input[type="radio"][name="btn_charts"]').on('change',function(){
         $this=$(this);
         $('.card-charts').each(function(){
@@ -9,16 +10,23 @@ $(window).on('load', function () {
                 $(this).fadeOut();
         });
     });
+    /*//$('#btn_uplink_01').trigger('click');alert();
+    $('input[type="radio"][name="btn_charts_01"]').on('change',function(){
+      alert();
+        $this=$(this);
+        $('.card-charts').each(function(){
+            if($(this).prop('class').indexOf($this.prop('id').replace('_01','').replace('_02','').replace('btn_',''))>-1)
+                $(this).fadeIn();
+            else
+                $(this).fadeOut();
+        });
+    });*/
 
     'use strict';
     var flatPicker_uplink = $('.flat-picker-uplink'),
         flatPicker_pon = $('.flat-picker-pon'),
-        flatPicker_traffic = $('.flat-picker-traffic'),
-        flatPicker_signal = $('.flat-picker-signal'),
         lineAreaChartEx_uplink = $('.line-area-chart-ex-uplink'),
-        lineAreaChartEx_pon = $('.line-area-chart-ex-pon'),
-        lineAreaChartEx_traffic = $('.line-area-chart-ex-traffic'),
-        lineAreaChartEx_signal = $('.line-area-chart-ex-signal');
+        lineAreaChartEx_pon = $('.line-area-chart-ex-pon');
   
     // Color Variables
     var primaryColorShade = '#836AF9',
@@ -303,264 +311,6 @@ $(window).on('load', function () {
       new Chart(lineAreaChartEx_pon, {
         type: 'line',
         plugins: [
-          {
-            beforeInit: function (chart) {
-              chart.legend.afterFit = function () {
-                this.height += 40;
-              };
-            }
-          }
-        ],
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          legend: {
-            position: 'top',
-            align: 'start',
-            labels: {
-              usePointStyle: true,
-              padding: 25,
-              boxWidth: 9
-            }
-          },
-          layout: {
-            padding: {
-              top: -20,
-              bottom: -20,
-              left: -20
-            }
-          },
-          tooltips: {
-            // Updated default tooltip UI
-            shadowOffsetX: 1,
-            shadowOffsetY: 1,
-            shadowBlur: 8,
-            shadowColor: tooltipShadow,
-            backgroundColor: window.colors.solid.white,
-            titleFontColor: window.colors.solid.black,
-            bodyFontColor: window.colors.solid.black
-          },
-          scales: {
-            xAxes: [
-              {
-                display: true,
-                gridLines: {
-                  color: 'transparent',
-                  zeroLineColor: grid_line_color
-                },
-                scaleLabel: {
-                  display: true
-                },
-                ticks: {
-                  fontColor: labelColor
-                }
-              }
-            ],
-            yAxes: [
-              {
-                display: true,
-                gridLines: {
-                  color: greyLightColor,
-                  zeroLineColor: grid_line_color
-                },
-                ticks: {
-                  stepSize: 1,
-                  min: 0,
-                  max: 5,
-                  fontColor: labelColor,
-                  callback: function(value, index, values) {
-                    return value?value+'Gbps':'0';
-                  }
-                },
-                scaleLabel: {
-                  display: true
-                }
-              }
-            ],
-          }
-        },
-        data: {
-          labels: [
-            '7/12',
-            '8/12',
-            '9/12',
-            '10/12',
-            '11/12',
-            '12/12',
-            '13/12',
-            '14/12',
-            '15/12',
-            '16/12',
-            '17/12',
-            '18/12',
-            '19/12',
-            '20/12',
-            ''
-          ],
-          datasets: [
-            {
-              label: 'Aggregate Traffic',
-              data: [0.25, 0.55, 0.45, 0.75, 0.65, 0.55, 0.70, 0.60, 1, 0.98, 0.90, 1.20, 1.25, 1.40, 1.55],
-              lineTension: 0,
-              backgroundColor: blueColor,
-              pointStyle: 'circle',
-              borderColor: 'transparent',
-              pointRadius: 0.5,
-              pointHoverRadius: 5,
-              pointHoverBorderWidth: 5,
-              pointBorderColor: 'transparent',
-              pointHoverBackgroundColor: blueColor,
-              pointHoverBorderColor: window.colors.solid.white
-            },
-          ]
-        }
-      });
-    }
-
-    //----------------------------------------------------------------------------traffic
-    if (flatPicker_traffic.length) {
-        var date = new Date();
-        flatPicker_traffic.each(function () {
-          $(this).flatpickr({
-            mode: 'range',
-            defaultDate: [date.getFullYear()+'-'+(date.getMonth()+1)+'-01', date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()]
-          });
-        });
-      }
-    if (lineAreaChartEx_traffic.length) {
-      new Chart(lineAreaChartEx_traffic, {
-        type: 'line',
-        plugins: [
-          // to add spacing between legends and chart
-          {
-            beforeInit: function (chart) {
-              chart.legend.afterFit = function () {
-                this.height += 40;
-              };
-            }
-          }
-        ],
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          legend: {
-            position: 'top',
-            align: 'start',
-            labels: {
-              usePointStyle: true,
-              padding: 25,
-              boxWidth: 9
-            }
-          },
-          layout: {
-            padding: {
-              top: -20,
-              bottom: -20,
-              left: -20
-            }
-          },
-          tooltips: {
-            // Updated default tooltip UI
-            shadowOffsetX: 1,
-            shadowOffsetY: 1,
-            shadowBlur: 8,
-            shadowColor: tooltipShadow,
-            backgroundColor: window.colors.solid.white,
-            titleFontColor: window.colors.solid.black,
-            bodyFontColor: window.colors.solid.black
-          },
-          scales: {
-            xAxes: [
-              {
-                display: true,
-                gridLines: {
-                  color: 'transparent',
-                  zeroLineColor: grid_line_color
-                },
-                scaleLabel: {
-                  display: true
-                },
-                ticks: {
-                  fontColor: labelColor
-                }
-              }
-            ],
-            yAxes: [
-              {
-                display: true,
-                gridLines: {
-                  color: greyLightColor,
-                  zeroLineColor: grid_line_color
-                },
-                ticks: {
-                  stepSize: 1,
-                  min: 0,
-                  max: 5,
-                  fontColor: labelColor,
-                  callback: function(value, index, values) {
-                    return value?value+'Gbps':'0';
-                  }
-                },
-                scaleLabel: {
-                  display: true
-                }
-              }
-            ],
-          }
-        },
-        data: {
-          labels: [
-            '7/12',
-            '8/12',
-            '9/12',
-            '10/12',
-            '11/12',
-            '12/12',
-            '13/12',
-            '14/12',
-            '15/12',
-            '16/12',
-            '17/12',
-            '18/12',
-            '19/12',
-            '20/12',
-            ''
-          ],
-          datasets: [
-            {
-              label: 'Aggregate Traffic',
-              data: [0.25, 0.55, 0.45, 0.75, 0.65, 0.55, 0.70, 0.60, 1, 0.98, 0.90, 1.20, 1.25, 1.40, 1.55],
-              lineTension: 0,
-              backgroundColor: blueColor,
-              pointStyle: 'circle',
-              borderColor: 'transparent',
-              pointRadius: 0.5,
-              pointHoverRadius: 5,
-              pointHoverBorderWidth: 5,
-              pointBorderColor: 'transparent',
-              pointHoverBackgroundColor: blueColor,
-              pointHoverBorderColor: window.colors.solid.white
-            },
-          ]
-        }
-      });
-    }
-
-    //----------------------------------------------------------------------------signal
-    if (flatPicker_signal.length) {
-        var date = new Date();
-        flatPicker_signal.each(function () {
-          $(this).flatpickr({
-            mode: 'range',
-            defaultDate: [date.getFullYear()+'-'+(date.getMonth()+1)+'-01', date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()]
-          });
-        });
-    }
-    if (lineAreaChartEx_signal.length) {
-      new Chart(lineAreaChartEx_signal, {
-        type: 'line',
-        plugins: [
-          // to add spacing between legends and chart
           {
             beforeInit: function (chart) {
               chart.legend.afterFit = function () {

@@ -1,0 +1,6 @@
+.config-submenu .nav-link.active{
+    border-color: transparent;
+    box-shadow: unset;
+    color: #7367f0;
+    background-color: transparent;
+}

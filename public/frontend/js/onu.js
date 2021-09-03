@@ -122,65 +122,47 @@ $(window).on('load', function () {
           }
         },
         {
-          text: 'Online',
-          className: 'btn-online btn-primary',
-          attr: {
-            'style':'min-width:70px;',
-          },
-          init: function (api, node, config) {
-            $(node).removeClass('btn-secondary');
-          },
-        },
-        {
+          extend: 'collection',
+          className: 'btn btn-outline-primary dropdown-toggle me-2 filter-btn-group',
           text: 'All',
-          className: 'btn-all btn-primary active',
-          attr: {
-            'style':'min-width:70px;',
-          },
-          init: function (api, node, config) {
-            $(node).removeClass('btn-secondary');
-          },
+          buttons: [
+            {
+              text: 'Online',
+              className: 'dropdown-item',
+              attr: {
+                'onclick':'filterAction(0);',
+              },
+            },
+            {
+              text: 'All',
+              className: 'dropdown-item',
+              attr: {
+                'onclick':'filterAction(1);',
+              },
+            },
+            {
+              text: 'Offline',
+              className: 'dropdown-item',
+              attr: {
+                'onclick':'filterAction(2);',
+              },
+            },
+            {
+              text: 'LoS',
+              className: 'dropdown-item',
+              attr: {
+                'onclick':'filterAction(3);',
+              },
+            },
+            {
+              text: 'Disabled',
+              className: 'dropdown-item',
+              attr: {
+                'onclick':'filterAction(4);',
+              },
+            },
+          ],
         },
-        {
-          text: 'Offline',
-          className: 'btn-offline btn-primary',
-          attr: {
-            'style':'min-width:70px;',
-          },
-          init: function (api, node, config) {
-            $(node).removeClass('btn-secondary');
-          },
-        },
-        {
-          text: 'LoS',
-          className: 'btn-los btn-primary',
-          attr: {
-            'style':'min-width:70px;',
-          },
-          init: function (api, node, config) {
-            $(node).removeClass('btn-secondary');
-          },
-        },
-        {
-          text: 'Disabled',
-          className: 'btn-disabled btn-primary me-2',
-          attr: {
-            'style':'min-width:70px;',
-          },
-          init: function (api, node, config) {
-            $(node).removeClass('btn-secondary');
-          },
-        }
-        ,{
-          text: feather.icons['star'].toSvg({ class: 'me-50 font-small-4' }) + 'Placeholder',
-          className: 'btn-placeholder',
-          attr: {
-            'style':'border: none;',
-          },
-          init: function (api, node, config) {
-            $(node).removeClass('btn-secondary');
-          },
-        }
       ],
       responsive: {
         details: {
@@ -248,3 +230,22 @@ $(window).on('load', function () {
     });
   });
 });
+function filterAction(i){
+  if(i==0){
+    $('.filter-btn-group span').html('Online');
+    dt_basic.ajax.url('/onu/getDataTable?status=0').load();
+  }else if(i==1){
+    $('.filter-btn-group span').html('All');
+    dt_basic.ajax.url('/onu/getDataTable?status=').load();
+  }else if(i==2){
+    $('.filter-btn-group span').html('Offline');
+    dt_basic.ajax.url('/onu/getDataTable?status=1').load();
+  }else if(i==3){
+    $('.filter-btn-group span').html('LoS');
+    dt_basic.ajax.url('/onu/getDataTable?status=2').load();
+  }else if(i==4){
+    $('.filter-btn-group span').html('Disabled');
+    dt_basic.ajax.url('/onu/getDataTable?status=3').load();
+  }
+  $('.dt-buttons.d-inline-flex .dt-button-collection').remove();
+}
