@@ -16,16 +16,12 @@ $(function () {
   // --------------------------------------------------------------------
   if (pageResetForm.length) {
     pageResetForm.validate({
-      /*
-      * ? To enable validation onkeyup
       onkeyup: function (element) {
-        $(element).valid();
-      },*/
-      /*
-      * ? To enable validation on focusout
+        //$(element).valid();
+      },
       onfocusout: function (element) {
-        $(element).valid();
-      }, */
+        //$(element).valid();
+      }, 
       rules: {
         'firstName': {
           required: true
@@ -48,6 +44,11 @@ $(function () {
 
   pageResetForm.on('submit',function(e){
     e.preventDefault();
+    if($('#firstName').val()==''){$('#firstName').focus();return;}
+    if($('#cnpj').val()==''){$('#cnpj').focus();return;}
+    if($('#email').val()==''){$('#email').focus();return;}
+    if($('#phone').val()==''){$('#phone').focus();return;}
+    if($('#register-privacy-policy').prop('checked')===false||$('#register-privacy-policy').val()=='off'){$('#register-privacy-policy').focus();return;}
     var form_data = new FormData();
     form_data.append('firstName',$('#firstName').val());
     form_data.append('cnpj',$('#cnpj').val());
@@ -69,10 +70,11 @@ $(function () {
               $('.alert-danger').html(response.message);
               $('.alert-danger').fadeIn();
               $('.alert-normal').fadeOut();
-            }else{alert('We have sent your password, please check your mailbox.');
+            }else{
+              //alert('We have sent your password, please check your mailbox.');
               $('.alert-danger').fadeOut();
               $('.alert-normal').fadeIn();
-              location.href='/login';
+              location.href='/login?token='+response.token;
             }
         },
         error: function (response) {

@@ -279,7 +279,7 @@ $(window).on('load', function () {
 
     // On load Toast
     var isRtl = $('html').attr('data-textdirection') === 'rtl';
-  setTimeout(function () {
+  /*setTimeout(function () {
     toastr['success'](
       'You have successfully logged in to Vuexy. Now you can start to explore!',
       '👋 Welcome John Doe!',
@@ -289,7 +289,7 @@ $(window).on('load', function () {
         rtl: isRtl
       }
     );
-  }, 2000);
+  // }, 2000);*/
 
   var $barColor = '#f3f3f3';
   var $trackBgColor = '#EBEBEB';

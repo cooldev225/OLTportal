@@ -338,7 +338,7 @@
                     <li data-menu="dropdown" class="dropdown nav-item <?php echo Request::path()=='user'||Request::path()=='user/index'||Request::path()=='setting'||strpos(Request::path(),'setting/index')!==false?'active':'';?>" data-menu="">
                         <a class="dropdown-toggle nav-link d-flex align-items-center" href="/setting"><i data-feather="settings"></i><span data-i18n="Configuration">Configuration</span></a>
                         <ul class="dropdown-menu" data-bs-popper="none">
-                            <li class="<?php echo Request::path()=='setting'&&!isset($active)?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting/index" data-bs-toggle="" data-i18n="OLTSettings"><i data-feather="settings"></i><span data-i18n="OLTSettings">OLT Settings</span></a>
+                            <li class="<?php echo Request::path()=='setting'&&!isset($active)?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting" data-bs-toggle="" data-i18n="OLTSettings"><i data-feather="settings"></i><span data-i18n="OLTSettings">OLT Settings</span></a>
                             </li>
                             <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==1?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=1" data-bs-toggle="" data-i18n="Cards"><i data-feather="credit-card"></i><span data-i18n="Cards">Cards</span></a>
                             </li>
@@ -348,11 +348,11 @@
                             </li>
                             <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==4?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=4" data-bs-toggle="" data-i18n="VLAN"><i data-feather="info"></i><span data-i18n="VLAN">VLAN</span></a>
                             </li>
-                            <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==5?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=5" data-bs-toggle="" data-i18n="ONUTYPE"><i data-feather="info"></i><span data-i18n="ONUTYPE">ONU TYPE</span></a>
+                            <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==5?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=5" data-bs-toggle="" data-i18n="ONUTYPE"><i data-feather="shuffle"></i><span data-i18n="ONUTYPE">ONU TYPE</span></a>
                             </li>
-                            <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==6?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=6" data-bs-toggle="" data-i18n="BILLING"><i data-feather="info"></i><span data-i18n="BILLING">BILLING</span></a>
+                            <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==6?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=6" data-bs-toggle="" data-i18n="BILLING"><i data-feather="shopping-cart"></i><span data-i18n="BILLING">BILLING</span></a>
                             </li>
-                            <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==7?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=7" data-bs-toggle="" data-i18n="OLTs"><i data-feather="info"></i><span data-i18n="OLTs">OLTs</span></a>
+                            <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==7?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=7" data-bs-toggle="" data-i18n="OLTs"><i data-feather="layers"></i><span data-i18n="OLTs">OLTs</span></a>
                             </li>
                             <li class="<?php echo Request::path()=='user'||Request::path()=='user/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/user" data-bs-toggle="" data-i18n="Users"><i data-feather="user"></i><span data-i18n="Users">Users</span></a>
                             </li>
@@ -360,11 +360,13 @@
                     </li>                   
 
                     <li class="dropdown nav-item active" data-menu="dropdown" style="right: 5px;position: absolute;">
-                        <a class="dropdown-toggle nav-link d-flex align-items-center" href="javascript:;" data-bs-toggle="dropdown"><i data-feather="layers"></i><span>OLT_One</span></a>
+                        <a class="dropdown-toggle nav-link d-flex align-items-center" href="javascript:;" data-bs-toggle="dropdown"><i data-feather="layers"></i><span>{{$active_olt['name']}}</span></a>
                         <ul class="dropdown-menu" data-bs-popper="none" style="min-width: 138px;">
+                            @foreach($olts as $olt)
                             <li data-menu="">
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;" data-bs-toggle=""><i data-feather="activity"></i><span>OLT_One</span></a>
+                                <a class="dropdown-item d-flex align-items-center" href="javascript:;" onclick="selectOlt({{$olt['id']}});" data-bs-toggle=""><i data-feather="activity"></i><span>{{$olt['name']}}</span></a>
                             </li>
+                            @endforeach
                         </ul>
                     </li>
                 </ul>
@@ -403,7 +405,7 @@
     <!-- END: Theme JS-->
     <script src="/frontend/js/common.js"></script>
 
-    
+    <input type="hidden" id="active_olt_id" value="{{$active_olt['id']}}"/>
     <script>
         $(window).on('load', function() {
             if (feather) {
@@ -413,6 +415,10 @@
                 });
             }
         })
+        function selectOlt(o){
+            $href = window.location.href+(window.location.href.indexOf('?')>-1?'&':'?')+'active_olt='+o;
+            window.location.href=$href;
+        }
     </script>
 </body>
 <!-- END: Body-->

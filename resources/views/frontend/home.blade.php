@@ -37,7 +37,7 @@
                                                 </div>
                                             </div>
                                             <div class="my-auto">
-                                                <h4 class="fw-bolder mb-0">10</h4>
+                                                <h4 class="fw-bolder mb-0">{{$cnt_waiting}}</h4>
                                                 <p class="card-text font-small-3 mb-0">Waiting Authorization</p>
                                             </div>
                                         </div>
@@ -50,7 +50,7 @@
                                                 </div>
                                             </div>
                                             <div class="my-auto">
-                                                <h4 class="fw-bolder mb-0">1234</h4>
+                                                <h4 class="fw-bolder mb-0">{{$cnt_online}}</h4>
                                                 <p class="card-text font-small-3 mb-0">Online</p>
                                             </div>
                                         </div>
@@ -63,7 +63,7 @@
                                                 </div>
                                             </div>
                                             <div class="my-auto">
-                                                <h4 class="fw-bolder mb-0">5</h4>
+                                                <h4 class="fw-bolder mb-0">{{$cnt_offline}}</h4>
                                                 <p class="card-text font-small-3 mb-0">Offline</p>
                                             </div>
                                         </div>
@@ -76,7 +76,7 @@
                                                 </div>
                                             </div>
                                             <div class="my-auto">
-                                                <h4 class="fw-bolder mb-0">-</h4>
+                                                <h4 class="fw-bolder mb-0">{{$cnt_lowsignal}}</h4>
                                                 <p class="card-text font-small-3 mb-0">Low Signal</p>
                                             </div>
                                         </div>

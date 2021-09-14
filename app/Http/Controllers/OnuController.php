@@ -27,7 +27,7 @@ class OnuController extends Controller
     }
     public function getDataTable(Request $request){
         $query=Onu::select('onus.*','slots.serial','slots.serial','slots.pon','slots.slot as slots','slots.created_at as slot_created_at')
-        ->leftJoin('slots','slots.id','=','onus.slot');
+        ->leftJoin('slots','slots.id','=','onus.slot')->where('onus.olt_id',$request->input('olt_id'));
         if($request->input('status')!=null&&$request->input('status')!=''){
             $query=$query->where('status',$request->input('status'));
         }

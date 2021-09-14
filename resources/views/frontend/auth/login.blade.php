@@ -42,7 +42,11 @@
 			<div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
 				<h2 class="card-title fw-bold mb-1">Welcome to MiHUB OLT! 👋</h2>
 				<span class="alert alert-danger" style="display:none;"></span>
+				@if(isset($msg)&&$msg!='')
+				<p class="card-text mb-2 alert-normal">Your password is <span class="alert alert-danger">{{$msg}}</span></p>
+				@else
 				<p class="card-text mb-2 alert-normal">Please sign-in to your account</p>
+				@endif
 				<form class="auth-login-form mt-2" action="/login" method="POST">
 					<div class="mb-1">
 						<label class="form-label" for="login-email">Email</label>

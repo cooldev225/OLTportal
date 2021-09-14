@@ -15,7 +15,7 @@ $(window).on('load', function () {
         },
         type: 'POST',
         data: {
-
+          olt_id:$('#active_olt_id').val()
         }
       },
       "serverSide": true,
@@ -164,6 +164,7 @@ $(window).on('load', function () {
     form_data.append('desc',$desc);
     form_data.append('slot',$slot);
     form_data.append('pon',$pon);
+    form_data.append('olt_id',$('#active_olt_id').val());
     $.ajax({
         url: '/waiting/saveSlot',
         headers: {

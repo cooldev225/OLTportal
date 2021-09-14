@@ -55,7 +55,7 @@
                     </div>
                     <div class="mb-1">
                         <label class="form-label" for="email">Email</label>
-                        <input class="form-control" id="email" type="text" name="email" placeholder="john@example.com" aria-describedby="register-email" tabindex="3" />
+                        <input class="form-control" id="email" type="email" name="email" placeholder="john@example.com" aria-describedby="register-email" tabindex="3" />
                     </div>
                     <div class="mb-1">
                         <label class="form-label" for="phone">Phone</label>

@@ -9,8 +9,8 @@ use Stevebauman\Location\Facades\Location;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Country;
-use App\Models\State;
-use App\Models\City;
+use App\Models\Slot;
+use App\Models\Onu;
 class HomeController extends Controller
 {
     public function __construct()
@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         return view('frontend.home',[
-//            'announcements'=>$anns
+            
         ]);
     }
 }

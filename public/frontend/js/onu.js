@@ -15,7 +15,7 @@ $(window).on('load', function () {
         },
         type: 'POST',
         data: {
-
+          olt_id:$('#active_olt_id').val()
         }
       },
       "serverSide": true,

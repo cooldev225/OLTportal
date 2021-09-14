@@ -25,7 +25,26 @@ class AuthController extends Controller
     public function __invoke(Request $request)
     {
         if (Auth::check()&&Auth::user()->is_admin) return redirect()->intended('dashboard');
-        else return view('frontend.auth.login', ['page_title' => 'Login']);
+        else{
+            if($request->method()=='GET'){
+                $msg='';
+                if($request->input('token')!=''){
+                    $login='';
+                    try {
+                        $login = Crypt::decryptString($request->input('token'));
+                    } catch (DecryptException $e) {
+                        //dd($e);
+                    }
+                    if($login!=''){
+                        $login=explode('###',$login);
+                        if(count($login)==2){
+                            $msg=$login[1];
+                        }
+                    }
+                }
+                return view('frontend.auth.login', ['page_title' => 'Login','msg'=>$msg]); 
+            }
+        }
     }
 
     protected function selectAuthType(Request $request)
@@ -56,7 +75,7 @@ class AuthController extends Controller
                 'loggedin'=> false,
                 'password'=>''
             );
-        if(count(User::select()->where('email',$request->input('email'))->get()))
+            if(count(User::select()->where('email',$request->input('email'))->get()))
             return array(
                 'message'=> 'The email is exist already.',
                 'loggedin'=> false,
@@ -74,7 +93,7 @@ class AuthController extends Controller
             'phone_mobile'=>$request->input('phone'),
             'remember_token'=>$token
         ]);
-        mail($email,"OLT support","Your password is ".$password);
+        //mail($email,"OLT support","Your password is ".$password);
         try{
             $mailData = new MailData();
             $mailData->template='temps.common';
@@ -84,12 +103,13 @@ class AuthController extends Controller
             $mailData->subject = 'Gracias por crear una cuenta.';
             $mailData->mailType = 'MAGIC_LINK_TYPE';
             $mailData->content = "Your password is ".$password;
-            Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
+            //Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
         }catch(ConnectException $e){}
         return array(
             'message'=> 'We sent your password to your email.',
             'loggedin'=> true,
-            'password'=>''
+            'password'=>'',
+            'token'=>$token
         );
     }
 
@@ -120,22 +140,6 @@ class AuthController extends Controller
         if (Auth::attempt($validator))
         {
             if(auth::check()){
-                $login = Session::select()->where('user_id', Auth::id())->get();
-                if (count($login) > 0)
-                {
-                    if($this->get_client_ip()==$login[0]['ip_address']){
-                        $login[0]->delete();
-                    }else{
-                        Session::select()->where('user_id',Auth::id())->delete();//Auth::logoutUsingId(Auth::id());
-                        Auth::logout();     
-                        session()->flash('logout', "You are Logged in on other devices");
-                        return array(
-                            'message'=> 'You are Logged in on other devices',
-                            'loggedin'=> false
-                        );
-                    }
-                }
-
                 $user=Auth::user();
                 $user->remember_token=Crypt::encryptString("{$user->email}###{$validator['password']}");
                 $user->logins=$user->logins+1;
@@ -198,6 +202,7 @@ class AuthController extends Controller
             $_newPassword = Hash::make($newPassword);
 
             User::where('id', $user->userId)->update(['password'=>$_newPassword]);
+            User::where('id', $user->userId)->update(['remember_token'=>Crypt::encryptString("{$user->email}###{$newPassword}")]);
 
             $mailData = new MailData();
             $mailData->template='temps.password_changed';
@@ -208,12 +213,12 @@ class AuthController extends Controller
             $mailData->mailType = 'RESET_LINK_TYPE';
             $mailData->content = $newPassword;
 
-            Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
-
-            return redirect()->intended('login');
+            //Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
+            //return redirect()->intended('login')->with('token',$newPassword);
+            return view('frontend.auth.login',['page_title' => 'Login','msg'=>$newPassword]);
         }
         else{
-            return view('frontend.auth.login', ['page_title' => 'Login']);
+            return view('frontend.auth.forgot',['page_title' => 'Forgot']);
         }
     }
 

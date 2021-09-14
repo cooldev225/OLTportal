@@ -25,7 +25,7 @@ class WaitingController extends Controller
         ]);
     }
     public function getDataTable(Request $request){
-        $query=Slot::select();
+        $query=Slot::select()->where('olt_id',$request->input('olt_id'));
         $res=array();
         $res['recordsTotal']=$query->count();
         $res['start']=$request->input('start');
@@ -56,6 +56,7 @@ class WaitingController extends Controller
     public function saveSlot(Request $request){
         $id=$request->input('id');
         $row=$id>0?Slot::find($id):new Slot;
+        $row->olt_id=$request->input('olt_id');
         $row->serial=$request->input('serial');
         $row->desc=$request->input('desc');
         $row->slot=$request->input('slot');
