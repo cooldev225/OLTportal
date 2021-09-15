@@ -19,18 +19,17 @@
                             <div class="tab-pane active" id="account" aria-labelledby="account-tab" role="tabpanel">
                                 <!-- users edit start -->
                                 <div class="d-flex mb-2">
-                                    <img src="/vuexy/app-assets/images/avatars/7.png" alt="users avatar" class="user-avatar users-avatar-shadow rounded me-2 my-25 cursor-pointer" height="90" width="90" />
+                                    <img src="{{$user['avatar']==null||$user['avatar']==''?'/images/default-avatar.png':'/v1/api/downloadFile?path='.$user['avatar']}}" alt="users avatar" class="user-avatar users-avatar-shadow rounded me-2 my-25 cursor-pointer" height="90" width="90" >
                                     <div class="mt-50">
-                                        <h4>Eleanor Aguilar</h4>
+                                        <h4>{{$user->firstName}}</h4>
                                         <div class="col-12 d-flex mt-1 px-0">
-                                            <label class="btn btn-primary me-75 mb-0" for="change-picture">
+                                            <label class="btn btn-outline-primary me-75 mb-0" for="change-picture">
                                                 <span class="d-none d-sm-block">Change</span>
                                                 <input class="form-control" type="file" id="change-picture" hidden accept="image/png, image/jpeg, image/jpg" />
                                                 <span class="d-block d-sm-none">
                                                     <i class="me-0" data-feather="edit"></i>
                                                 </span>
                                             </label>
-                                            <button class="btn btn-outline-secondary d-none d-sm-block">Remove</button>
                                             <button class="btn btn-outline-secondary d-block d-sm-none">
                                                 <i class="me-0" data-feather="trash-2"></i>
                                             </button>
@@ -40,6 +39,7 @@
                                 <!-- users edit ends -->
                                 <!-- users edit account form start -->
                                 <form class="form-validate">
+                                    <input type="hidden" class="form-control" id="userid" value="{{$user->id}}"/>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="mb-1">
@@ -56,7 +56,7 @@
                                         <div class="col-md-4">
                                             <div class="mb-1">
                                                 <label class="form-label" for="email">E-mail</label>
-                                                <input type="email" class="form-control" placeholder="Email" value="{{$user->email}} name="email" id="email" />
+                                                <input type="email" class="form-control" placeholder="Email" value="{{$user->email}}" name="email" id="email" />
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -73,9 +73,9 @@
                                             <div class="mb-1">
                                                 <label class="form-label" for="role">Role</label>
                                                 <select class="form-select" id="role">
-                                                    <option value="0" {{$user->validate==0?'selected':''}}>Subscriber</option>
-                                                    <option value="1" {{$user->validate==1?'selected':''}}>Maintainer</option>
-                                                    <option value="2" {{$user->validate==2?'selected':''}}>Administrator</option>
+                                                    <option value="0" {{$user->is_admin==0?'selected':''}}>Subscriber</option>
+                                                    <option value="1" {{$user->is_admin==1?'selected':''}}>Maintainer</option>
+                                                    <option value="2" {{$user->is_admin==2?'selected':''}}>Administrator</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -85,6 +85,7 @@
                                                 <input type="text" class="form-control" value="" placeholder="Company name" id="company" />
                                             </div>
                                         </div>
+                                        <!--
                                         <div class="col-12">
                                             <div class="table-responsive border rounded mt-1">
                                                 <h6 class="py-1 mx-1 mb-0 font-medium-2">
@@ -213,9 +214,9 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <div class="col-12 d-flex flex-sm-row flex-column mt-2">
-                                            <button type="submit" class="btn btn-primary mb-1 mb-sm-0 me-0 me-sm-1">Save Changes</button>
+                                            <button type="button" class="btn btn-primary btn-submit mb-1 mb-sm-0 me-0 me-sm-1">Save Changes</button>
                                             <button type="reset" class="btn btn-outline-secondary">Reset</button>
                                         </div>
                                     </div>

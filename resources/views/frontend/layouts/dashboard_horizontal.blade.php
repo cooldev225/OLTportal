@@ -107,6 +107,7 @@
                         <ul class="search-list search-list-main"></ul>
                     </div>
                 </li>
+                <!--
                 <li class="nav-item dropdown dropdown-notification me-25"><a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge rounded-pill bg-danger badge-up">5</span></a>
                     <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
                         <li class="dropdown-menu-header">
@@ -188,9 +189,9 @@
                         </li>
                         <li class="dropdown-menu-footer"><a class="btn btn-primary w-100" href="#">Read all notifications</a></li>
                     </ul>
-                </li>
+                </li>-->
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">{{Auth::user()->firstName}}</span></div><span class="avatar"><img class="round" src="/vuexy/app-assets//images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">{{Auth::user()->firstName}}</span></div><span class="avatar"><img class="round" style="width:40px;height:40px;" src="{{Auth::user()->avatar==null||Auth::user()->avatar==''?'/images/default-avatar.png':'/v1/api/downloadFile?path='.Auth::user()->avatar}}" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
                         <!--a class="dropdown-item" href="page-profile.html"><i class="me-50" data-feather="user"></i> Profile</a>
@@ -201,6 +202,7 @@
                         <a class="dropdown-item" href="page-account-settings.html"><i class="me-50" data-feather="settings"></i> Settings</a>
                         <a class="dropdown-item" href="page-pricing.html"><i class="me-50" data-feather="credit-card"></i> Pricing</a>
                         <a class="dropdown-item" href="page-faq.html"><i class="me-50" data-feather="help-circle"></i> FAQ</a-->
+                        <a class="dropdown-item" href="/user/editUser/{{Auth::id()}}"><i class="me-50" data-feather="user"></i> Profile</a>
                         <a class="dropdown-item" href="/logout"><i class="me-50" data-feather="power"></i> Logout</a>
                     </div>
                 </li>
@@ -327,34 +329,60 @@
                 <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
                     <li class="<?php echo Request::path()=='/'||Request::path()=='home'||Request::path()=='home/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/home"><i data-feather="home"></i><span data-i18n="Dashboard">Dashboards</span></a>
                     </li>
+                    @if($current_permission[10][0])
                     <li class="<?php echo Request::path()=='waiting'||Request::path()=='waiting/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/waiting"><i data-feather="share"></i><span data-i18n="Authorization">Waiting Authorization</span></a>
                     </li>
+                    @endif
+                    @if($current_permission[8][0])
                     <li class="<?php echo Request::path()=='onu'||Request::path()=='onu/index'||strpos(Request::path(),'editOnu/')!==false?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/onu"><i data-feather="box"></i><span data-i18n="ONU List">ONU List</span></a>
                     </li>
+                    @endif
+                    @if($current_permission[11][0])
                     <li class="<?php echo Request::path()=='chart'||Request::path()=='chart/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/chart"><i data-feather="bar-chart-2"></i><span data-i18n="Charts">Charts</span></a>
                     </li>
+                    @endif
+                    @if($current_permission[12][0])
                     <li class="<?php echo Request::path()=='log'||Request::path()=='log/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/log"><i data-feather="file-text"></i><span data-i18n="LOGs">LOGs</span></a>
                     </li>
+                    @endif
                     <li data-menu="dropdown" class="dropdown nav-item <?php echo Request::path()=='user'||Request::path()=='user/index'||Request::path()=='setting'||strpos(Request::path(),'setting/index')!==false?'active':'';?>" data-menu="">
                         <a class="dropdown-toggle nav-link d-flex align-items-center" href="/setting"><i data-feather="settings"></i><span data-i18n="Configuration">Configuration</span></a>
                         <ul class="dropdown-menu" data-bs-popper="none">
                             <li class="<?php echo Request::path()=='setting'&&!isset($active)?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting" data-bs-toggle="" data-i18n="OLTSettings"><i data-feather="settings"></i><span data-i18n="OLTSettings">OLT Settings</span></a>
                             </li>
+                            @if($current_permission[3][0])
                             <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==1?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=1" data-bs-toggle="" data-i18n="Cards"><i data-feather="credit-card"></i><span data-i18n="Cards">Cards</span></a>
                             </li>
+                            @endif
+                            @if($current_permission[4][0])
                             <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==2?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=2" data-bs-toggle="" data-i18n="PON"><i data-feather="disc"></i><span data-i18n="PON">PON</span></a>
                             </li>
+                            @endif
+                            @if($current_permission[5][0])
                             <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==3?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=3" data-bs-toggle="" data-i18n="Uplink"><i data-feather="share-2"></i><span data-i18n="Uplink">Uplink</span></a>
                             </li>
+                            @endif
+                            @if($current_permission[6][0])
                             <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==4?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=4" data-bs-toggle="" data-i18n="VLAN"><i data-feather="info"></i><span data-i18n="VLAN">VLAN</span></a>
                             </li>
+                            @endif
+                            @if($current_permission[9][0])
                             <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==5?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=5" data-bs-toggle="" data-i18n="ONUTYPE"><i data-feather="shuffle"></i><span data-i18n="ONUTYPE">ONU TYPE</span></a>
                             </li>
+                            @endif
+                            @if($current_permission[7][0])
                             <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==6?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=6" data-bs-toggle="" data-i18n="BILLING"><i data-feather="shopping-cart"></i><span data-i18n="BILLING">BILLING</span></a>
                             </li>
+                            @endif
+                            @if($current_permission[2][0])
                             <li class="<?php echo strpos(Request::path(),'setting')!==false&&isset($active)&&$active==7?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/setting?a=7" data-bs-toggle="" data-i18n="OLTs"><i data-feather="layers"></i><span data-i18n="OLTs">OLTs</span></a>
                             </li>
+                            @endif
+                            @if($current_permission[1][0])
                             <li class="<?php echo Request::path()=='user'||Request::path()=='user/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/user" data-bs-toggle="" data-i18n="Users"><i data-feather="user"></i><span data-i18n="Users">Users</span></a>
+                            </li>
+                            @endif
+                            <li class="<?php echo Request::path()=='role'||Request::path()=='role/index'?'active':'';?>" data-menu=""><a class="dropdown-item d-flex align-items-center" href="/role" data-bs-toggle="" data-i18n="Users"><i data-feather="more-horizontal"></i><span data-i18n="Users">Permission</span></a>
                             </li>
                         </ul>
                     </li>                   
@@ -373,8 +401,22 @@
             </div>
         </div>
     </div>
+    
     <!-- END: Main Menu-->
-
+    <input type="hidden" id="active_olt_pp" value='<?php echo json_encode($current_permission);?>'/>
+    <script>let $pp='';$(window).on('load', function() {$pp=JSON.parse($('#active_olt_pp').val());
+    var dd=$('#active_olt_dd').val();
+    if(dd<0)msg='Your MiHUB OLT subscription was expired before '+(dd*(-1))+' days. Add more days: Configuration->Billing.';
+    if(dd==0)msg='You have no subscription in MiHUB OLT. Add more days: Configuration->Billing.';
+    if(dd>0)msg='Your MiHUB OLT subscription expires in '+dd+' days. Add more days: Configuration->Billing.';
+    var html='<div class="alert alert-primary mt-1 alert-validation-msg" role="alert">\
+        <div class="alert-body d-flex align-items-center">\
+            <i data-feather="info" class="me-50"></i>\
+            <span>'+msg+'</span>\
+        </div>\
+    </div>';
+    if(dd<10)$('.app-content.content').prepend(html);
+    });</script>
     @yield('content')
     
     <div class="sidenav-overlay"></div>
@@ -406,6 +448,8 @@
     <script src="/frontend/js/common.js"></script>
 
     <input type="hidden" id="active_olt_id" value="{{$active_olt['id']}}"/>
+    <input type="hidden" id="active_olt_dd" value="{{$active_olt->Expire()}}"/>
+    
     <script>
         $(window).on('load', function() {
             if (feather) {

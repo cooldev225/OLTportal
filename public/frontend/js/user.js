@@ -30,7 +30,7 @@ $(window).on('load', function () {
               $post = full['username'];
             if ($user_img) {
               var $output =
-                '<img src="' + assetPath + 'images/avatars/' + $user_img + '" alt="Avatar" width="32" height="32">';
+                '<img src="/v1/api/downloadFile?path=' + $user_img + '" alt="Avatar" width="32" height="32">';
             } else {
               // For Avatar badge
               var stateNum = full['validate'];
@@ -76,16 +76,16 @@ $(window).on('load', function () {
           else return '<span class="badge bg-danger">Disabled</span>';
         }},
         { 
-          data: '',
+          data: '',visible: $pp[1][1]||$pp[1][3]?true:false,
           render: function (data, type, full, meta) {
             return (
               '<div class="d-inline-flex">' +
-              '<a href="/user/editUser/'+full['id']+'" class="item-edit">' +
+              ($pp[1][1]?'<a href="/user/editUser/'+full['id']+'" class="item-edit">' +
               feather.icons['edit'].toSvg({ class: 'font-small-4' }) +
-              '</a>'+
-              '<a href="javascript:;" onclick="deleteRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
+              '</a>':'')+
+              ($pp[1][3]?'<a href="javascript:;" onclick="deleteRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
               feather.icons['trash-2'].toSvg({ class: 'font-small-4 me-50' }) +
-              '</a>' +
+              '</a>':'') +
               '</div>'
             );
           }

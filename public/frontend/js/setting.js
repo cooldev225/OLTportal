@@ -48,11 +48,11 @@ $(window).on('load', function () {
         },
         { data: 'updated_at', render:function(data,type,full,meta){return getCommonFormatDate(data);}},
         { 
-          data: '',
+          data: '',visible: $pp[3][1]||$pp[3][3]?true:false,
           render: function (data, type, full, meta) {
             return (
                 '<div class="d-inline-flex">' +
-                '<a class="pe-1 dropdown-toggle hide-arrow text-primary" data-bs-toggle="dropdown">' +
+                ($pp[3][1]?'<a class="pe-1 dropdown-toggle hide-arrow text-primary" data-bs-toggle="dropdown">' +
                 feather.icons['more-vertical'].toSvg({ class: 'font-small-4' }) +
                 '</a>' +
                 '<div class="dropdown-menu dropdown-menu-end">' +
@@ -73,10 +73,10 @@ $(window).on('load', function () {
                   $(\'#edit_card_port\').val(\''+full['port']+'\');\
                 " class="item-edit">' +
                 feather.icons['edit'].toSvg({ class: 'font-small-4' }) +
-                '</a>'+
-                '<a href="javascript:;" onclick="deleteCardRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
+                '</a>':'')+
+                ($pp[3][3]?'<a href="javascript:;" onclick="deleteCardRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
                 feather.icons['trash-2'].toSvg({ class: 'font-small-4 me-50' }) +
-                '</a>' +
+                '</a>':'') +
                 '</div>'
             );
           }
@@ -131,7 +131,7 @@ $(window).on('load', function () {
             }, 50);
           }
         },
-        {
+        $pp[3][2]?{
           text: feather.icons['plus'].toSvg({ class: 'me-50 font-small-4' }) + 'Create New',
           className: 'create-new btn btn-primary',
           attr: {
@@ -141,6 +141,15 @@ $(window).on('load', function () {
           },
           init: function (api, node, config) {
             $(node).removeClass('btn-secondary');
+          },
+        }:{
+          text: feather.icons['plus'].toSvg({ class: 'me-50 font-small-4' }) + 'Create New',
+          className: 'create-new btn btn-secondary',
+          attr: {
+            'data-bs-toggle': 'modal',
+            'data-bs-target': '#modals-slide-in',
+            'id':'add_card_button_disabled',
+            'disabled':true
           },
         }
       ],
@@ -192,8 +201,6 @@ $(window).on('load', function () {
             render: function(data, type, full, meta){
                 if(data==0)return '<span class="badge bg-success">UP</span>';
                 else if(data==1)return '<span class="badge bg-danger">DOWN</span>';
-
-
             }
         },
         { data: 'onu' },
@@ -201,11 +208,11 @@ $(window).on('load', function () {
         { data: 'power' },
         { data: 'updated_at', render:function(data,type,full,meta){return getCommonFormatDate(data);}},
         { 
-          data: '',
+          data: '',visible: $pp[4][1]||$pp[4][3]?true:false,
           render: function (data, type, full, meta) {
             return (
                 '<div class="d-inline-flex">' +
-                '<a class="pe-1 dropdown-toggle hide-arrow text-primary" data-bs-toggle="dropdown">' +
+                ($pp[4][1]?'<a class="pe-1 dropdown-toggle hide-arrow text-primary" data-bs-toggle="dropdown">' +
                 feather.icons['more-vertical'].toSvg({ class: 'font-small-4' }) +
                 '</a>' +
                 '<div class="dropdown-menu dropdown-menu-end">' +
@@ -224,10 +231,10 @@ $(window).on('load', function () {
                   $(\'#edit_pon_power\').val(\''+full['power']+'\');\
                 " class="item-edit">' +
                 feather.icons['edit'].toSvg({ class: 'font-small-4' }) +
-                '</a>'+
-                '<a href="javascript:;" onclick="deletePonRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
+                '</a>':'')+
+                ($pp[4][3]?'<a href="javascript:;" onclick="deletePonRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
                 feather.icons['trash-2'].toSvg({ class: 'font-small-4 me-50' }) +
-                '</a>' +
+                '</a>':'') +
                 '</div>'
             );
           }
@@ -282,7 +289,7 @@ $(window).on('load', function () {
             }, 50);
           }
         },
-        {
+        $pp[4][2]?{
           text: feather.icons['plus'].toSvg({ class: 'me-50 font-small-4' }) + 'Create New',
           className: 'create-new btn btn-primary',
           attr: {
@@ -292,6 +299,15 @@ $(window).on('load', function () {
           },
           init: function (api, node, config) {
             $(node).removeClass('btn-secondary');
+          },
+        }:{
+          text: feather.icons['plus'].toSvg({ class: 'me-50 font-small-4' }) + 'Create New',
+          className: 'create-new btn btn-secondary',
+          attr: {
+            'data-bs-toggle': 'modal',
+            'data-bs-target': '#modals-slide-in',
+            'id':'add_pon_button_disabled',
+            'disabled':true
           },
         }
       ],
@@ -350,11 +366,11 @@ $(window).on('load', function () {
         { data: 'pvid' },
         { data: 'vlan' },
         { 
-          data: '',
+          data: '',visible: $pp[5][1]||$pp[5][3]?true:false,
           render: function (data, type, full, meta) {
             return (
                 '<div class="d-inline-flex">' +
-                '<a class="pe-1 dropdown-toggle hide-arrow text-primary" data-bs-toggle="dropdown">' +
+                ($pp[5][1]?'<a class="pe-1 dropdown-toggle hide-arrow text-primary" data-bs-toggle="dropdown">' +
                 feather.icons['more-vertical'].toSvg({ class: 'font-small-4' }) +
                 '</a>' +
                 '<div class="dropdown-menu dropdown-menu-end">' +
@@ -392,8 +408,11 @@ $(window).on('load', function () {
                   $(\'#edit_uplink_pvid\').val(\''+full['pvid']+'\');\
                   $(\'#edit_uplink_vlan\').val(\''+full['vlan']+'\');\
                 " class="dropdown-item delete-record">' +
-                'Set PVID</a>' +
+                'Set PVID</a>':'') +
                 '</div>' +
+                ($pp[5][3]?'<a href="javascript:;" onclick="deleteUplinkRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
+                feather.icons['trash-2'].toSvg({ class: 'font-small-4 me-50' }) +
+                '</a>':'') +
                 '</div>'
             );
           }
@@ -448,7 +467,7 @@ $(window).on('load', function () {
             }, 50);
           }
         },
-        {
+        $pp[5][2]?{
           text: feather.icons['plus'].toSvg({ class: 'me-50 font-small-4' }) + 'Create New',
           className: 'create-new btn btn-primary',
           attr: {
@@ -458,6 +477,15 @@ $(window).on('load', function () {
           },
           init: function (api, node, config) {
             $(node).removeClass('btn-secondary');
+          },
+        }:{
+          text: feather.icons['plus'].toSvg({ class: 'me-50 font-small-4' }) + 'Create New',
+          className: 'create-new btn btn-secondary',
+          attr: {
+            'data-bs-toggle': 'modal',
+            'data-bs-target': '#modals-slide-in',
+            'id':'add_uplink_button_disabled',
+            'disabled':true
           },
         }
       ],
@@ -505,20 +533,20 @@ $(window).on('load', function () {
         { data: 'vlan_id' },
         { data: 'description' },
         { 
-          data: '',
+          data: '',visible: $pp[6][1]||$pp[6][3]?true:false,
           render: function (data, type, full, meta) {
             return (
               '<div class="d-inline-flex">' +
-              '<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modals-slide-vlan" onclick="\
+              ($pp[6][1]?'<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modals-slide-vlan" onclick="\
                 $(\'#edit_vlan_id\').val('+full['id']+');\
                 $(\'#edit_vlan_vid\').val(\''+full['vlan_id']+'\');\
                 $(\'#edit_vlan_description\').val(\''+full['description']+'\');\
               " class="item-edit">' +
               feather.icons['edit'].toSvg({ class: 'font-small-4' }) +
-              '</a>'+
-              '<a href="javascript:;" onclick="deleteVlanRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
+              '</a>':'')+
+              ($pp[6][3]?'<a href="javascript:;" onclick="deleteVlanRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
               feather.icons['trash-2'].toSvg({ class: 'font-small-4 me-50' }) +
-              '</a>' +
+              '</a>':'') +
               '</div>'
             );
           }
@@ -573,7 +601,7 @@ $(window).on('load', function () {
             }, 50);
           }
         },
-        {
+        $pp[6][2]?{
           text: feather.icons['plus'].toSvg({ class: 'me-50 font-small-4' }) + 'Create New',
           className: 'create-new btn btn-primary',
           attr: {
@@ -583,6 +611,15 @@ $(window).on('load', function () {
           },
           init: function (api, node, config) {
             $(node).removeClass('btn-secondary');
+          },
+        }:{
+          text: feather.icons['plus'].toSvg({ class: 'me-50 font-small-4' }) + 'Create New',
+          className: 'create-new btn btn-secondary',
+          attr: {
+            'data-bs-toggle': 'modal',
+            'data-bs-target': '#modals-slide-in',
+            'id':'add_vlan_button_disabled',
+            'disabled':true
           },
         }
       ],
@@ -757,20 +794,20 @@ $(window).on('load', function () {
         { data: 'expire' },
         { data: 'status',render:function(data){if(data==0)return 'Pending';else if(data==1) return 'Accepted';else return 'Rejected';} },
         { 
-          data: '',
+          data: '',visible: $pp[7][1]||$pp[7][3]?true:false,
           render: function (data, type, full, meta) {
             if(full['status'])return '';
             return (
               '<div class="d-inline-flex">' +
-              '<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modals-slide-billing" onclick="\
+              ($pp[7][1]?'<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modals-slide-billing" onclick="\
                 $(\'#edit_billing_id\').val('+full['id']+');\
                 $(\'#edit_billing_name\').val(\''+full['name']+'\');\
               " class="item-edit">' +
               feather.icons['edit'].toSvg({ class: 'font-small-4' }) +
-              '</a>'+
-              '<a href="javascript:;" onclick="deleteBillingRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
+              '</a>':'')+
+              ($pp[7][3]?'<a href="javascript:;" onclick="deleteBillingRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
               feather.icons['trash-2'].toSvg({ class: 'font-small-4 me-50' }) +
-              '</a>' +
+              '</a>':'') +
               '</div>'
             );
           }
@@ -825,7 +862,7 @@ $(window).on('load', function () {
             }, 50);
           }
         },
-        {
+        $pp[7][2]?{
           text: feather.icons['plus'].toSvg({ class: 'me-50 font-small-4' }) + 'Create Billing',
           className: 'create-new btn btn-primary',
           attr: {
@@ -835,6 +872,15 @@ $(window).on('load', function () {
           },
           init: function (api, node, config) {
             $(node).removeClass('btn-secondary');
+          },
+        }:{
+          text: feather.icons['plus'].toSvg({ class: 'me-50 font-small-4' }) + 'Create Billing',
+          className: 'create-new btn btn-secondary',
+          attr: {
+            'data-bs-toggle': 'modal',
+            'data-bs-target': '#modals-slide-in',
+            'id':'add_billing_button_disabled',
+            'disabled':true
           },
         }
       ],
@@ -899,20 +945,20 @@ $(window).on('load', function () {
         { data: 'version' },
         { data: 'created_at',render:function(data){return getCommonFormatDate(data);}},
         { 
-          data: '',
+          data: '',visible: $pp[2][1]||$pp[2][3]?true:false,
           render: function (data, type, full, meta) {
             return (
               '<div class="d-inline-flex">' +
-              '<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modals-slide-olt" onclick="\
+              ($pp[2][1]?'<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modals-slide-olt" onclick="\
                 $(\'#edit_olt_id\').val('+full['id']+');\
                 $(\'#edit_olt_name\').val(\''+full['name']+'\');\
                 $(\'#edit_olt_ip\').val(\''+full['ip']+'\');\
               " class="item-edit">' +
               feather.icons['edit'].toSvg({ class: 'font-small-4' }) +
-              '</a>'+
-              '<a href="javascript:;" onclick="deleteOltRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
+              '</a>':'')+
+              ($pp[2][3]?'<a href="javascript:;" onclick="deleteOltRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
               feather.icons['trash-2'].toSvg({ class: 'font-small-4 me-50' }) +
-              '</a>' +
+              '</a>':'') +
               '</div>'
             );
           }
@@ -967,7 +1013,7 @@ $(window).on('load', function () {
             }, 50);
           }
         },
-        {
+        $pp[2][2]?{
           text: feather.icons['plus'].toSvg({ class: 'me-50 font-small-4' }) + 'Create OLT',
           className: 'create-new btn btn-primary',
           attr: {
@@ -977,6 +1023,15 @@ $(window).on('load', function () {
           },
           init: function (api, node, config) {
             $(node).removeClass('btn-secondary');
+          },
+        }:{
+          text: feather.icons['plus'].toSvg({ class: 'me-50 font-small-4' }) + 'Create OLT',
+          className: 'create-new btn btn-secondary',
+          attr: {
+            'data-bs-toggle': 'modal',
+            'data-bs-target': '#modals-slide-in',
+            'id':'add_olt_button_disabled',
+            'disabled':true
           },
         }
       ],

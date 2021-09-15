@@ -40,6 +40,7 @@ class ViewServiceProvider extends ServiceProvider
                 'frontend.setting',
                 'frontend.user',
                 'frontend.user_edit',
+                'frontend.role',
             ],
             'App\Http\Binds\HomeComposer'
         );

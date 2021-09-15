@@ -27,54 +27,70 @@
                                     <span class="fw-bold"><span class="fw-bold"> OLT Settings</span>
                                 </a>
                             </li>
+                            @if($current_permission[3][0])
                             <li class="nav-item">
                                 <a class="nav-link {{$active==1?'active':''}}" id="account-pill-card" data-bs-toggle="pill" href="#account-vertical-card" aria-expanded="false">
                                     <i data-feather="credit-card" class="font-medium-3 me-1"></i>
                                     <span class="fw-bold">Cards</span>
                                 </a>
                             </li>
+                            @endif
+                            @if($current_permission[4][0])
                             <li class="nav-item">
                                 <a class="nav-link {{$active==2?'active':''}}" id="account-pill-pon" data-bs-toggle="pill" href="#account-vertical-pon" aria-expanded="false">
                                     <i data-feather="disc" class="font-medium-3 me-1"></i>
                                     <span class="fw-bold">PON</span>
                                 </a>
                             </li>
+                            @endif
+                            @if($current_permission[5][0])
                             <li class="nav-item">
                                 <a class="nav-link {{$active==3?'active':''}}" id="account-pill-uplink" data-bs-toggle="pill" href="#account-vertical-uplink" aria-expanded="false">
                                     <i data-feather="share-2" class="font-medium-3 me-1"></i>
                                     <span class="fw-bold">Uplink</span>
                                 </a>
                             </li>
+                            @endif
+                            @if($current_permission[6][0])
                             <li class="nav-item">
                                 <a class="nav-link {{$active==4?'active':''}}" id="account-pill-vlan" data-bs-toggle="pill" href="#account-vertical-vlan" aria-expanded="false">
                                     <i data-feather="info" class="font-medium-3 me-1"></i>
                                     <span class="fw-bold">VLAN</span>
                                 </a>
                             </li>
+                            @endif
+                            @if($current_permission[9][0])
                             <li class="nav-item">
                                 <a class="nav-link {{$active==5?'active':''}}" id="account-pill-onutype" data-bs-toggle="pill" href="#account-vertical-onutype" aria-expanded="false">
                                     <i data-feather="shuffle" class="font-medium-3 me-1"></i>
                                     <span class="fw-bold">ONU TYPE</span>
                                 </a>
                             </li>
+                            @endif
+                            @if($current_permission[7][0])
                             <li class="nav-item">
                                 <a class="nav-link {{$active==6?'active':''}}" id="account-pill-billing" data-bs-toggle="pill" href="#account-vertical-billing" aria-expanded="false">
                                     <i data-feather="shopping-cart" class="font-medium-3 me-1"></i>
                                     <span class="fw-bold">BILLING</span>
                                 </a>
                             </li>
+                            @endif
+                            @if($current_permission[2][0])
                             <li class="nav-item">
                                 <a class="nav-link {{$active==7?'active':''}}" id="account-pill-olt" data-bs-toggle="pill" href="#account-vertical-olt" aria-expanded="false">
                                     <i data-feather="layers" class="font-medium-3 me-1"></i>
                                     <span class="fw-bold">OLTs</span>
                                 </a>
                             </li>
+                            @endif
+                            @if($current_permission[1][0])
                             <li class="nav-item">
                                 <a class="nav-link" id="account-pill-vlan" href="/user" aria-expanded="false">
                                     <i data-feather="user" class="font-medium-3 me-1"></i>
                                     <span class="fw-bold">Users</span>
                                 </a>
                             </li>
+                            @endif
                         </ul>
                     </div>
 
@@ -154,10 +170,12 @@
                                                                 <input type="text" class="form-control" id="olt_version" name="olt_version"  value="{{$active_olt['version']}}" placeholder="version" />
                                                             </div>
                                                         </div>
+                                                        @if($current_permission[2][1])
                                                         <div class="col-12">
                                                             <button type="submit" class="btn btn-primary olt-save-submit mt-2 me-1">Save changes</button>
                                                             <button type="reset" class="btn btn-outline-secondary mt-2">Cancel</button>
                                                         </div>
+                                                        @endif
                                                     </div>
                                                 </form>
                                             </div>

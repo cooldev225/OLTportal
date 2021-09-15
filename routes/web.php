@@ -62,6 +62,10 @@ Route::group(['middleware' => ['login']], function () {
     Route::get('/user', 'UserController@index');
     Route::post('/user/getDataTable', 'UserController@getDataTable');
     Route::get('/user/editUser/{id}', 'UserController@editUser');
+    Route::post('/user/saveUser', 'UserController@saveUser');
+    Route::get('/role', 'RoleController@index');
+    Route::post('/role/getDataTable', 'RoleController@getDataTable');
+    Route::post('/role/savePermission', 'RoleController@savePermission');
 });
 
 Route::group(['middleware' => ['admin']], function () {

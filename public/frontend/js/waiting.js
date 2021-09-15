@@ -1,3 +1,4 @@
+
 var dt_basic_table = $('.datatables-basic'),
 assetPath = '/vuexy/app-assets/',
 dt_basic=null;
@@ -35,11 +36,11 @@ $(window).on('load', function () {
         { data: 'slot' },
         { data: 'pon' },
         { 
-          data: '',
+          data: '',visible: $pp[10][1]||$pp[10][3]?true:false,
           render: function (data, type, full, meta) {
             return (
               '<div class="d-inline-flex">' +
-              '<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modals-slide-in" onclick="\
+              ($pp[10][1]?'<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modals-slide-in" onclick="\
                 $(\'#edit_id\').val('+full['id']+');\
                 $(\'#edit_serial\').val(\''+full['serial']+'\');\
                 $(\'#edit_desc\').val(\''+full['desc']+'\');\
@@ -47,10 +48,10 @@ $(window).on('load', function () {
                 $(\'#edit_pon\').val(\''+full['pon']+'\');\
               " class="item-edit">' +
               feather.icons['edit'].toSvg({ class: 'font-small-4' }) +
-              '</a>'+
-              '<a href="javascript:;" onclick="deleteRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
+              '</a>':'')+
+              ($pp[10][3]?'<a href="javascript:;" onclick="deleteRow('+full['id']+');" class="delete-record" style="margin-left:8px;">' +
               feather.icons['trash-2'].toSvg({ class: 'font-small-4 me-50' }) +
-              '</a>' +
+              '</a>':'') +
               '</div>'
             );
           }
@@ -105,7 +106,7 @@ $(window).on('load', function () {
             }, 50);
           }
         },
-        {
+        $pp[10][2]?{
           text: feather.icons['plus'].toSvg({ class: 'me-50 font-small-4' }) + 'Add New Record',
           className: 'create-new btn btn-primary',
           attr: {
@@ -115,6 +116,15 @@ $(window).on('load', function () {
           },
           init: function (api, node, config) {
             $(node).removeClass('btn-secondary');
+          },
+        }:{
+          text: feather.icons['plus'].toSvg({ class: 'me-50 font-small-4' }) + 'Add New Record',
+          className: 'create-new btn btn-secondary',
+          attr: {
+            'data-bs-toggle': 'modal',
+            'data-bs-target': '#modals-slide-in',
+            'id':'add_button_disabled',
+            'disabled':true
           },
         }
       ],

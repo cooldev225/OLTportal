@@ -60,4 +60,21 @@ class UserController extends Controller
             'user'=>User::find($id),
         ]);
     }
+    public function saveUser(Request $request){
+        $id=$request->input('id');
+        $row=$id>0?User::find($id):new User;
+        $row->email=$request->input('email');
+        $row->username=$request->input('username');
+        $row->firstName=$request->input('firstName');
+        $row->validate=$request->input('validate');
+        $row->is_admin=$request->input('is_admin');
+        $row->ac_about=$request->input('ac_about');
+        if($request->file('avatar')!=null){
+            $path=$request->file('avatar')->store('upload/avatar');
+            $row->avatar=$path;
+        }
+        $row->updated_at=date('Y-m-d H:i:s');
+        $row->save();
+        return $row->id;
+    }
 }

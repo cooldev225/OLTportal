@@ -60,7 +60,7 @@ $(window).on('load', function () {
         },
         { data: 'vlan'},
         { 
-          data: '',
+          data: '',visible: $pp[8][1]?true:false,
           render: function (data, type, full, meta) {
             return (
               '<div class="d-inline-flex">' +

@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Cookie;
 use App\Models\National;
 use App\Models\Olt;
 use App\Models\Slot;
+use App\Models\Page;
+use App\Models\Permission;
 class HomeComposer
 {
     public function __construct()
@@ -51,6 +53,19 @@ class HomeComposer
         $view->with('cnt_online',0);
         $view->with('cnt_offline',0);
         $view->with('cnt_lowsignal','-');
+
+        if($role=Auth::id()){
+            $role=Auth::user()->is_admin;
+            $permissions=array();
+            foreach(Page::select()->get() as $page){
+                $permissions[$page->id][0]=Permission::where('role_id',$role)->where('page_id',$page->id)->where('action',0)->count()?1:0;
+                $permissions[$page->id][1]=Permission::where('role_id',$role)->where('page_id',$page->id)->where('action',1)->count()?1:0;
+                $permissions[$page->id][2]=Permission::where('role_id',$role)->where('page_id',$page->id)->where('action',2)->count()?1:0;
+                $permissions[$page->id][3]=Permission::where('role_id',$role)->where('page_id',$page->id)->where('action',3)->count()?1:0;
+            }
+            $view->with('current_role',$role);
+            $view->with('current_permission',$permissions);
+        }
 
         if(request()->get('lang')){
             app()->setLocale(request()->get('lang'));
